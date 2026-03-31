@@ -24,3 +24,93 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.companiesmarquee {
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes glowPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.marquee {
+  animation: marquee 30s linear infinite;
+
+}
+.marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+
+}
+.marquee:hover,
+.marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+
+
+@keyframes changewidth {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 110px;
+  }
+}
+
+.animate-cta {
+  animation: changewidth 2s infinite alternate;
+}
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+
+
