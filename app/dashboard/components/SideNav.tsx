@@ -17,6 +17,7 @@ import {
   Headset,
   PanelRight,
   X,
+  Video,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -32,27 +33,29 @@ type NavItem = {
 
 const mainItems: NavItem[] = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Exam Details", href: "/dashboard/exam-details", icon: FileText },
-  { name: "Strategy", href: "/dashboard/startegy", icon: Target },
+  { name: "Classes", href: "/dashboard/exam-details", icon: Video },
+  // { name: "Strategy", href: "/dashboard/startegy", icon: Target },
   { name: "My Courses", href: "/dashboard/courses", icon: BookOpen },
-  { name: "Mocks", href: "/dashboard/mocks", icon: HelpCircle },
+  { name: "Quiz", href: "/dashboard/mocks", icon: HelpCircle },
   { name: "24/7 Doubt Solving", href: "/dashboard/doubt", icon: MessageCircle },
+   { name: "Explore Courses", href: "/dashboard/explore-courses", icon: GraduationCap },
+   { name: "Need Support", href: "/dashboard/support", icon: Headset },
 ];
 
-const resourcesItems: NavItem[] = [
-  { name: "Free Material", href: "/dashboard/free-material", icon: FileText },
-  { name: "Books", href: "/dashboard/books", icon: Book },
-  { name: "Tools", href: "/dashboard/tools", icon: Wrench },
-  { name: "Explore Courses", href: "/dashboard/explore-courses", icon: GraduationCap },
-];
+// const resourcesItems: NavItem[] = [
+//   { name: "Free Material", href: "/dashboard/free-material", icon: FileText },
+//   { name: "Books", href: "/dashboard/books", icon: Book },
+//   { name: "Tools", href: "/dashboard/tools", icon: Wrench },
+//   { name: "Explore Courses", href: "/dashboard/explore-courses", icon: GraduationCap },
+// ];
 
 
-const growthItems: NavItem[] = [
-  { name: "Special Initiatives", href: "/dashboard/special-initiators", icon: Award },
-  { name: "Success Stories", href: "/dashboard/success-stories", icon: Trophy },
-  { name: "Refer & Earn", href: "/dashboard/refer-earn", icon: Gift },
-  { name: "Need Support", href: "/dashboard/support", icon: Headset },
-];
+// const growthItems: NavItem[] = [
+//   { name: "Special Initiatives", href: "/dashboard/special-initiators", icon: Award },
+//   { name: "Success Stories", href: "/dashboard/success-stories", icon: Trophy },
+//   { name: "Refer & Earn", href: "/dashboard/refer-earn", icon: Gift },
+//   { name: "Need Support", href: "/dashboard/support", icon: Headset },
+// ];
 
 export default function SideNav() {
   const pathname = usePathname();
@@ -160,16 +163,16 @@ export default function SideNav() {
             }}>
             {!collapsed && (
               <section className="space-y-2">
-                <p className="px-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                {/* <p className="px-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   Main
-                </p>
+                </p> */}
                 <div className="space-y-1">{renderNavItems(mainItems)}</div>
               </section>
             )}
             {collapsed && (
               <div className="space-y-0.5">{renderNavItems(mainItems)}</div>
             )}
-            {!collapsed && (
+            {/* {!collapsed && (
               <section className="space-y-2">
                 <p className="px-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   Resources
@@ -178,21 +181,21 @@ export default function SideNav() {
                   {renderNavItems(resourcesItems)}
                 </div>
               </section>
-            )}
-            {collapsed && (
+            )} */}
+            {/* {collapsed && (
               <div className="space-y-0.5">{renderNavItems(resourcesItems)}</div>
-            )}
-            {!collapsed && (
+            )} */}
+            {/* {!collapsed && (
               <section className="space-y-2">
                 <p className="px-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   Growth
                 </p>
                 <div className="space-y-1">{renderNavItems(growthItems)}</div>
               </section>
-            )}
-            {collapsed && (
+            )} */}
+            {/* {collapsed && (
               <div className="space-y-0.5">{renderNavItems(growthItems)}</div>
-            )}
+            )} */}
           </nav>
           <div
             className={`rounded-2xl border border-slate-200 bg-linear-to-br from-blue-50 via-white to-indigo-50 transition-all duration-300 ${collapsed ? "m-2 p-2" : "m-3 p-3"
@@ -219,10 +222,16 @@ export default function SideNav() {
             {!collapsed && (
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-medium text-blue-700">
-                  CAT
+                  DSA
                 </span>
                 <span className="rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-medium text-violet-700">
-                  SNAP
+                  Full Stack
+                </span>
+                <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-medium text-blue-700">
+                  Data Science
+                </span>
+                <span className="rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-medium text-violet-700">
+                  DSA & CP
                 </span>
               </div>
             )}
