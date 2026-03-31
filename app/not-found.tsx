@@ -12,7 +12,7 @@ export default function NotFound() {
     <div className="fixed inset-0 bg-linear-to-br from-[#0f0f0f] via-[#191919] to-black flex items-center justify-center px-4">
       <div className="flex flex-col items-center text-center text-white">
         <img
-          src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg"
+          src="/imgs/sad404.svg"
           alt="404"
           className="h-65 md:h-80 "
         />
