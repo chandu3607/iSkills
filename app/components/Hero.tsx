@@ -7,7 +7,7 @@ export default function Hero() {
    const [isContactOpen, setIsContactOpen] = useState(false);
   return (
     <>
-    <section className="relative bg-[#080808] overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="relative bg-[#080808] overflow-hidden  md:min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 opacity-20">
         <img
           src="https://media.iquanta.in/ui_images/skills/banner-bg.png"
@@ -31,7 +31,7 @@ export default function Hero() {
     
       <div
         className="relative z-10 text-center max-w-6xl w-full mx-auto px-6
-        pt-22 pb-1 md:pt-45 md:pb-10">
+        pt-30 pb-10 md:pt-45 md:pb-10">
         <p className="text-white/60 font-light tracking-widest uppercase text-sm md:text-base mb-5 font-[Inter,sans-serif]">
           2x Your Salary with
         </p>
