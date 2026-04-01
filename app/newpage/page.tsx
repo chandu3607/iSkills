@@ -5,7 +5,7 @@ import Headder from "../components/Headder";
 import HeroVideo from "../components/HeroVideo";
 import { Loader, MoveRight, Sparkles, TrendingUp } from "lucide-react";
 
-export default function Page() {
+export default function page() {
   return (
     <>
       <Headder />
@@ -44,7 +44,7 @@ export default function Page() {
               rounded-full
               text-white/70 text-[11px] md:text-xs
               font-medium tracking-widest  mb-6
-              bg-white/[0.06]
+              bg-white/6
               border border-white/10
               backdrop-blur-md
               shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]
