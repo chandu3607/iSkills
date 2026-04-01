@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Headder from "./components/Headder";
 import Hero from "./components/Hero";
@@ -15,7 +14,7 @@ import SuccessStories from "./components/SuccessStories";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import { Metadata } from "next";
-import { ShoppingCart } from "lucide-react";
+import { MoveRight, ShoppingCart } from "lucide-react";
 import BuyNowButton from "./components/BuyNowButton";
 
 const faqData = [
@@ -204,7 +203,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div>
+      <div className="bg-black">
         <Headder />
         <Hero />
         <HeroVideo />
@@ -216,7 +215,7 @@ export default function Home() {
         <Roadmap />
         {/* <Confused /> */}
         <div id="Learning">
-          <Learning  />
+          <Learning />
         </div>
         <SuccessStories />
         <FAQ data={faqData} />
