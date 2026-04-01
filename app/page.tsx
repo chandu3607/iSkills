@@ -213,7 +213,7 @@ export default function Home() {
         <Community />
         <Mentors />
         <Roadmap />
-        {/* <Confused /> */}
+        <Confused />
         <div id="Learning">
           <Learning />
         </div>

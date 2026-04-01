@@ -29,20 +29,17 @@ export default function ContactModal({ open, onClose }: Props) {
   return (
     <div
       className="fixed inset-0 z-1200 flex items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-md"
-      onClick={onClose}
-    >
+      onClick={onClose}>
       <div
         className="relative w-full max-w-3xl overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.98)_0%,rgba(8,8,10,0.99)_100%)] shadow-[0_30px_120px_rgba(0,0,0,0.55)]"
-        onClick={(e) => e.stopPropagation()}
-      >
+        onClick={(e) => e.stopPropagation()}>
         <div className="absolute left-0 top-0 h-56 w-56 rounded-full bg-[#127EF1]/18 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-[#EF7D6E]/16 blur-3xl" />
         <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)]" />
         <button
           onClick={onClose}
           className="absolute right-3 top-3 z-20 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition-colors duration-200 hover:bg-white/8 hover:text-white"
-          aria-label="Close modal"
-        >
+          aria-label="Close modal" >
           <X className="h-4 w-4" />
         </button>
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12">
@@ -50,12 +47,10 @@ export default function ContactModal({ open, onClose }: Props) {
             <h3 className="mt-4 sm:mt-6 text-[22px] sm:text-[26px] md:text-[30px] font-semibold leading-tight text-white">
               Lets Have a Chat
             </h3>
-
             <p className="mt-3 sm:mt-4 max-w-sm text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-7 text-[#BBC2CE]">
               Share a few details and our team will help you pick the right
               program, learning path, and career direction.
             </p>
-
             <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
               {[
                 "Get guidance based on your current experience",
@@ -64,8 +59,7 @@ export default function ContactModal({ open, onClose }: Props) {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-2 sm:gap-3 text-[13px] sm:text-[14px] leading-6 text-white/85"
-                >
+                  className="flex items-start gap-2 sm:gap-3 text-[13px] sm:text-[14px] leading-6 text-white/85">
                   <span className="mt-2 h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0 rounded-full bg-[linear-gradient(180deg,#61E6C6_0%,#127EF1_60%,#EF7D6E_100%)]" />
                   <span>{item}</span>
                 </div>
@@ -89,7 +83,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   />
                 </div>
               </div>
-
               <div>
                 <FieldLabel>Phone Number</FieldLabel>
                 <div className="flex gap-2">
@@ -103,7 +96,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   </div>
                 </div>
               </div>
-
               <div className="md:col-span-2">
                 <FieldLabel>Email</FieldLabel>
                 <div className="flex items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-white/4 px-3 sm:px-4 py-2.5 sm:py-3">
@@ -115,7 +107,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   />
                 </div>
               </div>
-
               <div>
                 <FieldLabel>Skills</FieldLabel>
                 <div className="flex items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-white/4 px-3 sm:px-4 py-2.5 sm:py-3">
@@ -127,7 +118,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   />
                 </div>
               </div>
-
               <div className="relative">
                 <FieldLabel>City</FieldLabel>
                 <div className="flex items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-white/4 px-3 sm:px-4 py-2.5 sm:py-3">
@@ -141,7 +131,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   <ChevronDown className="pointer-events-none h-4 w-4 text-white/40" />
                 </div>
               </div>
-
               <div>
                 <FieldLabel> Experience</FieldLabel>
                 <div className="flex items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-white/4 px-3 sm:px-4 py-2.5 sm:py-3">
@@ -153,7 +142,6 @@ export default function ContactModal({ open, onClose }: Props) {
                   />
                 </div>
               </div>
-
               <div>
                 <FieldLabel>Domain</FieldLabel>
                 <div className="flex items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-white/4 px-3 sm:px-4 py-2.5 sm:py-3">
