@@ -19,8 +19,7 @@ const Card: React.FC<CardProps> = ({ className = "" }) => {
       className={`absolute w-62 p-5 rounded-[30px]
       bg-[url('https://media.iquanta.in/ui_images/skills/inttrest-card-png.png')]
       backdrop-blur-[4.7px] border-2 border-[#9c9c9c] bg-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.6)]
-      ${className}`}
-    >
+      ${className}`}>
       <h5
         className="text-[14px] italic font-extrabold mb-3
         bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
@@ -29,8 +28,8 @@ const Card: React.FC<CardProps> = ({ className = "" }) => {
         What are you <br /> Interested in?
       </h5>
       <div className="grid gap-1.5">
-        {chips.map((c, i) => (
-          <Link key={i} href={c.href}>
+        {chips.map((chip, i) => (
+          <Link key={i} href={chip.href}>
             <div
               className="
               flex items-center gap-2 px-1 py-1 rounded-[10px]
@@ -42,13 +41,13 @@ const Card: React.FC<CardProps> = ({ className = "" }) => {
               <span
                 className="w-6 h-6 text-[10px] flex items-center justify-center
                rounded-md border border-[#5A5257] bg-[#2F2B2A] text-white">
-                {c.letter}
+                {chip.letter}
               </span>
               <h6
                 className="text-[10px]
                   bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
                   bg-clip-text text-transparent">
-                {c.label}
+                {chip.label}
               </h6>
             </div>
           </Link>
