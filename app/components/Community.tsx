@@ -31,10 +31,10 @@ export default function Community() {
                 </div>
                 <div className="mt-5 text-center">
                   <button
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(!open)} 
                     className="mx-auto px-5 py-2 rounded-[20px] 
                     bg-[linear-gradient(90deg,#ECECEC,#898989)]
-                    text-black text-[13px] shadow-md"
+                    text-black text-[13px] shadow-md cursor-pointer"
                   >
                     {open ? "Close" : "Join Now"}
                   </button>
@@ -61,9 +61,17 @@ export default function Community() {
                   />
                 </div>
                 <div className="mt-5 text-center">
-                  <h3 className="text-white md:text-[18px] text-[16px] mb-4">Data Science</h3>
+                  <h3 className="text-white md:text-[18px] text-[16px] mb-4">
+                    Data Science
+                  </h3>
                   <button
-                    className="mx-auto px-5 py-2 rounded-[20px] 
+                    onClick={() => {
+                      window.open(
+                        "https://chat.whatsapp.com/EUuhFxuhkVE6Slh4GEz2gU",
+                        "_blank",
+                      );
+                    }}
+                    className="mx-auto px-5 py-2 rounded-[20px] cursor-pointer
                   bg-[linear-gradient(90deg,#ECECEC,#898989)]
                   text-black text-[13px] shadow-md"
                   >
@@ -85,7 +93,13 @@ export default function Community() {
                     Data Analytics
                   </h3>
                   <button
-                    className="mx-auto px-5 py-2 rounded-[20px] 
+                    onClick={() => {
+                      window.open(
+                        "https://chat.whatsapp.com/Iuz82xuSb7u5GPBim8pCFc",
+                        "_blank",
+                      );
+                    }}
+                    className="mx-auto px-5 py-2 rounded-[20px] cursor-pointer
                     bg-[linear-gradient(90deg,#ECECEC,#898989)]
                     text-black text-[13px] shadow-md"
                   >
@@ -107,7 +121,13 @@ export default function Community() {
                     DSA & Competitive Programming
                   </h3>
                   <button
-                    className="mx-auto px-5 py-2 rounded-[20px] 
+                    onClick={() => {
+                      window.open(
+                        "https://chat.whatsapp.com/JGyStpu18Jz1YvV63pnVag",
+                        "_blank",
+                      );
+                    }}
+                    className="mx-auto px-5 py-2 rounded-[20px] cursor-pointer
                   bg-[linear-gradient(90deg,#ECECEC,#898989)]
                   text-black text-[13px] shadow-md"
                   >

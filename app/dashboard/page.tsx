@@ -98,7 +98,6 @@ export default function DashboardHome() {
           {/* <div className="pointer-events-none absolute -bottom-20 left-10 sm:left-20 h-40 w-40 sm:h-56 sm:w-56 rounded-full bg-emerald-100/60 blur-2xl" /> */}
           <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-2 sm:space-y-3 ">
-           
               <h2 className="text-xl sm:text-2xl font-semibold leading-tight tracking-tight text-slate-900 lg:text-3xl">
                 Welcome back, Use. Keep your coding momentum high.
               </h2>
@@ -108,24 +107,20 @@ export default function DashboardHome() {
                 readiness.
               </p>
             </div>
-
           </div>
         </article>
       </section>
-
       <section className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
         {kpiCards.map((card) => {
           const Icon = card.icon;
           return (
             <article
               key={card.title}
-              className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-5 transition hover:-translate-y-0.5"
-            >
+              className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-5 transition hover:-translate-y-0.5">
               <div className="flex items-start justify-between">
                 <span
-                  className={`inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl border ${card.iconWrap}`}
-                >
-                  <Icon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+                  className={`inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl border ${card.iconWrap}`}>
+                  <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
                 </span>
               </div>
               <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs uppercase tracking-[0.11em] text-slate-400">
@@ -141,7 +136,6 @@ export default function DashboardHome() {
           );
         })}
       </section>
-
       <section className="grid gap-3 sm:gap-4 xl:grid-cols-12">
         <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white xl:col-span-7 flex flex-col">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 px-4 sm:px-5 py-3 sm:py-4 gap-2 sm:gap-0">
@@ -158,7 +152,7 @@ export default function DashboardHome() {
             </button>
           </div>
 
-          <div className="space-y-2 sm:space-y-3 p-3 sm:p-4 overflow-y-auto max-h-[360px] sm:max-h-none scrollbar-hide">
+          <div className="space-y-2 sm:space-y-3 p-3 sm:p-4 overflow-y-auto max-h-90 sm:max-h-none scrollbar-hide">
             {learningTracks.map((course) => (
               <div
                 key={course.name}
@@ -187,7 +181,7 @@ export default function DashboardHome() {
                   <div className="ml-2 sm:ml-3 flex shrink-0 items-center gap-2">
                     <ChevronRight
                       size={16}
-                      className="text-slate-400 sm:h-[18px] sm:w-[18px]"
+                      className="text-slate-400 sm:h-4.5 sm:w-4.5"
                     />
                   </div>
                 </div>
@@ -207,7 +201,7 @@ export default function DashboardHome() {
                 {todayPlan.length} tasks
               </span>
             </div>
-            <div className="sm:mt-4 space-y-2 sm:space-y-3 overflow-y-auto max-h-[200px] sm:max-h-none scrollbar-hide">
+            <div className="sm:mt-4 space-y-2 sm:space-y-3 overflow-y-auto max-h-50 sm:max-h-none scrollbar-hide">
               {todayPlan.map((item) => (
                 <div
                   key={item.title}
@@ -240,14 +234,14 @@ export default function DashboardHome() {
               <h3 className="mt-1 sm:mt-1.5 text-base sm:text-xl font-semibold leading-tight text-slate-900">
                 Build production-ready skills with live cohorts and portfolio projects.
               </h3>
-              <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-sm text-slate-600 max-w-[280px] sm:max-w-none">
+              <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-sm text-slate-600 max-w-70 sm:max-w-none">
                 From Full Stack and Data Science to DSA and Analytics, iSkills is
                 structured for real outcomes with mentor-led sessions, project
                 reviews, and career support.
               </p>
               <button className="mt-3 sm:mt-4 inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-semibold text-white transition hover:bg-slate-800">
                 Explore iSkills
-                <ArrowUpRight size={14} className="sm:h-[15px] sm:w-[15px]" />
+                <ArrowUpRight size={14} className="sm:h-3.75 sm:w-3.75" />
               </button>
             </div>
           </article>
@@ -255,17 +249,17 @@ export default function DashboardHome() {
       </section>
 
       <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `,
-        }}
+      //   dangerouslySetInnerHTML={{
+      //     __html: `
+      //   .scrollbar-hide::-webkit-scrollbar {
+      //     display: none;
+      //   }
+      //   .scrollbar-hide {
+      //     -ms-overflow-style: none;
+      //     scrollbar-width: none;
+      //   }
+      // `,
+      //   }}
       />
     </div>
   );

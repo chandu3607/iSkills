@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 
 export default function CourseCommunity() {
@@ -24,7 +25,13 @@ export default function CourseCommunity() {
                 </div>
                 <div className="mt-5 text-center">
                   <button
-                    className="mx-auto px-5 py-2 rounded-[20px] 
+                  onClick={() => {
+                      window.open(
+                        "https://chat.whatsapp.com/EUuhFxuhkVE6Slh4GEz2gU",
+                        "_blank",
+                      );
+                    }}
+                    className="mx-auto px-5 py-2 rounded-[20px]  cursor-pointer
                     bg-[linear-gradient(90deg,#ECECEC,#898989)]
                     text-black text-[13px] shadow-md"
                   >

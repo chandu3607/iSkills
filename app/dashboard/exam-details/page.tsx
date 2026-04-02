@@ -140,7 +140,7 @@ export default function ExamDetailsPage() {
 
   return (
     <div className="space-y-5 pb-6">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50 p-5 md:p-6">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-br from-white via-slate-50 to-blue-50 p-5 md:p-6">
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-200/40 blur-3xl" />
         {/* <div className="pointer-events-none absolute bottom-0 left-10 h-28 w-28 rounded-full bg-emerald-100/60 blur-3xl" /> */}
         <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -233,7 +233,7 @@ export default function ExamDetailsPage() {
             >
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(191,219,254,0.35),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(224,231,255,0.35),transparent_28%)]" />
               <div className="relative items-center flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5">
-                <div className="relative h-44 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-[168px] md:w-[270px] md:min-w-[270px]">
+                <div className="relative h-44 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-42 md:w-67.5 md:min-w-67.5">
                   <img
                     src={session.image}
                     alt={session.title}
