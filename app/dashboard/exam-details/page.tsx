@@ -1,509 +1,330 @@
 "use client";
 
-import { useState } from "react";
-import { BookOpenCheck, FileText, Sparkles } from "lucide-react";
+import { useMemo, useState } from "react";
+import Image from "next/image";
+import {
+  CalendarDays,
+  Clock3,
+  PlayCircle,
+  Radio,
+  Users,
+} from "lucide-react";
 
-type Category = "after12" | "iit" | "neet";
-type Track = "cuet" | "ipmat" | "clat" | "iit-jee" | "neet-track";
+type Category =
+  | "All Tracks"
+  | "Data Analytics"
+  | "Full Stack Web Development"
+  | "Data Science Bootcamp"
+  | "DSA MAANG"
+  | "DSA Pattern & Competitive Programming";
+
+type ModeFilter = "All" | "Live" | "Recorded";
+type BatchFilter = "All" | "Batch 1" | "Batch 2" | "Batch 3";
+
+type ClassSession = {
+  id: number;
+  title: string;
+  category: Exclude<Category, "All Tracks">;
+  mode: Exclude<ModeFilter, "All">;
+  batch: Exclude<BatchFilter, "All">;
+  date: string;
+  time: string;
+  duration: string;
+  mentor: string;
+  image: string;
+  tag: string;
+};
+
+const categories: Category[] = [
+  "All Tracks",
+  "Data Analytics",
+  "Full Stack Web Development",
+  "Data Science Bootcamp",
+  "DSA MAANG",
+  "DSA Pattern & Competitive Programming",
+];
+
+const sessions: ClassSession[] = [
+  {
+    id: 1,
+    title: "Data Analytics - SAT Live Classes",
+    category: "Data Analytics",
+    mode: "Live",
+    batch: "Batch 1",
+    date: "12 Dec 2024",
+    time: "09:00 AM",
+    duration: "2 Hrs",
+    mentor: "Mentor Room with Vivek",
+    image: "https://media.iquanta.in/ui_images/skills/DAMASTERYPOSTER.jpg",
+    tag: "Live Class",
+  },
+  {
+    id: 2,
+    title: "Full Stack Web Development - React Sprint",
+    category: "Full Stack Web Development",
+    mode: "Recorded",
+    batch: "Batch 2",
+    date: "13 Dec 2024",
+    time: "06:30 PM",
+    duration: "1.5 Hrs",
+    mentor: "Recorded by Product Engineering Team",
+    image:
+      "https://media.iquanta.in/ui_images/skills/FULLSTACKPOSTER.jpg",
+    tag: "Recorded",
+  },
+  {
+    id: 3,
+    title: "Data Science Bootcamp - Python for ML",
+    category: "Data Science Bootcamp",
+    mode: "Live",
+    batch: "Batch 1",
+    date: "14 Dec 2024",
+    time: "08:00 PM",
+    duration: "2 Hrs",
+    mentor: "Live with Ananya Sharma",
+    image:
+      "https://media.iquanta.in/ui_images/skills/DSBOOTCAMPPOSTER.jpg",
+    tag: "Mentor Live",
+  },
+  {
+    id: 4,
+    title: "DSA MAANG - Graphs Revision Marathon",
+    category: "DSA MAANG",
+    mode: "Recorded",
+    batch: "Batch 3",
+    date: "15 Dec 2024",
+    time: "07:30 AM",
+    duration: "2.5 Hrs",
+    mentor: "Recorded by Interview Prep Team",
+    image: "https://media.iquanta.in/ui_images/skills/DSA&CPPOSTER.jpg",
+    tag: "Practice Heavy",
+  },
+  {
+    id: 5,
+    title: "DSA Pattern & Competitive Programming - DP Patterns",
+    category: "DSA Pattern & Competitive Programming",
+    mode: "Live",
+    batch: "Batch 2",
+    date: "16 Dec 2024",
+    time: "09:30 PM",
+    duration: "2 Hrs",
+    mentor: "Live with Shashank",
+    image:
+      "https://media.iquanta.in/ui_images/skills/DSA&CPPOSTER.jpg",
+    tag: "Live Problem Solving",
+  },
+];
+
+const modeOptions: ModeFilter[] = ["All", "Live", "Recorded"];
+const batchOptions: BatchFilter[] = ["All", "Batch 1", "Batch 2", "Batch 3"];
 
 export default function ExamDetailsPage() {
-  const [category, setCategory] = useState<Category>("after12");
-  const [track, setTrack] = useState<Track>("cuet");
-  const [activeTab, setActiveTab] = useState("");
+  const [activeCategory, setActiveCategory] = useState<Category>("All Tracks");
+  const [modeFilter, setModeFilter] = useState<ModeFilter>("All");
+  const [batchFilter, setBatchFilter] = useState<BatchFilter>("All");
 
-  const categoryLabel =
-    category === "after12" ? "After 12th" : category === "iit" ? "IIT JEE" : "NEET";
+  const filteredSessions = useMemo(
+    () =>
+      sessions.filter((session) => {
+        const matchesCategory =
+          activeCategory === "All Tracks" || session.category === activeCategory;
+        const matchesMode =
+          modeFilter === "All" || session.mode === modeFilter;
+        const matchesBatch =
+          batchFilter === "All" || session.batch === batchFilter;
 
-  const trackLabel =
-    track === "cuet"
-      ? "CUET"
-      : track === "ipmat"
-      ? "IPMAT"
-      : track === "clat"
-      ? "CLAT"
-      : track === "iit-jee"
-      ? "IIT JEE"
-      : "NEET";
-
-  const tabCount =
-    track === "cuet"
-      ? 4
-      : track === "ipmat"
-      ? 6
-      : track === "clat"
-      ? 6
-      : track === "iit-jee"
-      ? 5
-      : 4;
-
-  const handleCategoryChange = (nextCategory: Category) => {
-    setCategory(nextCategory);
-    if (nextCategory === "after12") {
-      setTrack("cuet");
-    } else if (nextCategory === "iit") {
-      setTrack("iit-jee");
-    } else {
-      setTrack("neet-track");
-    }
-    setActiveTab("");
-  };
-
-  const handleTrackChange = (nextTrack: Track) => {
-    setTrack(nextTrack);
-    setActiveTab("");
-  };
-
-  const topBtn = (isActive: boolean) =>
-    `inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
-      isActive
-        ? "border-blue-200 bg-blue-50 text-blue-700"
-        : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
-    }`;
-
-  const chipBtn = (isActive: boolean) =>
-    `rounded-lg border px-4 py-2 text-sm font-semibold transition ${
-      isActive
-        ? "border-slate-900 bg-slate-900 text-white"
-        : "border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100"
-    }`;
-
-  const tabBtn = (isActive: boolean) =>
-    `rounded-lg border px-3.5 py-2 text-sm font-medium transition ${
-      isActive
-        ? "border-blue-200 bg-blue-50 text-blue-700"
-        : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
-    }`;
+        return matchesCategory && matchesMode && matchesBatch;
+      }),
+    [activeCategory, batchFilter, modeFilter],
+  );
 
   return (
-    <div className="space-y-5 pb-8">
+    <div className="space-y-5 pb-6">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50 p-5 md:p-6">
-        <div className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-blue-200/40 blur-3xl" />
-        <div className="relative">
+        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-200/40 blur-3xl" />
+        {/* <div className="pointer-events-none absolute bottom-0 left-10 h-28 w-28 rounded-full bg-emerald-100/60 blur-3xl" /> */}
+        <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
           
-          <h2 className=" text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
-            Exam Details
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-600">
-            Explore exam structure, eligibility, and timelines with category-wise tabs.
+            <h1 className=" text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+              Classes
+            </h1>
+            <p className="mt-2 text-sm text-slate-600">
+              Stay on top of live sessions, pick up recorded lessons quickly,
+              and keep every batch track inside the dashboard flow.
+            </p>
+          </div>
+
+      
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-slate-200 bg-white p-4 md:p-5">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => {
+              const active = activeCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                    active
+                      ? "border-blue-200 bg-blue-50 text-blue-700"
+                      : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                  }`}
+                >
+                  {active && <span className="h-2 w-2 rounded-full bg-current" />}
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-2">
+            <label className="block">
+              <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                Mode
+              </span>
+              <select
+                value={modeFilter}
+                onChange={(event) => setModeFilter(event.target.value as ModeFilter)}
+                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white"
+              >
+                {modeOptions.map((mode) => (
+                  <option key={mode} value={mode}>
+                    {mode}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="block">
+              <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                Batch
+              </span>
+              <select
+                value={batchFilter}
+                onChange={(event) =>
+                  setBatchFilter(event.target.value as BatchFilter)
+                }
+                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white"
+              >
+                {batchOptions.map((batch) => (
+                  <option key={batch} value={batch}>
+                    {batch}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 gap-4">
+        {filteredSessions.map((session) => {
+          const isLive = session.mode === "Live";
+
+          return (
+            <article
+              key={session.id}
+              className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
+            >
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(191,219,254,0.35),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(224,231,255,0.35),transparent_28%)]" />
+              <div className="relative items-center flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5">
+                <div className="relative h-44 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-[168px] md:w-[270px] md:min-w-[270px]">
+                  <img
+                    src={session.image}
+                    alt={session.title}
+                    className="object-cover h-full w-full"
+                    sizes="(max-width: 768px) 100vw, 280px"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-r from-slate-900/10 via-transparent to-transparent" />
+                </div>
+
+                <div className="flex flex-1 flex-col md:min-w-0">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2.5">
+                        <span
+                          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                            isLive
+                              ? "bg-emerald-50 text-emerald-700 border border-emerald-100"
+                              : "bg-slate-100 text-slate-600 border border-slate-200"
+                          }`}
+                        >
+                          {isLive ? <Radio size={12} /> : <PlayCircle size={12} />}
+                          {session.tag}
+                        </span>
+                        <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700">
+                          {session.batch}
+                        </span>
+                      </div>
+                      <h2 className="mt-3 max-w-3xl text-xl font-semibold leading-snug text-slate-900 md:text-[20px] md:leading-9">
+                        {session.title}
+                      </h2>
+                    </div>
+
+                    <button
+                      className={`inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-[14px] font-semibold transition  ${
+                        isLive
+                          ? "bg-slate-900 text-white hover:bg-slate-800"
+                          : "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100"
+                      }`}
+                    >
+                      <PlayCircle size={18} />
+                      {isLive ? "Watch " : "Open"}
+                    </button>
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap gap-x-8 gap-y-4">
+                    <div>
+                      <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+                        <CalendarDays size={14} />
+                        Date
+                      </p>
+                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                        {session.date}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+                        <Clock3 size={14} />
+                        Time
+                      </p>
+                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                        {session.time}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+                        Duration
+                      </p>
+                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                        {session.duration}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      {filteredSessions.length === 0 && (
+        <section className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 text-center">
+          <p className="text-lg font-semibold text-slate-900">
+            No classes match these filters.
           </p>
-
-            <div className="mt-4">
-        <div className="flex flex-wrap gap-2">
-          <button type="button" onClick={() => handleCategoryChange("after12")} className={topBtn(category === "after12")}>
-            <BookOpenCheck size={14} />
-            After 12th
-          </button>
-          <button type="button" onClick={() => handleCategoryChange("iit")} className={topBtn(category === "iit")}>
-            <FileText size={14} />
-            IIT JEE
-          </button>
-          <button type="button" onClick={() => handleCategoryChange("neet")} className={topBtn(category === "neet")}>
-            <FileText size={14} />
-            NEET
-          </button>
-        </div>
-
-        {category === "after12" && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            <button type="button" onClick={() => handleTrackChange("cuet")} className={chipBtn(track === "cuet")}>
-              CUET
-            </button>
-            <button type="button" onClick={() => handleTrackChange("ipmat")} className={chipBtn(track === "ipmat")}>
-              IPMAT
-            </button>
-            <button type="button" onClick={() => handleTrackChange("clat")} className={chipBtn(track === "clat")}>
-              CLAT
-            </button>
-          </div>
-        )}
-
-        {category === "iit" && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            <button type="button" className={chipBtn(true)}>
-              IIT JEE
-            </button>
-          </div>
-        )}
-
-        {category === "neet" && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            <button type="button" className={chipBtn(true)}>
-              NEET
-            </button>
-          </div>
-        )}
-      </div>
-
-         
-        </div>
-      </section>
-
-    
-
-      <section className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
-        <h3 className="text-base font-semibold text-slate-900">Topic Details</h3>
-        <p className="mt-1 text-sm text-slate-500">
-          Pick a section below to read detailed content for the selected track.
-        </p>
-
-        <div className="mb-5 mt-4 flex flex-wrap gap-2 border-b border-slate-200 pb-4">
-          {track === "cuet" && (
-            <>
-              <button type="button" onClick={() => setActiveTab("")} className={tabBtn(activeTab === "")}>
-                What is CUET UG?
-              </button>
-              <button type="button" onClick={() => setActiveTab("pattern")} className={tabBtn(activeTab === "pattern")}>
-                CUET UG Exam Pattern
-              </button>
-              <button type="button" onClick={() => setActiveTab("calendar")} className={tabBtn(activeTab === "calendar")}>
-                CUET UG Exam Calendar
-              </button>
-              <button type="button" onClick={() => setActiveTab("eligibility")} className={tabBtn(activeTab === "eligibility")}>
-                CUET UG Eligibility
-              </button>
-            </>
-          )}
-
-          {track === "ipmat" && (
-            <>
-              <button type="button" onClick={() => setActiveTab("")} className={tabBtn(activeTab === "")}>
-                Everything about IPMAT
-              </button>
-              <button type="button" onClick={() => setActiveTab("syllabus")} className={tabBtn(activeTab === "syllabus")}>
-                IPMAT Syllabus
-              </button>
-              <button type="button" onClick={() => setActiveTab("pattern")} className={tabBtn(activeTab === "pattern")}>
-                IPMAT Exam Pattern
-              </button>
-              <button type="button" onClick={() => setActiveTab("cutoff")} className={tabBtn(activeTab === "cutoff")}>
-                IPMAT Cutoff
-              </button>
-              <button type="button" onClick={() => setActiveTab("colleges")} className={tabBtn(activeTab === "colleges")}>
-                IPM All Colleges
-              </button>
-              <button type="button" onClick={() => setActiveTab("eligibility")} className={tabBtn(activeTab === "eligibility")}>
-                IPMAT Eligibility
-              </button>
-            </>
-          )}
-
-          {track === "clat" && (
-            <>
-              <button type="button" onClick={() => setActiveTab("")} className={tabBtn(activeTab === "")}>
-                Everything about CLAT
-              </button>
-              <button type="button" onClick={() => setActiveTab("syllabus")} className={tabBtn(activeTab === "syllabus")}>
-                CLAT Syllabus
-              </button>
-              <button type="button" onClick={() => setActiveTab("pattern")} className={tabBtn(activeTab === "pattern")}>
-                CLAT Exam Pattern
-              </button>
-              <button type="button" onClick={() => setActiveTab("cutoff")} className={tabBtn(activeTab === "cutoff")}>
-                CLAT Cutoff
-              </button>
-              <button type="button" onClick={() => setActiveTab("colleges")} className={tabBtn(activeTab === "colleges")}>
-                CLAT All Colleges
-              </button>
-              <button type="button" onClick={() => setActiveTab("eligibility")} className={tabBtn(activeTab === "eligibility")}>
-                Exam Eligibility
-              </button>
-            </>
-          )}
-
-          {track === "iit-jee" && (
-            <>
-              <button type="button" onClick={() => setActiveTab("")} className={tabBtn(activeTab === "")}>
-                What is IIT?
-              </button>
-              <button type="button" onClick={() => setActiveTab("about")} className={tabBtn(activeTab === "about")}>
-                About Exam
-              </button>
-              <button type="button" onClick={() => setActiveTab("dates")} className={tabBtn(activeTab === "dates")}>
-                IIT Important Dates
-              </button>
-              <button type="button" onClick={() => setActiveTab("mains")} className={tabBtn(activeTab === "mains")}>
-                JEE Mains Eligibility
-              </button>
-              <button type="button" onClick={() => setActiveTab("adv")} className={tabBtn(activeTab === "adv")}>
-                JEE Advanced Eligibility
-              </button>
-            </>
-          )}
-
-          {track === "neet-track" && (
-            <>
-              <button type="button" onClick={() => setActiveTab("")} className={tabBtn(activeTab === "")}>
-                What is NEET?
-              </button>
-              <button type="button" onClick={() => setActiveTab("nta")} className={tabBtn(activeTab === "nta")}>
-                What is NTA?
-              </button>
-              <button type="button" onClick={() => setActiveTab("eligibility")} className={tabBtn(activeTab === "eligibility")}>
-                NEET Eligibility
-              </button>
-              <button type="button" onClick={() => setActiveTab("dates")} className={tabBtn(activeTab === "dates")}>
-                NEET Important Dates
-              </button>
-            </>
-          )}
-        </div>
-
-        <div className="prose prose-slate max-w-none text-[15px] leading-7 [&_table]:w-full [&_table]:border-collapse [&_td]:border [&_td]:border-slate-200 [&_td]:p-3 [&_th]:border [&_th]:border-slate-200 [&_th]:bg-slate-50 [&_th]:p-3 [&_th]:text-left">
-          {track === "cuet" && activeTab === "" && (
-            <>
-              <h3>Common University Entrance Test (CUET UG)</h3>
-              <p>CUET UG is a centralized entrance test for admission into multiple central, state and private universities in India.</p>
-              <h4>Top Universities</h4>
-              <ul>
-                <li>Delhi University</li>
-                <li>Banaras Hindu University</li>
-                <li>University of Allahabad</li>
-                <li>Jamia Millia Islamia</li>
-                <li>AMU Aligarh</li>
-              </ul>
-            </>
-          )}
-
-          {track === "cuet" && activeTab === "pattern" && (
-            <>
-              <h3>CUET UG Exam Pattern</h3>
-              <table>
-                <thead>
-                  <tr><th>Section</th><th>Questions</th><th>Time</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Section 1: Languages</td><td>50</td><td>45 minutes</td></tr>
-                  <tr><td>Section 2: Domain Subjects</td><td>50/45</td><td>45 minutes</td></tr>
-                  <tr><td>Section 3: General Test</td><td>60</td><td>60 minutes</td></tr>
-                </tbody>
-              </table>
-            </>
-          )}
-
-          {track === "cuet" && activeTab === "calendar" && (
-            <>
-              <h3>CUET UG Exam Calendar</h3>
-              <table>
-                <thead>
-                  <tr><th>Event</th><th>Tentative Time</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Notification Release</td><td>First week of February</td></tr>
-                  <tr><td>Application Start</td><td>Second week of February</td></tr>
-                  <tr><td>Exam Window</td><td>May (3rd to 4th week)</td></tr>
-                  <tr><td>Result</td><td>June</td></tr>
-                </tbody>
-              </table>
-            </>
-          )}
-
-          {track === "cuet" && activeTab === "eligibility" && (
-            <>
-              <h3>CUET UG Eligibility</h3>
-              <ul>
-                <li>General category: minimum 50% in class 12.</li>
-                <li>SC/ST/OBC/EWS/PwD: minimum 45% in class 12.</li>
-                <li>Class 12 appearing students can also apply.</li>
-              </ul>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "" && (
-            <>
-              <h3>Everything about IPMAT</h3>
-              <p>IPMAT is an entrance exam for integrated management programs. It opens pathways to top IPM institutes including IIM programs.</p>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "syllabus" && (
-            <>
-              <h3>IPMAT Syllabus</h3>
-              <ul>
-                <li>Quantitative Aptitude</li>
-                <li>Logical Reasoning</li>
-                <li>Verbal Ability</li>
-                <li>Higher Mathematics (exam dependent)</li>
-              </ul>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "pattern" && (
-            <>
-              <h3>IPMAT Exam Pattern</h3>
-              <p>Pattern varies across IPMAT Indore, IPMAT Rohtak and JIPMAT. Sections primarily include Quant, LR and Verbal components.</p>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "cutoff" && (
-            <>
-              <h3>IPMAT Cutoff</h3>
-              <p>Cutoffs are different each year and vary by institute, reservation category and difficulty level.</p>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "colleges" && (
-            <>
-              <h3>IPM All Colleges</h3>
-              <ul>
-                <li>IIM Indore</li>
-                <li>IIM Ranchi</li>
-                <li>IIM Rohtak</li>
-                <li>IIM Jammu</li>
-                <li>IIM Bodh Gaya</li>
-              </ul>
-            </>
-          )}
-
-          {track === "ipmat" && activeTab === "eligibility" && (
-            <>
-              <h3>IPMAT Eligibility</h3>
-              <p>Eligibility varies by institute. Most institutes require Class 10 and 12 score thresholds with category relaxations.</p>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "" && (
-            <>
-              <h3>Everything about CLAT</h3>
-              <p>CLAT is the national entrance exam for admission to NLUs and top law colleges in India.</p>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "syllabus" && (
-            <>
-              <h3>CLAT Syllabus</h3>
-              <ul>
-                <li>English Language</li>
-                <li>Current Affairs and General Knowledge</li>
-                <li>Legal Reasoning</li>
-                <li>Logical Reasoning</li>
-                <li>Quantitative Techniques</li>
-              </ul>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "pattern" && (
-            <>
-              <h3>CLAT Exam Pattern</h3>
-              <p>CLAT is typically a 2-hour exam with objective questions and negative marking for incorrect answers.</p>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "cutoff" && (
-            <>
-              <h3>CLAT Cutoff</h3>
-              <p>Cutoffs vary based on seat matrix, category, and exam difficulty.</p>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "colleges" && (
-            <>
-              <h3>CLAT All Colleges</h3>
-              <p>CLAT scores are accepted across NLUs and several private law colleges.</p>
-            </>
-          )}
-
-          {track === "clat" && activeTab === "eligibility" && (
-            <>
-              <h3>Exam Eligibility</h3>
-              <p>For UG law admissions, candidates need class 12 qualification with category-specific minimum marks criteria.</p>
-            </>
-          )}
-
-          {track === "iit-jee" && activeTab === "" && (
-            <>
-              <h3>What is IIT?</h3>
-              <p>IIT JEE includes JEE Main and JEE Advanced, and is the key path to IITs and other top engineering institutes.</p>
-            </>
-          )}
-
-          {track === "iit-jee" && activeTab === "about" && (
-            <>
-              <h3>About Exam</h3>
-              <p>JEE Main is conducted by NTA, while JEE Advanced is conducted by IITs on a rotational basis.</p>
-            </>
-          )}
-
-          {track === "iit-jee" && activeTab === "dates" && (
-            <>
-              <h3>IIT Important Dates</h3>
-              <table>
-                <thead>
-                  <tr><th>Date</th><th>Event</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Jan-Feb</td><td>JEE Main registration windows</td></tr>
-                  <tr><td>Apr-May</td><td>Exam sessions</td></tr>
-                  <tr><td>May-Jun</td><td>Advanced + Results</td></tr>
-                </tbody>
-              </table>
-            </>
-          )}
-
-          {track === "iit-jee" && activeTab === "mains" && (
-            <>
-              <h3>JEE Mains Eligibility</h3>
-              <ul>
-                <li>Class 12 with required subject combinations.</li>
-                <li>Board marks/percentile criteria as per latest rules.</li>
-                <li>Attempt and age criteria as per official notification.</li>
-              </ul>
-            </>
-          )}
-
-          {track === "iit-jee" && activeTab === "adv" && (
-            <>
-              <h3>JEE Advanced Eligibility</h3>
-              <ul>
-                <li>Top rankers from JEE Main are eligible.</li>
-                <li>Age and attempt limits apply.</li>
-                <li>Additional category rules may apply.</li>
-              </ul>
-            </>
-          )}
-
-          {track === "neet-track" && activeTab === "" && (
-            <>
-              <h3>What is NEET?</h3>
-              <p>NEET UG is the standard entrance exam for MBBS/BDS and other medical programs in India.</p>
-            </>
-          )}
-
-          {track === "neet-track" && activeTab === "nta" && (
-            <>
-              <h3>What is NTA?</h3>
-              <p>NTA is the national testing body that conducts NEET and multiple other major entrance exams.</p>
-            </>
-          )}
-
-          {track === "neet-track" && activeTab === "eligibility" && (
-            <>
-              <h3>NEET Eligibility</h3>
-              <ul>
-                <li>Class 12 with Physics, Chemistry and Biology.</li>
-                <li>Minimum marks differ by category.</li>
-                <li>Minimum age is 17 years in admission year.</li>
-              </ul>
-            </>
-          )}
-
-          {track === "neet-track" && activeTab === "dates" && (
-            <>
-              <h3>NEET Important Dates</h3>
-              <table>
-                <thead>
-                  <tr><th>Event</th><th>Tentative Dates</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Application Window</td><td>Feb-March</td></tr>
-                  <tr><td>Admit Card</td><td>May first week</td></tr>
-                  <tr><td>Exam</td><td>May first week</td></tr>
-                  <tr><td>Result</td><td>June</td></tr>
-                </tbody>
-              </table>
-            </>
-          )}
-        </div>
-      </section>
+          <p className="mt-2 text-sm text-slate-500">
+            Try switching the batch or mode to see more sessions.
+          </p>
+        </section>
+      )}
     </div>
   );
 }

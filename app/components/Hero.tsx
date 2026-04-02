@@ -1,5 +1,5 @@
 "use client";
-import { MoveRight } from "lucide-react";
+import { Loader, MoveRight } from "lucide-react";
 import { useState } from "react";
 import ContactModal from "./ContactModal";
 
@@ -8,27 +8,39 @@ export default function Hero() {
   return (
     <>
       <section className="relative bg-[#080808] overflow-hidden  md:min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%]">
           <img
             src="https://media.iquanta.in/ui_images/skills/banner-bg.png"
             className="w-full h-full object-cover"
             alt="" />
         </div>
-        <div className="hidden md:block absolute ointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[62%] opacity-30 ">
+        <div className="hidden md:block absolute ointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] opacity-30 ">
           <img
             src="https://media.iquanta.in/ui_images/skills/flower.gif"
             className="w-full h-auto"
             alt=""/>
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,transparent_20%,#080808_100%)] pointer-events-none" />
+        <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,transparent_20%,#080808_100%)] pointer-events-none" />
         <div
           className="absolute pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[62%]
             w-225 h-75 rounded-full blur-[80px] opacity-10
           bg-[linear-gradient(92deg,#00efff,#ff6b00)]" />
         <div
           className="relative z-10 text-center max-w-6xl w-full mx-auto px-6
-        pt-30 pb-10 md:pt-45 md:pb-10" >
-          <p className="text-white/60 font-light tracking-widest uppercase text-sm md:text-base mb-5 font-[Inter,sans-serif]">
+          pt-30 pb-10 md:pt-45 md:pb-10" >
+           <p
+            className="
+              inline-flex items-center gap-2
+              mx-auto w-fit
+              px-4 py-1.5
+              rounded-full
+              text-white/70 text-[11px] md:text-sm
+              font-medium tracking-widest  mb-8
+              bg-white/6
+              border border-white/10
+              backdrop-blur-md
+              shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
+            <Loader className="w-3.5 h-3.5 text-[#ff9000]" />
             2x Your Salary with
           </p>
           <h1

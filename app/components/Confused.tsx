@@ -12,7 +12,6 @@ const chips = [
   { label: "Data Analytics", letter: "C", href: "/data-analytics" },
   { label: "Data Science", letter: "D", href: "/data-science" },
 ];
-
 const Card: React.FC<CardProps> = ({ className = "" }) => {
   return (
     <div
@@ -39,12 +38,12 @@ const Card: React.FC<CardProps> = ({ className = "" }) => {
               cursor-pointer transition-all duration-200
               group">
               <span
-                className="w-6 h-6 text-[10px] flex items-center justify-center
+                className="w-6 h-6 text-[10px] font-semibold flex items-center justify-center
                rounded-md border border-[#5A5257] bg-[#2F2B2A] text-white">
                 {chip.letter}
               </span>
               <h6
-                className="text-[10px]
+                className="text-[10px] font-semibold
                   bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
                   bg-clip-text text-transparent">
                 {chip.label}

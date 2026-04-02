@@ -3,11 +3,13 @@ import { useState } from "react";
 import Link from "next/link";
 import {  ChevronsLeft, Phone, X } from "lucide-react";
 import CounsellingModal from "./CounsellingModal";
+import SplashCursor from "./SplashCursor";
 export default function ClientWrapper() {
   const [open, setOpen] = useState(true);
   const [isCounsellingOpen, setIsCounsellingOpen] = useState(false);
   return (
     <>
+      {/* <SplashCursor /> */}
       <Link href="tel:+91 96670 69263">
         <div
           className="
