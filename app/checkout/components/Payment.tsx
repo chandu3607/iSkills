@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   BookOpen,
@@ -10,7 +11,6 @@ import {
   Wallet,
 } from "lucide-react";
 import Link from "next/link";
-
 const features = [
   {
     title: "Live classes",
