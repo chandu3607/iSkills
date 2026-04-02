@@ -9,6 +9,7 @@ import {
   Smartphone,
   Wallet,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -50,7 +51,6 @@ export default function Payment() {
             method.
           </p>
         </div>
-
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
           <div className="space-y-6">
             <div className="rounded-3xl border-2 border-white/60 bg-[#080808] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.35)] sm:p-8">
@@ -68,7 +68,6 @@ export default function Payment() {
                   </p>
                 </div>
               </div>
-
               <div className="grid gap-4 pt-6 sm:grid-cols-3">
                 {features.map((feature) => {
                   const Icon = feature.icon;
@@ -90,7 +89,6 @@ export default function Payment() {
                 })}
               </div>
             </div>
-
             <div className="rounded-3xl border-2 border-white/60 bg-[#080808] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.35)] sm:p-8">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/6 text-white">
@@ -105,11 +103,9 @@ export default function Payment() {
                   </p>
                 </div>
               </div>
-
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {paymentMethods.map((method) => {
                   const Icon = method.icon;
-
                   return (
                     <div
                       key={method.label}
@@ -124,7 +120,6 @@ export default function Payment() {
               </div>
             </div>
           </div>
-
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="rounded-3xl border-2 border-white/60 bg-[#080808] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.35)] sm:p-7">
               <div className="flex items-center justify-between gap-4">
@@ -140,7 +135,6 @@ export default function Payment() {
                   <CreditCard className="h-5 w-5" />
                 </span>
               </div>
-
               <div className="mt-6 space-y-4 border-b border-white/10 pb-6">
                 <div className="flex items-center justify-between text-sm text-white/65">
                   <span>Program fee</span>
@@ -151,19 +145,16 @@ export default function Payment() {
                   <span className="font-medium text-white">₹1,800</span>
                 </div>
               </div>
-
               <div className="mt-6 rounded-2xl border border-white/10 bg-white/2 p-2">
                 <div className="flex items-center gap-2">
                   <input
                     placeholder="Coupon code"
-                    className="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-white outline-none placeholder:text-white/25"
-                  />
+                    className="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-white outline-none placeholder:text-white/25" />
                   <button className="rounded-xl bg-linear-to-r from-gray-200 to-gray-400 px-4 py-2 text-sm font-medium text-black cursor-pointer transition hover:bg-white/90">
                     Apply
                   </button>
                 </div>
               </div>
-
               <div className="mt-6 flex items-end justify-between">
                 <div>
                   <p className="text-sm text-white/50">Total payable</p>
@@ -174,14 +165,13 @@ export default function Payment() {
                 </del>
                   </p>
                 </div>
-                
               </div>
-
+              <Link  href="/success">
               <button className="mt-6 flex w-full items-center justify-center gap-2 cursor-pointer rounded-2xl bg-linear-to-r from-purple-600 to-orange-400 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/90">
                 <CreditCard className="h-4 w-4" />
                 Proceed to Payment
               </button>
-
+                </Link>
               <div className="mt-4 flex items-start gap-3 rounded-2xl bg-white/3 px-4 py-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
                 <p className="text-sm leading-6 text-white/55">

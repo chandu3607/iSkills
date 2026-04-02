@@ -60,7 +60,7 @@ export default function Confused() {
     const [isContactOpen, setIsContactOpen] = useState(false);
   return (
     <>
-      <section className="bg-black md:py-20 py-6 relative ">
+      <section className="bg-black md:py-20 py-6 relative  overflow-hidden">
         <div className="max-w-7xl mx-auto relative px-4">
           <div className="absolute md:absolute left-0 top-0 w-full md:w-125 h-auto md:h-125 z-99">
             <div className="hidden md:block">

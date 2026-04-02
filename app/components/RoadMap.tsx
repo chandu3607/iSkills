@@ -55,14 +55,12 @@ export default function Roadmap() {
               <div key={step.text} className="relative">
                 <div
                   className="absolute -left-8 top-6 h-4 w-4 rounded-full border border-white/60"
-                  style={{ background: step.glow }}
-                />
+                  style={{ background: step.glow }}/>
                 <div className="rounded-[22px] border border-white/12 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm">
                   <div className="mb-3 flex items-center gap-3">
                     <div
                       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[13px] font-black text-white"
-                      style={{ background: `linear-gradient(135deg, ${step.glow}, rgba(255,255,255,0.12))` }}
-                    >
+                      style={{ background: `linear-gradient(135deg, ${step.glow}, rgba(255,255,255,0.12))` }}>
                       {i + 1}
                     </div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/45">
@@ -78,13 +76,11 @@ export default function Roadmap() {
           </div>
         </div>
       </div>
-
       <div className="relative hidden md:block">
         <div className="relative z-10">
           <img
             src="https://media.iquanta.in/ui_images/skills/roadmap.webp"
-            className="w-full"
-          />
+            className="w-full" />
         </div>
         {steps.map((step, i) => (
           <div
@@ -104,8 +100,7 @@ export default function Roadmap() {
                 <div
                   className="absolute w-30 h-30 rounded-full blur-[50px] 
                  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80"
-                  style={{ background: step.glow }}
-                />
+                  style={{ background: step.glow }}/>
                 <h3 className="text-white text-[16px] leading-5 italic font-extrabold relative">
                   {step.text}
                 </h3>
