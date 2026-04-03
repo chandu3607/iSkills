@@ -2,6 +2,7 @@
 import { Loader, MoveRight } from "lucide-react";
 import { useState } from "react";
 import ContactModal from "./ContactModal";
+import Image from "next/image";
 
 export default function Hero() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -9,16 +10,21 @@ export default function Hero() {
     <>
       <section className="relative bg-[#080808] overflow-hidden  md:min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%]">
-          <img
+          <Image
             src="https://media.iquanta.in/ui_images/skills/banner-bg.png"
             className="w-full h-full object-cover"
-            alt="" />
+            fill
+            priority
+            alt="Banner" />
         </div>
         <div className="hidden md:block absolute ointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] opacity-30 ">
-          <img
+          <Image
             src="https://media.iquanta.in/ui_images/skills/flower.gif"
             className="w-full h-auto"
-            alt=""/>
+            fill
+            priority
+            alt="Flower"/>
+
         </div>
         <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,transparent_20%,#080808_100%)] pointer-events-none" />
         <div

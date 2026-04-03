@@ -22,7 +22,6 @@ export default function HeroVideo() {
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#FFB056]/30 animate-ping" />
-
                 <div
                   className="relative w-16 h-16 md:w-20 md:h-20 rounded-full 
                 bg-[#FFB056]/20 backdrop-blur-xl border border-[#FFB056]/30
