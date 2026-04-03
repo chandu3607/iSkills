@@ -12,15 +12,12 @@ bg-fixed py-25 md:py-35 pb-12.5 md:pb-17.5">
     <div className="text-left  mx-auto md:mx-0">
       <h1 className="
         text-white font-extrabold leading-tight
-        text-[28px] sm:text-[34px] md:text-[54px]
-      ">
+        text-[28px] sm:text-[34px] md:text-[54px]">
         <span className="
           bg-[linear-gradient(104.04deg,#1472ff_-4%,#47a9ff_23%,#adc3ff_50%,#ffadc9_77%,#ff476b_104%)]
-          bg-clip-text text-transparent block sm:inline
-        ">
+          bg-clip-text text-transparent block sm:inline ">
           Job Guarantee
         </span>
-
         <span className="text-white/90 block sm:inline">
           {" "}terms and conditions
         </span>

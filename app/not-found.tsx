@@ -34,7 +34,7 @@ export default function NotFound() {
             shadow-[0_10px_30px_rgba(255,255,255,0.1)]
             hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)]
             transition-all duration-300 cursor-pointer"
-          >
+>
             <ArrowLeft className="w-4 h-4" />
             Go Back
           </button>

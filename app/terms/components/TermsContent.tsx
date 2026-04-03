@@ -8,8 +8,7 @@ export default function TermsContent() {
           <div>
             <div
               className="text-white mb-5 md:mb-5.75 border-b-2 border-transparent 
-                [border-image:linear-gradient(90deg,rgba(217,217,217,0.06)_0%,#060066_50%,rgba(255,255,255,0)_100%)_1]"
-            >
+                [border-image:linear-gradient(90deg,rgba(217,217,217,0.06)_0%,#060066_50%,rgba(255,255,255,0)_100%)_1]">
               <h2 className="text-[22px] md:text-[28px] font-semibold mb-5 md:mb-6.25 leading-snug">
                 iSkills Job Guarantee Program – Terms & Conditions
               </h2>
@@ -22,8 +21,7 @@ export default function TermsContent() {
             </div>
             <div
               className="text-white mb-5 md:mb-5.75 border-b-2 border-transparent 
-             [border-image:linear-gradient(90deg,rgba(217,217,217,0.06)_0%,#060066_50%,rgba(255,255,255,0)_100%)_1]"
-            >
+             [border-image:linear-gradient(90deg,rgba(217,217,217,0.06)_0%,#060066_50%,rgba(255,255,255,0)_100%)_1]" >
               <h3 className="text-[20px] md:text-[26px] mb-4 md:mb-5 font-medium text-[#469aff]">
                 Eligibility Requirements
               </h3>
@@ -34,8 +32,7 @@ export default function TermsContent() {
               <h6
                 className="text-[16px] md:text-[19px] mb-4 md:mb-5 font-medium 
                 bg-[linear-gradient(104.04deg,#1472ff_-4%,#47a9ff_23%,#adc3ff_50%,#ffadc9_77%,#ff476b_104%)]
-                bg-clip-text text-transparent w-fit"
-              >
+                bg-clip-text text-transparent w-fit" >
                 For Data Analytics Program:
               </h6>
               <ul className="mb-4 md:mb-5 pl-4 md:pl-3.75 list-disc text-[#98A1AE] text-[14px] md:text-[16px] leading-relaxed">
@@ -68,8 +65,7 @@ export default function TermsContent() {
               <h6
                 className="text-[16px] md:text-[19px] mb-4 md:mb-5 font-medium 
                 bg-[linear-gradient(104.04deg,#1472ff_-4%,#47a9ff_23%,#adc3ff_50%,#ffadc9_77%,#ff476b_104%)]
-                bg-clip-text text-transparent w-fit"
-              >
+                bg-clip-text text-transparent w-fit" >
                 For DSA and Competitive Programming Program:
               </h6>
               <ul className="mb-4 md:mb-5 pl-4 md:pl-3.75 list-disc text-[#98A1AE] text-[14px] md:text-[16px] leading-relaxed">
