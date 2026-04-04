@@ -1,23 +1,24 @@
-import React from 'react'
-import Headder from '../components/Headder'
-import Banner from './components/Banner'
-import PmpSection from './components/PmpSection'
-import Footer from '../components/Footer'
-import Benefits from './components/Benefits'
-import Contact from './components/Contact'
-import ComparisonTable from './components/ComparisonTable'
-import Features from './components/Features'
-import Skills from './components/Skills'
-import CourseCommunity from './components/CourseCommunity'
-import Mentors from '../components/Mentors'
-import CourseRoadmap from './components/CourseRoadmap'
-import Curriculum from './components/Curriculum'
-import Courses from './components/Courses'
-import SuccessStories from '../components/SuccessStories'
-import FAQ from '../components/FAQ'
-import Certification from './components/Certification'
-import JobRoles from './components/JobRoles'
-import BuyNowButton from '../components/BuyNowButton'
+import React from "react";
+import Headder from "../components/Headder";
+import Banner from "./components/Banner";
+import PmpSection from "./components/PmpSection";
+import Footer from "../components/Footer";
+import Benefits from "./components/Benefits";
+import Contact from "./components/Contact";
+import ComparisonTable from "./components/ComparisonTable";
+import Features from "./components/Features";
+import Skills from "./components/Skills";
+import CourseCommunity from "./components/CourseCommunity";
+import Mentors from "../components/Mentors";
+import CourseRoadmap from "./components/CourseRoadmap";
+import Curriculum from "./components/Curriculum";
+import Courses from "./components/Courses";
+import SuccessStories from "../components/SuccessStories";
+import FAQ from "../components/FAQ";
+import Certification from "./components/Certification";
+import JobRoles from "./components/JobRoles";
+import BuyNowButton from "../components/BuyNowButton";
+import StickyFooter from "../components/StickyFooter";
 
 const faqData = [
   {
@@ -54,8 +55,7 @@ const faqData = [
     name: "What are the terms and conditions for job guarantee?  ",
     submenu: [
       {
-        answer:
-          "Please go through the detailed terms and conditions document ",
+        answer: "Please go through the detailed terms and conditions document ",
         subanswers: [],
       },
     ],
@@ -69,12 +69,11 @@ const faqData = [
       },
     ],
   },
-
 ];
-
 export const metadata = {
   title: "Learn Data Analysis & Business Analytics - Online Course",
-  description: "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
+  description:
+    "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
   keywords: [
     "data analytics certification",
     "data science certification",
@@ -82,7 +81,7 @@ export const metadata = {
     "data analyst course free",
     "online data science course",
     "business analyst course online",
-    "best data analytics courses"
+    "best data analytics courses",
   ],
   alternates: {
     canonical: "https://www.iquanta.in/iskills/data-analytics-course",
@@ -91,7 +90,8 @@ export const metadata = {
     type: "website",
     title: "Learn Data Analysis & Business Analytics - Online Course",
     url: "https://www.iquanta.in/iskills/data-analytics-course",
-    description: "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
+    description:
+      "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
     images: [
       {
         url: "https://www.iquanta.in/blog/wp-content/uploads/2024/10/DAFI.jpg",
@@ -103,10 +103,9 @@ export const metadata = {
   },
   twitter: {
     title: "Learn Data Analysis & Business Analytics - Online Course",
-    description: "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
-    images: [
-      "https://www.iquanta.in/blog/wp-content/uploads/2024/10/DAFI.jpg",
-    ],
+    description:
+      "Learn business analytics and data analytics from basics to advance, work on live projects to become job-ready, get 1 to 1 support to enhance your learning.",
+    images: ["https://www.iquanta.in/blog/wp-content/uploads/2024/10/DAFI.jpg"],
   },
   other: {
     "article:publisher": "https://facebook.com/iquanta.in",
@@ -122,30 +121,50 @@ export const metadata = {
     "og:image:type": "image/jpg",
   },
 };
+
 export default function page() {
   return (
     <div>
-        <Headder />
-        <Banner />
-        <PmpSection />
+      <Headder />
+      <Banner />
+      <PmpSection />
+      <div id="benefits">
         <Benefits />
+      </div>
+      <div id="contact">
         <Contact />
+      </div>
+      <div id="vsothers">
         <ComparisonTable />
+      </div>
+      <div id="features">
         <Features />
+      </div>
+      <div id="skills">
         <Skills />
+      </div>
+      <div id="community">
         <CourseCommunity />
+      </div>
+      <div id="expects">
         <Mentors />
+      </div>
+      <div id="roadmap">
         <CourseRoadmap />
+      </div>
+      <div id="Curriculum">
         <Curriculum />
-       <div id='Courses'>
-         <Courses />
-       </div>
-        <JobRoles />
-        <SuccessStories />
-        <Certification />
-        <FAQ data={faqData} />
-        <Footer />
-        <BuyNowButton targetId="Courses" />
+      </div>
+      <div id="Courses">
+        <Courses />
+      </div>
+      <JobRoles />
+      <SuccessStories />
+      <Certification />
+      <FAQ data={faqData} />
+      <Footer />
+      <BuyNowButton targetId="Courses" />
+      {/* <StickyFooter /> */}
     </div>
-  )
+  );
 }

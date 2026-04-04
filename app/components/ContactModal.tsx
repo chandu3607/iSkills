@@ -36,12 +36,12 @@ export default function ContactModal({ open, onClose }: Props) {
         <div className="absolute left-0 top-0 h-56 w-56 rounded-full bg-[#127EF1]/18 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-[#EF7D6E]/16 blur-3xl" />
         <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)]" />
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 z-20 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition-colors duration-200 hover:bg-white/8 hover:text-white"
-          aria-label="Close modal" >
-          <X className="h-4 w-4" />
-        </button>
+          <button
+            onClick={onClose}
+            className="absolute right-3 top-3 z-20 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition-all  cursor-pointer duration-200 hover:bg-white/8 hover:text-white hover:rotate-90"
+            aria-label="Close modal">
+            <X className="h-4 w-4 transition-transform duration-200" />
+          </button>
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12">
           <div className=" hidden md:block col-span-12 lg:col-span-5 border-b border-white/10 p-4 sm:p-5 md:p-6 lg:border-b-0 lg:border-r lg:p-8">
             <h3 className="mt-4 sm:mt-6 text-[22px] sm:text-[26px] md:text-[30px] font-semibold leading-tight text-white">
@@ -56,7 +56,7 @@ export default function ContactModal({ open, onClose }: Props) {
                 "Get guidance based on your current experience",
                 "Find the right course and specialization",
                 "Understand timelines, projects, and outcomes",
-              ].map((item) => (
+                ].map((item) => (
                 <div
                   key={item}
                   className="flex items-start gap-2 sm:gap-3 text-[13px] sm:text-[14px] leading-6 text-white/85">

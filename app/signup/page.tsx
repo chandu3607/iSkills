@@ -59,7 +59,6 @@ export default function page() {
                       <p className="text-[13px] text-white/55">Founder & CEO</p>
                     </div>
                   </div>
-
                   <div className="pointer-events-none absolute bottom-0 right-0 w-[36%]">
                     <Image
                       src="https://media.iquanta.in/ui_images/skills/founder.png"

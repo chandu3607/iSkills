@@ -1,17 +1,14 @@
 @import "tailwindcss";
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -23,16 +20,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    /* cursor: none;  */
 }
 
 .companiesmarquee {
@@ -53,6 +41,7 @@ body {
     opacity: 0.4;
   }
 }
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -61,6 +50,7 @@ body {
     transform: translateX(-50%);
   }
 }
+
 @keyframes marquee-reverse {
   0% {
     transform: translateX(-50%);
@@ -69,20 +59,28 @@ body {
     transform: translateX(0);
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .marquee {
   animation: marquee 30s linear infinite;
-
 }
+
 .marquee-reverse {
   animation: marquee-reverse 30s linear infinite;
-
 }
+
 .marquee:hover,
 .marquee-reverse:hover {
   animation-play-state: paused;
 }
-
-
 
 @keyframes changewidth {
   from {
@@ -92,6 +90,7 @@ body {
     width: 110px;
   }
 }
+
 
 .animate-cta {
   animation: changewidth 2s infinite alternate;
@@ -114,3 +113,25 @@ body {
 
 
 
+/* /////// CustomCursor ///// */
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease;
+
+  mix-blend-mode: difference; /* 🔥 THIS LINE */
+}
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* ///////// */

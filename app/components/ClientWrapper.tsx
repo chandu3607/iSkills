@@ -4,26 +4,28 @@ import Link from "next/link";
 import {  ChevronsLeft, Phone, X } from "lucide-react";
 import CounsellingModal from "./CounsellingModal";
 import SplashCursor from "./SplashCursor";
+import CustomCursor from "./CustomCursor";
 export default function ClientWrapper() {
   const [open, setOpen] = useState(true);
   const [isCounsellingOpen, setIsCounsellingOpen] = useState(false);
   return (
     <>
-      {/* <SplashCursor /> */}
+      <SplashCursor />
+      {/* <CustomCursor /> */}
       <Link href="tel:+91 96670 69263">
         <div
           className="
-        fixed 
-        bottom-24 sm:bottom-30 md:bottom-35 
-        right-3 sm:right-4 md:right-2.5 
-        z-50 
-        w-10 h-10 sm:w-11 sm:h-11 md:w-12.5 md:h-12.5 
-        bg-[#e63145] 
-        rounded-full 
-        flex items-center justify-center 
-        cursor-pointer 
-        hover:scale-110 transition duration-300 
-        shadow-[0_0_15px_rgba(230,49,69,0.6)] md:shadow-[0_0_20px_rgba(230,49,69,0.6)]" >
+          fixed 
+          bottom-24 sm:bottom-30 md:bottom-35 
+          right-3 sm:right-4 md:right-2.5 
+          z-50 
+          w-10 h-10 sm:w-11 sm:h-11 md:w-12.5 md:h-12.5 
+          bg-[#e63145] 
+          rounded-full 
+          flex items-center justify-center 
+          cursor-pointer 
+          hover:scale-110 transition duration-300 
+          shadow-[0_0_15px_rgba(230,49,69,0.6)] md:shadow-[0_0_20px_rgba(230,49,69,0.6)]" >
           <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </div>
       </Link>

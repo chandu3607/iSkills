@@ -217,7 +217,6 @@ export default function Login() {
                 </div>
               </div>
             </div>
-
              <div className="block md:hidden">
                 <div className="md:mt-10  max-w-xl rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
                 <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(97,230,198,0.16),transparent_35%),linear-gradient(160deg,rgba(15,15,20,0.98)_0%,rgba(7,7,10,0.98)_100%)] p-6 sm:p-7">

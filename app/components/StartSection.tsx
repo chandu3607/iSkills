@@ -17,8 +17,7 @@ export default function StartSection() {
         <div className="flex justify-center  relative z-10 ">
           <img
             src="https://www.iquanta.in/blog/wp-content/uploads/2024/12/iSkill-Landing-Page.-FinalIGfr-1-1.png"
-            className="w-full max-w-3xl"
-          />
+            className="w-full max-w-3xl" />
         </div>
         <div className="relative max-w-6xl">
           <div className="grid md:grid-cols-12 gap-6 items-center">
@@ -46,17 +45,15 @@ export default function StartSection() {
             <div className="md:col-span-6">
               <div
                 className="rounded-[26px] border border-[#666] 
-              bg-[linear-gradient(180deg,rgba(26,31,29,0.41),rgba(20,20,20,0.41))]
-              shadow-[inset_0_3px_8px_rgba(79,79,79,0.67)]
-              md:p-6.25 p-4 relative z-10"
-              >
+                bg-[linear-gradient(180deg,rgba(26,31,29,0.41),rgba(20,20,20,0.41))]
+                shadow-[inset_0_3px_8px_rgba(79,79,79,0.67)]
+                md:p-6.25 p-4 relative z-10">
                 <div className="grid md:grid-cols-2 md:gap-5 gap-3 ">
                   <div className="rounded-[10px] border-2 border-[#FFAA2E] bg-black p-5 md:min-h-70">
                     <h3
                       className="text-[22px] italic font-extrabold md:mb-4 mb-2 leading-7.25
                     bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
-                    bg-clip-text text-transparent"
-                    >
+                    bg-clip-text text-transparent">
                       Live Interactive classes
                     </h3>
                     <p className="text-[#F1F1F1] text-[13px] leading-4.5">
@@ -66,13 +63,12 @@ export default function StartSection() {
                       skill levels—start coding live today!
                     </p>
                   </div>
-
                   <div className="rounded-[10px] border-2 border-[#1ABCFE] bg-black p-5 md:min-h-70">
                     <h3
                       className="text-[22px] italic font-extrabold md:mb-4 mb-2 leading-7.25
-                    bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
-                    bg-clip-text text-transparent"
-                    >
+                        bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
+                        bg-clip-text text-transparent"
+                        >
                       Practical Learning
                     </h3>
                     <p className="text-[#F1F1F1] text-[13px] leading-4.5">
@@ -83,13 +79,11 @@ export default function StartSection() {
                       and a deep understanding of technical skills.
                     </p>
                   </div>
-
                   <div className="rounded-[10px] border-2 border-[#FF7262] bg-black p-5 md:min-h-70">
                     <h3
                       className="text-[22px] italic font-extrabold md:mb-4 mb-2  leading-7.25
-                    bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
-                    bg-clip-text text-transparent"
-                    >
+                      bg-[linear-gradient(90deg,#F1F1F1,#8B8B8B)]
+                      bg-clip-text text-transparent">
                       Personalized Doubt Support
                     </h3>
                     <p className="text-[#F1F1F1] text-[13px] leading-4.5">

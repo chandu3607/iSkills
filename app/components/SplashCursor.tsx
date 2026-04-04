@@ -116,9 +116,7 @@ export default function SplashCursor({
         halfFloat = context.getExtension("OES_texture_half_float");
         supportLinearFiltering = context.getExtension("OES_texture_half_float_linear");
       }
-
       context.clearColor(0, 0, 0, 1);
-
       const halfFloatTexType = isWebGL2
         ? context.HALF_FLOAT
         : halfFloat && halfFloat.HALF_FLOAT_OES;
@@ -1149,16 +1147,14 @@ export default function SplashCursor({
       return delta;
     }
 
-    function generateColor() {
-      const base = 0.82 + Math.random() * 0.12;
-      const coolOffset = Math.random() * 0.04;
-
-      return {
-        r: base * 0.18,
-        g: (base + coolOffset * 0.4) * 0.18,
-        b: (base + coolOffset) * 0.18,
-      };
-    }
+function generateColor() {
+  const t = Math.random();
+  return {
+    r: (0.243 * (1 - t) + 0.549 * t) * 0.15,
+    g: (1.0   * (1 - t) + 0.059 * t) * 0.15,
+    b: (0.910 * (1 - t) + 0.933 * t) * 0.15,
+  };
+}
 
     function wrap(value: number, min: number, max: number) {
       const range = max - min;
@@ -1300,7 +1296,7 @@ export default function SplashCursor({
         pointerEvents: "none",
         width: "100%",
         height: "100%",
-        opacity: 0.92,
+        opacity: 0.2,
       }}
     >
       <canvas

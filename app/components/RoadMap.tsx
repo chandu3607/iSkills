@@ -95,7 +95,7 @@ export default function Roadmap() {
                     bg-white/10 border border-white/50 
                     flex items-center justify-center px-3 text-center
                     transition-all duration-300
-                    hover:scale-110 hover:border-4 hover:border-white/50
+                    hover:scale-110 hover:border-4 hover:border-white/50 hover:shadow-[inset_0px_9px_11px_0px_rgba(0,0,0,0.5),0px_1px_12px_5px_rgba(0,0,0,0)]
                     hover:bg-linear-to-br ${step.hover}`}>
                 <div
                   className="absolute w-30 h-30 rounded-full blur-[50px] 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Receipt, ShieldCheck } from "lucide-react";
 import Headder from "../components/Headder";
 
+
 const summaryItems = [
   { label: "Program", value: "Full Stack Development" },
   { label: "Amount Paid", value: "₹12,000" },

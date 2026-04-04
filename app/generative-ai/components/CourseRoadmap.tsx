@@ -3,37 +3,37 @@
 export default function CourseRoadmap() {
   const steps = [
     {
-      text: "Learn Python programming along with data manipulation and visualization libraries along with SQL and no SQL  ",
+      text: "Master MS Excel and Advanced Excel | Master libraries for data manipulation. ",
       className: "left-[2.7vw] top-[10vw]",
       glow: "#F3641F",
       hover: "from-[#F3641E] to-[#CB4037]",
     },
     {
-      text: "Ace Statistics & machine learning along with deep learning basics ",
+      text: " Learn fundamentals of ETL ( Extract, Transform and Load) process | Master SQL and NoSQL. ",
       className: "left-[20.9vw] top-[20.4vw]",
       glow: "#6362AE",
       hover: "from-[#6362AE] to-[#28347E]",
     },
     {
-      text: "Advance in deep learning, computer vision ",
+      text: " Learn Python Programming | Unleash the power with one of the most powerful and easy programming language. ",
       className: "left-[34.2vw] top-[4vw]",
       glow: "#31D49D",
       hover: "from-[#31D49D] to-[#1E8678]",
     },
     {
-      text: "Leverage and learn NLP (Gen Ai) ",
+      text: "Leverage Statistics | Analyze data like a pro, make accurate predictions and find meaningful insights from data. ",
       className: "left-[53vw] top-[14vw]",
       glow: "#5FC9F0",
       hover: "from-[#84D8F3] to-[#3C65B5]",
     },
     {
-      text: "Work on building real time projects in ML, DL, CV & NLP ",
+      text: "Master data visualization | Create interactive dashboards with PowerBI and Tableau. ",
       className: "left-[68vw] top-[-3vw]",
       glow: "#9B3DA8",
       hover: "from-[#9E3BA8] to-[#7552A1]",
     },
     {
-      text: "Get job ready with Placement Assistance | Mock interviews | Resume Support ",
+      text: " Placement assistance | Access mock interviews and resume support. ",
       className: "left-[85vw] top-[8vw]",
       glow: "#DF9D14",
       hover: "from-[#FEC22E] to-[#D8950E]",

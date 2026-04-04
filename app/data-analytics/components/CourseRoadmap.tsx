@@ -57,7 +57,7 @@ export default function CourseRoadmap() {
                   className="absolute -left-8 top-6 h-6 w-6 rounded-full border border-white/60"
                   style={{ background: step.glow }}
                 />
-                <div className="rounded-[22px] border border-white/12 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm">
+                <div className="rounded-[22px] border border-white/12 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]  backdrop-blur-sm">
                   <div className="mb-3 flex items-center gap-3">
                     <div
                       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[13px] font-black text-white"
@@ -99,7 +99,7 @@ export default function CourseRoadmap() {
                     bg-white/10 border border-white/50 
                     flex items-center justify-center px-3 text-center
                     transition-all duration-300
-                    hover:scale-110 hover:border-4 hover:border-white/50
+                    hover:scale-110 hover:border-4 hover:border-white/50 hover:shadow-[inset_0px_9px_11px_0px_rgba(0,0,0,0.5),0px_1px_12px_5px_rgba(0,0,0,0)]
                     hover:bg-linear-to-br ${step.hover}`}>
                 <div
                   className="absolute w-40 h-40 rounded-full blur-[70px] 

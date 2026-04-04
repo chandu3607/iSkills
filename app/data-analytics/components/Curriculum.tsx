@@ -1511,7 +1511,7 @@ export default function Curriculum() {
         acc[item.heading].lessons.push(item.Lessons);
         return acc;
       },
-      {} as Record<string, { title: string; lessons: string[] }>,
+      {} as Record<string,{title: string; lessons: string[]}>,
     ),
   );
 
@@ -1541,8 +1541,7 @@ export default function Curriculum() {
                         active?.title === module.title
                         ? "border-[#61E6C6]/35 bg-[linear-gradient(135deg,rgba(97,230,198,0.18)_0%,rgba(18,126,241,0.12)_48%,rgba(239,125,110,0.14)_100%)] shadow-[0_18px_40px_rgba(0,0,0,0.28)]"
                         : "border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.03)_100%)] hover:border-white/15 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.04)_100%)]"
-                    }`}
-                  >
+                    }`}>
                     <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)]" />
                     <p className="mb-2 md:text-[12px] text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
                       Module {i + 1}
@@ -1556,8 +1555,8 @@ export default function Curriculum() {
             </div>
             <div className="h-95 rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,14,0.96)_0%,rgba(6,6,8,0.98)_100%)] p-4 sm:p-5"
              style={{
-                    scrollbarWidth: "thin",
-                    scrollbarColor: "#EFD4CB #1a1a1a",
+                scrollbarWidth: "thin",
+                scrollbarColor: "#EFD4CB #1a1a1a",
                 }}>
               <div className="h-full overflow-y-auto pr-2">
                 <ul className="grid gap-3">
