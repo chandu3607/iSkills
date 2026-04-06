@@ -18,7 +18,7 @@ export default function RotateDevice() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0f] overflow-hidden">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-[#0a0a0f] overflow-hidden">
       <div className="absolute -top-20 -left-20 w-[320px] h-80 rounded-full bg-[radial-gradient(circle,rgba(83,74,183,0.18)_0%,transparent_70%)] blur-3xl" />
       <div className="absolute -bottom-15 -right-15 w-70 h-70 rounded-full bg-[radial-gradient(circle,rgba(29,158,117,0.14)_0%,transparent_70%)] blur-3xl" />
       <div className="absolute inset-0 opacity-40">
