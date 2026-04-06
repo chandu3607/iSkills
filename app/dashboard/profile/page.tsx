@@ -15,7 +15,7 @@ export default function DashboardProfilePage() {
           <div className="pointer-events-none absolute -bottom-20 left-16 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl" />
           <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
-              <div className="grid h-14 w-14 place-items-center rounded-full border-[5px] border-blue-600 bg-white text-sm font-semibold text-blue-700 sm:h-16 sm:w-16 sm:text-base">
+              <div className="grid h-14 w-14 min-w-14 place-items-center rounded-full border-[5px] border-blue-600 bg-white text-sm font-semibold text-blue-700 sm:h-16 sm:w-16 sm:text-base">
                 100%
               </div>
               <div>
@@ -39,7 +39,7 @@ export default function DashboardProfilePage() {
             <div className="group relative h-24 w-24 sm:h-28 sm:w-28">
               <img
                 src="https://s3-ap-south-1.amazonaws.com/iquantamedia/media/profile_pic/profile_pic/giphy.gif"
-                alt="Sai Chandu"
+                alt="Leo's profile"
                 className="h-full w-full rounded-2xl border border-slate-200 bg-slate-100 object-cover p-1"
               />
               <label
@@ -56,16 +56,17 @@ export default function DashboardProfilePage() {
               />
             </div>
             <p className="mt-3 text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
-              Sai Chandu
+              Leo
             </p>
 
             <div className="mt-3 flex items-center gap-2">
               <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
-                CAT
+                DSA
               </span>
               <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
-                SNAP
+                Full Stack
               </span>
+             
             </div>
           </div>
 
@@ -94,18 +95,18 @@ export default function DashboardProfilePage() {
             <div className="mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>Name</label>
-                <input className={fieldClass} defaultValue="Sai Chandu" />
+                <input className={fieldClass} defaultValue="" />
               </div>
               <div>
                 <label className={labelClass}>Email Address</label>
                 <input
                   className={fieldClass}
-                  defaultValue="chanduprince78963@gmail.com"
+                  defaultValue=""
                 />
               </div>
               <div className="relative">
                 <label className={labelClass}>Date of Birth</label>
-                <input className={`${fieldClass} pr-11`} defaultValue="11/21/1998" />
+                <input className={`${fieldClass} pr-11`} defaultValue="" />
                 <CalendarDays
                   size={16}
                   className="pointer-events-none absolute right-4 top-[46px] text-slate-400"
@@ -113,11 +114,11 @@ export default function DashboardProfilePage() {
               </div>
               <div>
                 <label className={labelClass}>Phone Number</label>
-                <input className={fieldClass} defaultValue="8790063618" />
+                <input className={fieldClass} defaultValue="" />
               </div>
               <div className="relative">
                 <label className={labelClass}>Gender</label>
-                <select className={`${fieldClass} appearance-none`} defaultValue="Male">
+                <select className={`${fieldClass} appearance-none`} defaultValue="">
                   <option>Male</option>
                   <option>Female</option>
                   <option>Other</option>
@@ -133,27 +134,26 @@ export default function DashboardProfilePage() {
           <div className="mt-7">
             <h2 className="text-base sm:text-lg font-semibold text-slate-900">Address</h2>
             <div className="mt-3 h-px bg-slate-200" />
-
             <div className="mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>Address 01</label>
-                <textarea className={areaClass} defaultValue="Sanjay Gandhi Colony" />
+                <textarea className={areaClass} defaultValue="" />
               </div>
               <div>
                 <label className={labelClass}>Address 02</label>
-                <textarea className={areaClass} defaultValue="hhhh" />
+                <textarea className={areaClass} defaultValue="" />
               </div>
               <div>
                 <label className={labelClass}>City</label>
-                <input className={fieldClass} defaultValue="Bapatla" />
+                <input className={fieldClass} defaultValue="" />
               </div>
               <div>
                 <label className={labelClass}>State</label>
-                <input className={fieldClass} defaultValue="Andhra Pradesh" />
+                <input className={fieldClass} defaultValue="" />
               </div>
               <div>
                 <label className={labelClass}>Pincode</label>
-                <input className={fieldClass} defaultValue="522101" />
+                <input className={fieldClass} defaultValue="" />
               </div>
             </div>
           </div>
@@ -161,26 +161,15 @@ export default function DashboardProfilePage() {
           <div className="mt-7">
             <h2 className="text-base sm:text-lg font-semibold text-slate-900">Exam Details</h2>
             <div className="mt-3 h-px bg-slate-200" />
-
-            <div className="mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
+            <div className="mt-4 ">
               <div className="relative">
-                <label className={labelClass}>Exam Category</label>
-                <select className={`${fieldClass} appearance-none`} defaultValue="MBA Exam">
-                  <option>MBA Exam</option>
-                  <option>Engineering</option>
-                  <option>Law</option>
-                </select>
-                <ChevronDown
-                  size={16}
-                  className="pointer-events-none absolute right-4 top-[46px] text-slate-400"
-                />
-              </div>
-              <div className="relative">
-                <label className={labelClass}>Exam</label>
-                <select className={`${fieldClass} appearance-none`} defaultValue="CAT, SNAP">
-                  <option>CAT, SNAP</option>
-                  <option>CAT</option>
-                  <option>SNAP</option>
+                <label className={labelClass}>Exam Course</label>
+                <select className={`${fieldClass} appearance-none`} defaultValue="">
+                  <option>Data Analytics Mastery</option>
+                  <option>DSA Pattern & Competitive Programming</option>
+                  <option>Data Science Bootcamp</option>
+                  <option>Full Stack Web Development</option>
+                  <option>DSA MAANG</option>
                 </select>
                 <ChevronDown
                   size={16}

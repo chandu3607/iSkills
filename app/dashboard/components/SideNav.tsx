@@ -90,14 +90,12 @@ export default function SideNav() {
             } ${active
               ? "border-blue-200 bg-blue-50 text-blue-700"
               : "border-transparent text-slate-600 hover:border-slate-200 hover:bg-slate-50 hover:text-slate-900"
-            }`}
-        >
+            }`} >
           <span
             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition ${active
               ? "border-blue-200 bg-white text-blue-700"
               : "border-slate-200 bg-white text-slate-500 group-hover:text-slate-800"
-              }`}
-          >
+              }`}>
             <Icon size={16} />
           </span>
           {!collapsed && (
@@ -109,7 +107,7 @@ export default function SideNav() {
   return (
     <>
       <div
-        className={`fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm transition-opacity lg:hidden ${isMobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-10 bg-slate-900/50 backdrop-blur-sm transition-opacity lg:hidden ${isMobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         onClick={() => setIsMobileOpen(false)}
       />
@@ -135,8 +133,7 @@ export default function SideNav() {
               onClick={() => setCollapsed(!collapsed)}
               aria-label={toggleNavLabel}
               className={`group relative rounded-lg border border-slate-200 bg-[#f6f6f6] p-2 text-slate-600 transition hover:bg-gray-100 hover:text-slate-900 hidden lg:block ${collapsed ? "cursor-e-resize" : "cursor-w-resize"
-                }`}
-            >
+                }`}>
               <PanelRight
                 size={18}
                 className={`transition-transform ${collapsed ? "rotate-180" : ""
@@ -146,12 +143,10 @@ export default function SideNav() {
                 {toggleNavLabel}
               </span>
             </button>
-            {/* Mobile Close Button */}
             <button
               onClick={() => setIsMobileOpen(false)}
               aria-label="Close menu"
-              className="lg:hidden flex h-8 w-8 items-center justify-center rounded-xl bg-slate-50 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
-            >
+              className="lg:hidden flex h-8 w-8 items-center justify-center rounded-xl bg-slate-50 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900">
               <X size={18} />
             </button>
           </div>
@@ -213,7 +208,7 @@ export default function SideNav() {
               {!collapsed && (
                 <div>
                   <p className="text-sm font-semibold text-slate-900">
-                    Sai Chandu
+                    Leo
                   </p>
                   <p className="text-xs text-slate-500">ID: 316649</p>
                 </div>

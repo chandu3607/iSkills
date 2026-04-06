@@ -99,7 +99,7 @@ export default function DashboardHome() {
           <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-2 sm:space-y-3 ">
               <h2 className="text-xl sm:text-2xl font-semibold leading-tight tracking-tight text-slate-900 lg:text-3xl">
-                Welcome back, Use. Keep your coding momentum high.
+                Welcome back, Leo. Keep your coding momentum high.
               </h2>
               <p className="max-w-xl text-xs sm:text-sm leading-relaxed text-slate-600">
                 Resume your live cohorts, ship project milestones, and stay on

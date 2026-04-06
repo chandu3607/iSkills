@@ -45,7 +45,7 @@ const formatter = new Intl.NumberFormat("en-IN", {
 });
 
 const profileData = {
-  username: "Sai Chandu-316649",
+  username: "Leo-316649",
   phoneNo: "9876543210",
   dob: "2000-08-16",
   referralCode: "IQSAI2000",

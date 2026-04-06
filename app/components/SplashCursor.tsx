@@ -253,7 +253,6 @@ export default function SplashCursor({
       setKeywords(keywords: string[]) {
         let hash = 0;
         for (let i = 0; i < keywords.length; i += 1) hash += hashCode(keywords[i]);
-
         let program = this.programs[hash];
         if (program == null) {
           const fragmentShader = compileShader(
@@ -264,7 +263,6 @@ export default function SplashCursor({
           program = createProgram(this.vertexShader, fragmentShader);
           this.programs[hash] = program;
         }
-
         if (program === this.activeProgram) return;
         this.uniforms = getUniforms(program);
         this.activeProgram = program;
@@ -278,13 +276,11 @@ export default function SplashCursor({
     class Program {
       uniforms: Record<string, any>;
       program: any;
-
       constructor(vertexShader: any, fragmentShader: any) {
         this.uniforms = {};
         this.program = createProgram(vertexShader, fragmentShader);
         this.uniforms = getUniforms(this.program);
       }
-
       bind() {
         gl.useProgram(this.program);
       }
@@ -295,23 +291,19 @@ export default function SplashCursor({
       gl.attachShader(program, vertexShader);
       gl.attachShader(program, fragmentShader);
       gl.linkProgram(program);
-
       if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
         console.trace(gl.getProgramInfoLog(program));
       }
-
       return program;
     }
 
     function getUniforms(program: any) {
       const uniforms: any[] = [];
       const uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
-
       for (let i = 0; i < uniformCount; i += 1) {
         const uniformName = gl.getActiveUniform(program, i).name;
         uniforms[uniformName] = gl.getUniformLocation(program, uniformName);
       }
-
       return uniforms;
     }
 
@@ -320,11 +312,9 @@ export default function SplashCursor({
       const shader = gl.createShader(type);
       gl.shaderSource(shader, shaderSource);
       gl.compileShader(shader);
-
       if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         console.trace(gl.getShaderInfoLog(shader));
       }
-
       return shader;
     }
 
@@ -350,7 +340,6 @@ export default function SplashCursor({
         varying vec2 vT;
         varying vec2 vB;
         uniform vec2 texelSize;
-
         void main () {
           vUv = aPosition * 0.5 + 0.5;
           vL = vUv - vec2(texelSize.x, 0.0);
@@ -369,7 +358,6 @@ export default function SplashCursor({
         precision mediump sampler2D;
         varying highp vec2 vUv;
         uniform sampler2D uTexture;
-
         void main () {
           gl_FragColor = texture2D(uTexture, vUv);
         }
@@ -384,7 +372,6 @@ export default function SplashCursor({
         varying highp vec2 vUv;
         uniform sampler2D uTexture;
         uniform float value;
-
         void main () {
           gl_FragColor = value * texture2D(uTexture, vUv);
         }

@@ -1,41 +1,47 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
 
-const wishlistItems = [
+const initialWishlist = [
   {
-    title: "CAT 2026 Complete Program",
-    subtitle: "Live classes + sectional tests + mock analysis",
-    price: "₹24,999",
-    oldPrice: "₹29,999",
+    title: "Full Stack Development Program",
+    subtitle: "React, Node.js, APIs, and real-world project building",
+    price: "₹19,999",
+    oldPrice: "₹24,999",
     badge: "Popular",
     accent: "bg-blue-100 text-blue-700",
   },
   {
-    title: "VARC Elite Workshop",
-    subtitle: "Reading comprehension and verbal accuracy track",
-    price: "₹6,999",
-    oldPrice: "₹8,999",
-    badge: "Limited Seats",
+    title: "DSA Mastery & Interview Prep",
+    subtitle: "Pattern-based DSA, coding rounds, and MAANG-level questions",
+    price: "₹9,999",
+    oldPrice: "₹12,999",
+    badge: "High Demand",
     accent: "bg-violet-100 text-violet-700",
   },
   {
-    title: "GDPI + WAT Interview Track",
-    subtitle: "Interview prep, SOP review, and panel simulation",
-    price: "₹4,999",
-    oldPrice: "₹6,499",
+    title: "System Design + Backend Track",
+    subtitle: "Scalable systems, databases, and backend architecture",
+    price: "₹7,999",
+    oldPrice: "₹10,999",
     badge: "New",
     accent: "bg-emerald-100 text-emerald-700",
   },
 ];
 
 export default function DashboardWishlistPage() {
+  const [wishlistItems, setWishlistItems] = useState(initialWishlist);
+  const handleRemove = (title: string) => {
+    setWishlistItems((prev) => prev.filter((item) => item.title !== title));
+  };
   return (
     <div className="space-y-4 sm:space-y-6 pb-6 w-full">
       <section className="grid gap-3 sm:gap-4 lg:grid-cols-12">
         <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50 p-4 sm:p-6 lg:col-span-12">
           <div className="pointer-events-none absolute -right-20 -top-24 h-52 w-52 rounded-full bg-blue-200/35 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-20 left-16 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl" />
-
           <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-700">
@@ -50,13 +56,7 @@ export default function DashboardWishlistPage() {
                 </p>
               </div>
             </div>
-
-            <Link
-              href="/dashboard/profile"
-              className="w-full sm:w-auto rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-            >
-              Back To Profile
-            </Link>
+            {/* <Link href="/dashboard/profile">Back To Profile</Link> */}
           </div>
         </article>
       </section>
@@ -78,7 +78,6 @@ export default function DashboardWishlistPage() {
             </div>
           </div>
         </aside>
-
         <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 sm:p-5 lg:col-span-8 xl:col-span-9">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <h2 className="text-base sm:text-lg font-semibold text-slate-900">
@@ -88,7 +87,6 @@ export default function DashboardWishlistPage() {
               {wishlistItems.length} items
             </span>
           </div>
-
           <div className="mt-4 space-y-3">
             {wishlistItems.map((item) => (
               <div
@@ -117,13 +115,15 @@ export default function DashboardWishlistPage() {
                       </span>
                     </div>
                   </div>
-
                   <div className="flex items-center gap-2">
-                    <button className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-100">
+                    <button
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition cursor-pointer hover:bg-slate-100"
+                      onClick={() => handleRemove(item.title)}
+                    >
                       <Trash2 size={14} />
                       Remove
                     </button>
-                    <button className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-slate-800">
+                    <button className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-slate-800 cursor-pointer">
                       <ShoppingCart size={14} />
                       Enroll Now
                     </button>
