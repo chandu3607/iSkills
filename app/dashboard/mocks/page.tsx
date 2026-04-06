@@ -128,7 +128,7 @@ export default function MocksPage() {
 
   return (
     <div className="space-y-5 pb-6">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50 p-5 md:p-6">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-br from-white via-slate-50 to-blue-50 p-5 md:p-6">
         <div className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-blue-200/40 blur-3xl" />
         <div className="relative">
           <h2 className=" text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
@@ -155,7 +155,7 @@ export default function MocksPage() {
                     : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
                 }`}>
                 <span
-                  className={`w-3 h-3 rounded-full border-1 flex items-center justify-center ${
+                  className={`w-3 h-3 rounded-full border flex items-center justify-center ${
                     active ? "border-blue-600" : "border-slate-400"
                   }`}>
                   {active && (

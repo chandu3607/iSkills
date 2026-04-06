@@ -109,7 +109,7 @@ export default function DashboardProfilePage() {
                 <input className={`${fieldClass} pr-11`} defaultValue="" />
                 <CalendarDays
                   size={16}
-                  className="pointer-events-none absolute right-4 top-[46px] text-slate-400"
+                  className="pointer-events-none absolute right-4 top-11.5 text-slate-400"
                 />
               </div>
               <div>
@@ -125,7 +125,7 @@ export default function DashboardProfilePage() {
                 </select>
                 <ChevronDown
                   size={16}
-                  className="pointer-events-none absolute right-4 top-[46px] text-slate-400"
+                  className="pointer-events-none absolute right-4 top-11.5 text-slate-400"
                 />
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function DashboardProfilePage() {
                 </select>
                 <ChevronDown
                   size={16}
-                  className="pointer-events-none absolute right-4 top-[46px] text-slate-400"
+                  className="pointer-events-none absolute right-4 top-11.5 text-slate-400"
                 />
               </div>
             </div>

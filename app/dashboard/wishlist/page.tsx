@@ -39,7 +39,7 @@ export default function DashboardWishlistPage() {
   return (
     <div className="space-y-4 sm:space-y-6 pb-6 w-full">
       <section className="grid gap-3 sm:gap-4 lg:grid-cols-12">
-        <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-blue-50 p-4 sm:p-6 lg:col-span-12">
+        <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-linear-to-br from-white via-slate-50 to-blue-50 p-4 sm:p-6 lg:col-span-12">
           <div className="pointer-events-none absolute -right-20 -top-24 h-52 w-52 rounded-full bg-blue-200/35 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-20 left-16 h-40 w-40 rounded-full bg-sky-100/60 blur-2xl" />
           <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
