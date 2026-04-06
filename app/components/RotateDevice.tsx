@@ -5,7 +5,9 @@ export default function RotateDevice() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     const check = () => {
-  const isMobile = window.innerWidth <= 768; // mobile breakpoint
+const isMobile =
+  /Mobi|Android/i.test(navigator.userAgent) ||
+  window.innerWidth <= 768;
   const isLandscape = window.innerWidth > window.innerHeight;
 
   setShow(isMobile && isLandscape);

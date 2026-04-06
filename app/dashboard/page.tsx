@@ -12,28 +12,24 @@ const kpiCards = [
   {
     title: "Active Programs",
     value: "4",
-    note: "Across web dev, data, and DSA",
     icon: BookOpen,
     iconWrap: "bg-amber-50 text-amber-600 border-amber-100",
   },
   {
     title: "Live Sessions",
     value: "12",
-    note: "This week with expert mentors",
     icon: Laptop,
     iconWrap: "bg-blue-50 text-blue-600 border-blue-100",
   },
   {
     title: "Career Upside",
     value: "2x",
-    note: "Built around salary-focused outcomes",
     icon: Wallet,
     iconWrap: "bg-violet-50 text-violet-600 border-violet-100",
   },
   {
     title: "Job Readiness",
     value: "92%",
-    note: "Roadmap completion for this month",
     icon: Goal,
     iconWrap: "bg-emerald-50 text-emerald-600 border-emerald-100",
   },
@@ -123,9 +119,7 @@ export default function DashboardHome() {
               <p className="mt-0.5 sm:mt-1 text-lg sm:text-2xl font-semibold text-slate-900 truncate">
                 {card.value}
               </p>
-              <p className="mt-1 text-[10px] sm:text-xs text-slate-500">
-                {card.note}
-              </p>
+              
             </article>
           );
         })}
