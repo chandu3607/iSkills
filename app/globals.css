@@ -135,3 +135,18 @@ body {
 }
 
 /* ///////// */
+
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1s ease-in-out infinite alternate;
+}

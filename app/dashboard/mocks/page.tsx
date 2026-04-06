@@ -142,31 +142,31 @@ export default function MocksPage() {
       </section>
 
       <section className="rounded-3xl border border-slate-200 bg-white p-4 md:p-5">
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => {
-            const active = activeTab === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveTab(cat)}
-                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition cursor-pointer ${
-                  active
-                    ? "border-blue-200 bg-blue-50 text-blue-700"
-                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+       <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        {categories.map((cat) => {
+          const active = activeTab === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => setActiveTab(cat)}
+              className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition cursor-pointer ${
+                active
+                  ? "border-blue-200 bg-blue-50 text-blue-700"
+                  : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+              }`}>
+              <span
+                className={`w-3 h-3 rounded-full border flex items-center justify-center ${
+                  active ? "border-blue-600" : "border-slate-400"
                 }`}>
-                <span
-                  className={`w-3 h-3 rounded-full border flex items-center justify-center ${
-                    active ? "border-blue-600" : "border-slate-400"
-                  }`}>
-                  {active && (
-                    <span className="w-2 h-2 rounded-full bg-current"></span>
-                  )}
-                </span>
-                {cat}
-              </button>
-            );
-          })}
-        </div>
+                {active && (
+                  <span className="w-2 h-2 rounded-full bg-current"></span>
+                )}
+              </span>
+              {cat}
+            </button>
+          );
+        })}
+      </div>
       </section>
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-4 ">

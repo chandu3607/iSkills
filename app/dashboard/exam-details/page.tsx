@@ -157,29 +157,30 @@ export default function ExamDetailsPage() {
 
       <section className="rounded-3xl border border-slate-200 bg-white p-4 md:p-5">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => {
-              const active = activeCategory === category;
-              return (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition ${
-                    active
-                      ? "border-blue-200 bg-blue-50 text-blue-700"
-                      : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
-                  }`}
-                >
-                  {active && <span className="h-2 w-2 rounded-full bg-current" />}
-                  {category}
-                </button>
-              );
-            })}
-          </div>
+        <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
+          {categories.map((category) => {
+            const active = activeCategory === category;
 
-          <div className="grid gap-3 md:grid-cols-2">
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition ${
+                  active
+                    ? "border-blue-200 bg-blue-50 text-blue-700"
+                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                {active && <span className="h-2 w-2 rounded-full bg-current" />}
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+          <div className="grid gap-3 grid-cols-2">
             <label className="block">
-              <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+              <span className="mb-1.5 block md:text-xs md:ml-0 ml-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                 Mode
               </span>
               <select
@@ -196,7 +197,7 @@ export default function ExamDetailsPage() {
             </label>
 
             <label className="block">
-              <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+              <span className="mb-1.5 block md:text-xs text-[9px] md:ml-0 ml-2 font-semibold uppercase tracking-[0.12em] text-slate-500">
                 Batch
               </span>
               <select
@@ -224,8 +225,8 @@ export default function ExamDetailsPage() {
               key={session.id}
               className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(191,219,254,0.35),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(224,231,255,0.35),transparent_28%)]" />
-              <div className="relative items-center flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5">
-                <div className="relative h-44 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-32 md:w-67.5 md:min-w-67.5">
+              <div className="relative items-start  flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5">
+                <div className="relative h-auto w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-32 md:w-67.5 md:min-w-67.5">
                   <img
                     src={session.image}
                     alt={session.title}
@@ -250,7 +251,7 @@ export default function ExamDetailsPage() {
                           {session.batch}
                         </span>
                       </div>
-                      <h2 className="mt-3 max-w-3xl text-xl font-semibold leading-snug text-slate-900 md:text-[20px] md:leading-9">
+                      <h2 className="mt-3 max-w-3xl text-sm font-semibold leading-snug text-slate-900 md:text-[20px] md:leading-9">
                         {session.title}
                       </h2>
                     </div>
@@ -270,7 +271,7 @@ export default function ExamDetailsPage() {
                         <CalendarDays size={14} />
                         Date
                       </p>
-                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
                         {session.date}
                       </p>
                     </div>
@@ -279,7 +280,7 @@ export default function ExamDetailsPage() {
                         <Clock3 size={14} />
                         Time
                       </p>
-                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
                         {session.time}
                       </p>
                     </div>
@@ -287,7 +288,7 @@ export default function ExamDetailsPage() {
                       <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                         Duration
                       </p>
-                      <p className="mt-1 text-[14px] font-semibold text-slate-900">
+                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
                         {session.duration}
                       </p>
                     </div>
