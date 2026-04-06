@@ -4,14 +4,8 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  BookOpenCheck,
   Circle,
-  Dot,
   FileText,
-  FlaskConical,
-  GraduationCap,
-  Landmark,
-  Sparkles,
 } from "lucide-react";
 
 type Category =

@@ -1,15 +1,15 @@
 "use client";
-
 import { useEffect, useState } from "react";
 
 export default function RotateDevice() {
   const [show, setShow] = useState(false);
-
   useEffect(() => {
     const check = () => {
-      setShow(window.innerWidth > window.innerHeight);
-    };
+  const isMobile = window.innerWidth <= 768; // mobile breakpoint
+  const isLandscape = window.innerWidth > window.innerHeight;
 
+  setShow(isMobile && isLandscape);
+};
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
