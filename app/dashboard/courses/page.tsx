@@ -45,7 +45,6 @@ const courses: Course[] = [
 ];
 
 export default function CoursesPage() {
-  const activeCount = courses.filter((course) => course.status === "Active").length;
 
   return (
     <div className="space-y-5 pb-6">

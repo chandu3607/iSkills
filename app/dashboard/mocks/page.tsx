@@ -137,12 +137,12 @@ export default function MocksPage() {
 
       <section className="rounded-3xl border border-slate-200 bg-white p-4 md:p-5">
        <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        {categories.map((cat) => {
-          const active = activeTab === cat;
+        {categories.map((skills) => {
+          const active = activeTab === skills;
           return (
             <button
-              key={cat}
-              onClick={() => setActiveTab(cat)}
+              key={skills}
+              onClick={() => setActiveTab(skills)}
               className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition cursor-pointer ${
                 active
                   ? "border-blue-200 bg-blue-50 text-blue-700"
@@ -156,7 +156,7 @@ export default function MocksPage() {
                   <span className="w-2 h-2 rounded-full bg-current"></span>
                 )}
               </span>
-              {cat}
+              {skills}
             </button>
           );
         })}
@@ -167,8 +167,7 @@ export default function MocksPage() {
         {activeMocks.map((mock) => (
           <article
             key={mock.title + mock.link}
-            className="rounded-3xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-sm"
-          >
+            className="rounded-3xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-sm">
             <div className="flex items-start justify-between gap-3">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-blue-100 bg-blue-50 text-blue-600">
                 <FileText size={18} />
@@ -179,7 +178,6 @@ export default function MocksPage() {
                 </span>
               )}
             </div>
-
             <h3 className="mt-4 text-lg font-semibold text-slate-900">
               {mock.title}
             </h3>
@@ -187,11 +185,9 @@ export default function MocksPage() {
               {mock.desc ||
                 "Mock tests designed for targeted preparation and timed practice."}
             </p>
-
             <Link
               href={mock.link}
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
-            >
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">
               Open Mock
               <ArrowUpRight size={15} />
             </Link>

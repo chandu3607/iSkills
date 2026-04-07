@@ -1,12 +1,5 @@
 "use client";
-import {
-  ArrowUpRight,
-  BookOpen,
-  ChevronRight,
-  Goal,
-  Laptop,
-  Wallet,
-} from "lucide-react";
+import {ArrowUpRight, BookOpen, ChevronRight, Goal, Laptop, Wallet,} from "lucide-react";
 
 const kpiCards = [
   {
