@@ -1,9 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [new URL("https://media.iquanta.in/ui_images/**")],
-  },
+ images: {
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "media.iquanta.in",
+      pathname: "/ui_images/**",
+    },
+  ],
+},
+
 };
 
 export default nextConfig;

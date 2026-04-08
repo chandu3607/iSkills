@@ -1,5 +1,5 @@
 "use client";
-import {ArrowUpRight, BookOpen, ChevronRight, Goal, Laptop, Wallet,} from "lucide-react";
+import { ArrowUpRight, BookOpen, ChevronRight, Goal, Laptop, Wallet, } from "lucide-react";
 
 const kpiCards = [
   {
@@ -10,7 +10,7 @@ const kpiCards = [
   },
   {
     title: "Live Sessions",
-    value: "12",
+    value: "20",
     icon: Laptop,
     iconWrap: "bg-blue-50 text-blue-600 border-blue-100",
   },
@@ -112,114 +112,113 @@ export default function DashboardHome() {
               <p className="mt-0.5 sm:mt-1 text-lg sm:text-2xl font-semibold text-slate-900 truncate">
                 {card.value}
               </p>
-              
+
             </article>
           );
         })}
       </section>
-     <section className="grid gap-3 sm:gap-4 md:grid-cols-12">
-      <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white md:col-span-7 flex flex-col overflow-hidden">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 px-4 sm:px-5 py-3 sm:py-4 gap-2 sm:gap-0">
-        <div className="min-w-0">
-          <h2 className="text-sm sm:text-base font-semibold text-slate-900">
-            Your Learning Tracks
-          </h2>
-          <p className="text-[11px] sm:text-sm text-slate-500 truncate">
-            Continue the iSkills programs shaping your career path.
-          </p>
-        </div>
-        <button className="w-full sm:w-auto rounded-xl border border-slate-200 bg-slate-50 sm:bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 shrink-0">
-          Explore Programs
-        </button>
-      </div>
-    <div className="space-y-2 sm:space-y-3 p-3 sm:p-4 overflow-y-auto max-h-90 sm:max-h-none">
-      {learningTracks.map((course) => (
-        <div
-          key={course.name}
-          className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3 transition hover:border-slate-300 hover:bg-white overflow-hidden">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 overflow-hidden">
-              <div className="relative h-11 w-12 sm:h-12 sm:w-36 shrink-0 overflow-hidden rounded-md bg-linear-to-br from-blue-100 to-slate-200">
-                <img
-                  src={course.img}
-                  alt={course.name}
-                  className="object-cover h-full w-full"
-                />
-              </div>
-              <div className="min-w-0 flex-1 overflow-hidden">
-                <p className="truncate whitespace-nowrap text-xs sm:text-sm font-semibold text-slate-900">
-                  {course.name}
-                </p>
-                <p className="truncate whitespace-nowrap text-[10px] sm:text-xs text-slate-500">
-                  {course.lesson}
-                </p>
-              </div>
-            </div>
-            <div className="shrink-0 ml-2">
-              <ChevronRight
-                size={16}
-                className="text-slate-400"
-              />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </article>
-  <div className="space-y-3 sm:space-y-4 md:col-span-5 flex flex-col">
-    <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-5 flex-1 ">
-      <div className="flex items-center justify-between mb-2 sm:mb-0">
-        <h2 className="text-sm sm:text-base font-semibold text-slate-900">
-          Today&apos;s Flow
-        </h2>
-        <span className="rounded-full bg-slate-100 px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-slate-600 shrink-0">
-          {todayPlan.length} tasks
-        </span>
-      </div>
-      <div className="sm:mt-4 space-y-2 sm:space-y-3 overflow-y-auto max-h-50 md:max-h-none scrollbar-hide">
-        {todayPlan.map((item) => (
-          <div
-            key={item.title}
-            className="flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 sm:py-2.5 gap-2">
-            <div className="min-w-0 flex-1 mr-2 overflow-hidden">
-              <p className="truncate text-xs sm:text-sm font-semibold text-slate-900">
-                {item.title}
-              </p>
-              <p className="truncate text-[10px] sm:text-xs text-slate-500">
-                {item.time}
+      <section className="grid gap-3 sm:gap-4 md:grid-cols-12">
+        <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white md:col-span-7 flex flex-col overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 px-4 sm:px-5 py-3 sm:py-4 gap-2 sm:gap-0">
+            <div className="min-w-0">
+              <h2 className="text-sm sm:text-base font-semibold text-slate-900">
+                Your Learning Tracks
+              </h2>
+              <p className="text-[11px] sm:text-sm text-slate-500 truncate">
+                Continue the iSkills programs shaping your career path.
               </p>
             </div>
-            <span
-              className={`shrink-0 rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold ${item.statusStyle}`}>
-              {item.status}
-            </span>
+            <button className="w-full sm:w-auto rounded-xl border border-slate-200 bg-slate-50 sm:bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 shrink-0">
+              Explore Programs
+            </button>
           </div>
-        ))}
-      </div>
-    </article>
-    <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-linear-to-br from-blue-50 via-white to-indigo-50 p-4 sm:p-5 flex-1">
-      <div className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 sm:h-36 sm:w-36 rounded-full bg-blue-200/45 blur-2xl" />
-      <div className="relative">
-        <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
-          Spotlight
-        </p>
-        <h3 className="mt-1 sm:mt-1.5 text-base sm:text-xl font-semibold leading-tight text-slate-900">
-          Build production-ready skills with live cohorts and portfolio projects.
-        </h3>
-        <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-sm text-slate-600 max-w-70 sm:max-w-none">
-          From Full Stack and Data Science to DSA and Analytics, iSkills is
-          structured for real outcomes with mentor-led sessions, project
-          reviews, and career support.
-        </p>
-        <button className="mt-3 sm:mt-4 inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-semibold text-white transition hover:bg-slate-800">
-          Explore iSkills
-          <ArrowUpRight size={14} className="sm:h-3.75 sm:w-3.75" />
-        </button>
-      </div>
-    </article>
-  </div>
-</section>
-
+          <div className="space-y-2 sm:space-y-3 p-3 sm:p-4 overflow-y-auto max-h-90 sm:max-h-none">
+            {learningTracks.map((course) => (
+              <div
+                key={course.name}
+                className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3 transition hover:border-slate-300 hover:bg-white overflow-hidden">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 overflow-hidden">
+                    <div className="relative h-11 w-12 sm:h-12 sm:w-36 shrink-0 overflow-hidden rounded-md bg-linear-to-br from-blue-100 to-slate-200">
+                      <img
+                        src={course.img}
+                        alt={course.name}
+                        className="object-cover h-full w-full"
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1 overflow-hidden">
+                      <p className="truncate whitespace-nowrap text-xs sm:text-sm font-semibold text-slate-900">
+                        {course.name}
+                      </p>
+                      <p className="truncate whitespace-nowrap text-[10px] sm:text-xs text-slate-500">
+                        {course.lesson}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="shrink-0 ml-2">
+                    <ChevronRight
+                      size={16}
+                      className="text-slate-400"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+        <div className="space-y-3 sm:space-y-4 md:col-span-5 flex flex-col">
+          <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-5 flex-1 ">
+            <div className="flex items-center justify-between mb-2 sm:mb-0">
+              <h2 className="text-sm sm:text-base font-semibold text-slate-900">
+                Today&apos;s Flow
+              </h2>
+              <span className="rounded-full bg-slate-100 px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-slate-600 shrink-0">
+                {todayPlan.length} tasks
+              </span>
+            </div>
+            <div className="sm:mt-4 space-y-2 sm:space-y-3 overflow-y-auto max-h-50 md:max-h-none scrollbar-hide">
+              {todayPlan.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 sm:py-2.5 gap-2">
+                  <div className="min-w-0 flex-1 mr-2 overflow-hidden">
+                    <p className="truncate text-xs sm:text-sm font-semibold text-slate-900">
+                      {item.title}
+                    </p>
+                    <p className="truncate text-[10px] sm:text-xs text-slate-500">
+                      {item.time}
+                    </p>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold ${item.statusStyle}`}>
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-linear-to-br from-blue-50 via-white to-indigo-50 p-4 sm:p-5 flex-1">
+            <div className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 sm:h-36 sm:w-36 rounded-full bg-blue-200/45 blur-2xl" />
+            <div className="relative">
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
+                Spotlight
+              </p>
+              <h3 className="mt-1 sm:mt-1.5 text-base sm:text-xl font-semibold leading-tight text-slate-900">
+                Build production-ready skills with live cohorts and portfolio projects.
+              </h3>
+              <p className="mt-1 sm:mt-1.5 text-[11px] sm:text-sm text-slate-600 max-w-70 sm:max-w-none">
+                From Full Stack and Data Science to DSA and Analytics, iSkills is
+                structured for real outcomes with mentor-led sessions, project
+                reviews, and career support.
+              </p>
+              <button className="mt-3 sm:mt-4 inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-semibold text-white transition hover:bg-slate-800">
+                Explore iSkills
+                <ArrowUpRight size={14} className="sm:h-3.75 sm:w-3.75" />
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
   );
 }

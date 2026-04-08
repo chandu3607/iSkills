@@ -3,9 +3,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Home, ArrowLeft } from "lucide-react";
 import Headder from "./components/Headder";
-
 export default function NotFound() {
-    const router = useRouter();
+const router = useRouter();
   return (
     <>
     <Headder />
@@ -47,7 +46,6 @@ export default function NotFound() {
             <Home className="w-4 h-4" />
             Go Home
           </Link>
-
         </div>
       </div>
       </div>

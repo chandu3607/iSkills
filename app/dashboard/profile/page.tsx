@@ -1,5 +1,13 @@
+"use client";
 import Link from "next/link";
-import { CalendarDays, Camera, ChevronDown, Heart, UserRound } from "lucide-react";
+import { useState } from "react";
+import {
+  CalendarDays,
+  Camera,
+  ChevronDown,
+  Heart,
+  UserRound,
+} from "lucide-react";
 
 const fieldClass =
   "h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none placeholder:text-slate-400 transition focus:border-blue-200 focus:bg-white focus:ring-4 focus:ring-blue-50";
@@ -7,6 +15,18 @@ const areaClass =
   "min-h-[96px] w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400 transition focus:border-blue-200 focus:bg-white focus:ring-4 focus:ring-blue-50";
 const labelClass = "mb-2 block text-sm font-medium text-slate-700";
 export default function DashboardProfilePage() {
+  const [image, setImage] = useState(
+    "https://s3-ap-south-1.amazonaws.com/iquantamedia/media/profile_pic/profile_pic/giphy.gif",
+  );
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const previewUrl = URL.createObjectURL(file);
+      setImage(previewUrl);
+    }
+  };
+
   return (
     <div className="space-y-4 sm:space-y-6 pb-6 w-full">
       <section className="grid gap-3 sm:gap-4 lg:grid-cols-12">
@@ -38,8 +58,8 @@ export default function DashboardProfilePage() {
           <div className="flex flex-col items-center">
             <div className="group relative h-24 w-24 sm:h-28 sm:w-28">
               <img
-                src="https://s3-ap-south-1.amazonaws.com/iquantamedia/media/profile_pic/profile_pic/giphy.gif"
-                alt="Leo's profile"
+                src={image}
+                alt="Profile"
                 className="h-full w-full rounded-2xl border border-slate-200 bg-slate-100 object-cover p-1"
               />
               <label
@@ -52,13 +72,13 @@ export default function DashboardProfilePage() {
                 id="profile-image-upload"
                 type="file"
                 accept="image/*"
+                onChange={handleImageChange}
                 className="sr-only"
-              />
+                />
             </div>
             <p className="mt-3 text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
               Leo
             </p>
-
             <div className="mt-3 flex items-center gap-2">
               <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
                 DSA
@@ -66,21 +86,13 @@ export default function DashboardProfilePage() {
               <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
                 Full Stack
               </span>
-             
             </div>
           </div>
-
           <div className="my-5 h-px bg-slate-200" />
-
           <nav className="space-y-2">
-            <button className="flex w-full items-center gap-2.5 rounded-xl border border-blue-100 bg-blue-50 px-3 py-2.5 text-left text-sm font-semibold text-blue-700">
-              <UserRound size={16} />
-              Personal Information
-            </button>
             <Link
               href="/dashboard/wishlist"
-              className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
-            >
+              className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
               <Heart size={16} />
               Wishlist
             </Link>
@@ -89,9 +101,10 @@ export default function DashboardProfilePage() {
 
         <article className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 sm:p-5 xl:col-span-8">
           <div>
-            <h2 className="text-base sm:text-lg font-semibold text-slate-900">Personal Information</h2>
+            <h2 className="text-base sm:text-lg font-semibold text-slate-900">
+              Personal Information
+            </h2>
             <div className="mt-3 h-px bg-slate-200" />
-
             <div className="mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>Name</label>
@@ -99,10 +112,7 @@ export default function DashboardProfilePage() {
               </div>
               <div>
                 <label className={labelClass}>Email Address</label>
-                <input
-                  className={fieldClass}
-                  defaultValue=""
-                />
+                <input className={fieldClass} defaultValue="" />
               </div>
               <div className="relative">
                 <label className={labelClass}>Date of Birth</label>
@@ -118,7 +128,9 @@ export default function DashboardProfilePage() {
               </div>
               <div className="relative">
                 <label className={labelClass}>Gender</label>
-                <select className={`${fieldClass} appearance-none`} defaultValue="">
+                <select
+                  className={`${fieldClass} appearance-none`}
+                  defaultValue="">
                   <option>Male</option>
                   <option>Female</option>
                   <option>Other</option>
@@ -132,7 +144,9 @@ export default function DashboardProfilePage() {
           </div>
 
           <div className="mt-7">
-            <h2 className="text-base sm:text-lg font-semibold text-slate-900">Address</h2>
+            <h2 className="text-base sm:text-lg font-semibold text-slate-900">
+              Address
+            </h2>
             <div className="mt-3 h-px bg-slate-200" />
             <div className="mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
               <div>
@@ -159,12 +173,17 @@ export default function DashboardProfilePage() {
           </div>
 
           <div className="mt-7">
-            <h2 className="text-base sm:text-lg font-semibold text-slate-900">Exam Details</h2>
+            <h2 className="text-base sm:text-lg font-semibold text-slate-900">
+              Exam Details
+            </h2>
             <div className="mt-3 h-px bg-slate-200" />
             <div className="mt-4 ">
               <div className="relative">
                 <label className={labelClass}>Exam Course</label>
-                <select className={`${fieldClass} appearance-none`} defaultValue="">
+                <select
+                  className={`${fieldClass} appearance-none`}
+                  defaultValue=""
+                >
                   <option>Data Analytics Mastery</option>
                   <option>DSA Pattern & Competitive Programming</option>
                   <option>Data Science Bootcamp</option>

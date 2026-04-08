@@ -52,7 +52,8 @@ export default function Courses() {
             return (
               <article
                 key={course.title}
-                className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)]">
+                className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)]"
+              >
                 <div
                   className={`absolute inset-0 ${
                     isGold

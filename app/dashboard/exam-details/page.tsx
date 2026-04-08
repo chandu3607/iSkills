@@ -2,13 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import {
-  CalendarDays,
-  Clock3,
-  PlayCircle,
-  Radio,
-  Users,
-} from "lucide-react";
+import { CalendarDays, Clock3, PlayCircle, Radio, Users } from "lucide-react";
+import Link from "next/link";
 
 type Category =
   | "All Tracks"
@@ -68,8 +63,7 @@ const sessions: ClassSession[] = [
     time: "06:30 PM",
     duration: "1.5 Hrs",
     mentor: "Recorded by Product Engineering Team",
-    image:
-      "https://media.iquanta.in/ui_images/skills/FULLSTACKPOSTER.jpg",
+    image: "https://media.iquanta.in/ui_images/skills/FULLSTACKPOSTER.jpg",
     tag: "Recorded",
   },
   {
@@ -82,8 +76,7 @@ const sessions: ClassSession[] = [
     time: "08:00 PM",
     duration: "2 Hrs",
     mentor: "Live with Ananya Sharma",
-    image:
-      "https://media.iquanta.in/ui_images/skills/DSBOOTCAMPPOSTER.jpg",
+    image: "https://media.iquanta.in/ui_images/skills/DSBOOTCAMPPOSTER.jpg",
     tag: "Mentor Live",
   },
   {
@@ -109,27 +102,23 @@ const sessions: ClassSession[] = [
     time: "09:30 PM",
     duration: "2 Hrs",
     mentor: "Live with Shashank",
-    image:
-      "https://media.iquanta.in/ui_images/skills/DSA&CPPOSTER.jpg",
+    image: "https://media.iquanta.in/ui_images/skills/DSA&CPPOSTER.jpg",
     tag: "Live Problem Solving",
   },
 ];
-
 const modeOptions: ModeFilter[] = ["All", "Live", "Recorded"];
 const batchOptions: BatchFilter[] = ["All", "Batch 1", "Batch 2", "Batch 3"];
-
 export default function ExamDetailsPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("All Tracks");
   const [modeFilter, setModeFilter] = useState<ModeFilter>("All");
   const [batchFilter, setBatchFilter] = useState<BatchFilter>("All");
-
   const filteredSessions = useMemo(
     () =>
       sessions.filter((session) => {
         const matchesCategory =
-          activeCategory === "All Tracks" || session.category === activeCategory;
-        const matchesMode =
-          modeFilter === "All" || session.mode === modeFilter;
+          activeCategory === "All Tracks" ||
+          session.category === activeCategory;
+        const matchesMode = modeFilter === "All" || session.mode === modeFilter;
         const matchesBatch =
           batchFilter === "All" || session.batch === batchFilter;
         return matchesCategory && matchesMode && matchesBatch;
@@ -152,31 +141,32 @@ export default function ExamDetailsPage() {
               and keep every batch track inside the dashboard flow.
             </p>
           </div>
-         </div>
+        </div>
       </section>
-
       <section className="rounded-3xl border border-slate-200 bg-white p-4 md:p-5">
         <div className="flex flex-col gap-4">
-        <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
-          {categories.map((category) => {
-            const active = activeCategory === category;
+          <div className="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
+            {categories.map((category) => {
+              const active = activeCategory === category;
 
-            return (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition ${
-                  active
-                    ? "border-blue-200 bg-blue-50 text-blue-700"
-                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
-                }`}
-              >
-                {active && <span className="h-2 w-2 rounded-full bg-current" />}
-                {category}
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition ${
+                    active
+                      ? "border-blue-200 bg-blue-50 text-blue-700"
+                      : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                  }`}
+                >
+                  {active && (
+                    <span className="h-2 w-2 rounded-full bg-current" />
+                  )}
+                  {category}
+                </button>
+              );
+            })}
+          </div>
 
           <div className="grid gap-3 grid-cols-2">
             <label className="block">
@@ -185,9 +175,10 @@ export default function ExamDetailsPage() {
               </span>
               <select
                 value={modeFilter}
-                onChange={(event) => setModeFilter(event.target.value as ModeFilter)}
-                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white"
-              >
+                onChange={(event) =>
+                  setModeFilter(event.target.value as ModeFilter)
+                }
+                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white">
                 {modeOptions.map((mode) => (
                   <option key={mode} value={mode}>
                     {mode}
@@ -195,7 +186,6 @@ export default function ExamDetailsPage() {
                 ))}
               </select>
             </label>
-
             <label className="block">
               <span className="mb-1.5 block md:text-xs text-[9px] md:ml-0 ml-2 font-semibold uppercase tracking-[0.12em] text-slate-500">
                 Batch
@@ -205,8 +195,7 @@ export default function ExamDetailsPage() {
                 onChange={(event) =>
                   setBatchFilter(event.target.value as BatchFilter)
                 }
-                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white"
-              >
+                className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-700 outline-none transition focus:border-blue-200 focus:bg-white" >
                 {batchOptions.map((batch) => (
                   <option key={batch} value={batch}>
                     {batch}
@@ -223,74 +212,57 @@ export default function ExamDetailsPage() {
           return (
             <article
               key={session.id}
-              className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(191,219,254,0.35),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(224,231,255,0.35),transparent_28%)]" />
-              <div className="relative items-start  flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5">
-                <div className="relative h-auto w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-32 md:w-67.5 md:min-w-67.5">
+              className="group rounded-2xl border border-slate-200 bg-white transition-all duration-200 hover:border-slate-300 hover:shadow-md">
+              <div className="flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-5 md:p-5">
+                <div className="relative w-full overflow-hidden rounded-xl bg-slate-100 md:h-28 md:w-64 md:min-w-64">
                   <img
                     src={session.image}
                     alt={session.title}
-                    className="object-cover h-full w-full"
-                    sizes="(max-width: 768px) 100vw, 280px" />
-                  <div className="absolute inset-0 bg-linear-to-r from-slate-900/10 via-transparent to-transparent" />
+                    className="h-full w-full object-cover"/>
+                  <span
+                    className={`absolute top-2 left-2 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold ${
+                      isLive
+                        ? "bg-emerald-600 text-white"
+                        : "bg-white/90 text-slate-700 border border-slate-200"
+                    }`}>
+                    {isLive ? <Radio size={10} /> : <PlayCircle size={10} />}
+                    {session.tag}
+                  </span>
                 </div>
-                <div className="flex flex-1 flex-col md:min-w-0">
-                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="flex flex-1 flex-col">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2.5">
-                        <span
-                          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-semibold ${
-                            isLive
-                              ? "bg-emerald-50 text-emerald-700 border border-emerald-100"
-                              : "bg-slate-100 text-slate-600 border border-slate-200"
-                          }`}>
-                          {isLive ? <Radio size={12} /> : <PlayCircle size={12} />}
-                          {session.tag}
-                        </span>
-                        <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[10px] font-semibold text-blue-700">
-                          {session.batch}
-                        </span>
-                      </div>
-                      <h2 className="mt-3 max-w-3xl text-sm font-semibold leading-snug text-slate-900 md:text-[20px] md:leading-9">
+                      <span className="inline-block rounded-md bg-blue-50 px-2 py-1 text-[10px] font-semibold text-blue-700">
+                        {session.batch}
+                      </span>
+                      <h2 className="mt-2 text-sm font-semibold text-slate-900 leading-snug md:text-base line-clamp-2">
                         {session.title}
                       </h2>
                     </div>
+                  <Link href={"/dashboard/videoplayer"}  > 
                     <button
-                      className={`inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-[12px] font-semibold transition cursor-pointer  ${
+                      className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold transition ${
                         isLive
                           ? "bg-slate-900 text-white hover:bg-slate-800"
-                          : "border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100"
-                      }`}>
-                      <PlayCircle size={18} />
-                      {isLive ? "Watch " : "Open"}
+                          : "border border-slate-200 text-slate-700 hover:bg-slate-50"
+                      }`} >
+                      <PlayCircle size={16} />
+                      {isLive ? "Watch Now" : "Open"}
                     </button>
+                    </Link>
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-x-8 gap-y-4">
-                    <div>
-                      <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-                        <CalendarDays size={14} />
-                        Date
-                      </p>
-                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
-                        {session.date}
-                      </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-6 text-xs text-slate-600">
+                    <div className="flex items-center gap-1.5">
+                      <CalendarDays size={14} />
+                      <span>{session.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Clock3 size={14} />
+                      <span>{session.time}</span>
                     </div>
                     <div>
-                      <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-                        <Clock3 size={14} />
-                        Time
-                      </p>
-                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
-                        {session.time}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-                        Duration
-                      </p>
-                      <p className="mt-1 md:text-[14px] text-[11px] font-semibold text-slate-900">
-                        {session.duration}
-                      </p>
+                      <span className="text-slate-400">•</span>
+                      <span className="ml-2">{session.duration}</span>
                     </div>
                   </div>
                 </div>
@@ -299,7 +271,6 @@ export default function ExamDetailsPage() {
           );
         })}
       </section>
-
       {filteredSessions.length === 0 && (
         <section className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 text-center">
           <p className="text-lg font-semibold text-slate-900">
