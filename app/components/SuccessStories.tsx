@@ -14,21 +14,18 @@ export default function SuccessStories() {
       subname: "",
       text: "Was super skeptical at first tbh (tried 2 other institutes before 😅). DSA felt like a mountain, especially coming from a tier-3 college. But Amit sir explanation of recursion actually made it click! ",
     },
-
     {
       img: "https://media.iquanta.in/ui_images/skills/Subject 1.png",
       name: "Rajesh Krishnamurthy",
       subname: "",
       text: "Writing this after 6 months in my new role. Mechanical grad who couldnot write a single line of code. Was scared about DSA (those leetcode hards 😱). But the building blocks approach really worked. Started from arrays, now solving graph problems! Big thanks to Sneha  for the extra doubt sessions.",
     },
-
     {
       img: "https://media.iquanta.in/ui_images/skills/Subject 5.png",
       name: "Karthik Iyer",
       subname: "",
       text: 'Real talk: This is one of those "become DSA expert in 30 days" scams. It intense, requires 3-4 hours daily commitment. ',
     },
-
     {
       img: "https://media.iquanta.in/ui_images/skills/Subject 8.png",
       name: "Vikram Singhania",
@@ -73,7 +70,6 @@ export default function SuccessStories() {
       subname: "",
       text: "Clear Explanations I used to get frustrated with DSA concepts, but the clear explanations at iSkills helped me break things down. Now, I approach problems with a much clearer mindset. ",
     },
-
     {
       img: "https://media.iquanta.in/ui_images/skills/Subject 7.png",
       name: "Anuj G",
@@ -175,7 +171,6 @@ export default function SuccessStories() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
