@@ -62,12 +62,10 @@ export default function Learning() {
             className="absolute md:w-260 w-[360] md:h-190 h-100
             bg-[linear-gradient(90deg,rgb(228,97,36)_25%,rgb(181,217,52)_42%,rgb(228,97,36)_62%,rgb(167,60,59)_84%)]
             -top-20 left-1/2 -translate-x-1/2
-            blur-[98px] rounded-full"
-          />
+            blur-[98px] rounded-full"/>
           <div
             className="relative rounded-[28px] p-2.5
-            bg-[linear-gradient(180deg,#EF7D6E_0%,#4BEBAD_46.5%,rgba(127,124,169,0.74)_97%)]"
-          >
+            bg-[linear-gradient(180deg,#EF7D6E_0%,#4BEBAD_46.5%,rgba(127,124,169,0.74)_97%)]" >
             <div className="relative bg-black/90 backdrop-blur-[14px] rounded-[21px] py-10 md:px-10 px-2">
               <div className="absolute top-0 left-92.5 w-px h-full bg-white/10 hidden md:block" />
               <div className="absolute top-0 right-97.5 w-px h-full bg-white/10 hidden md:block" />
@@ -81,8 +79,7 @@ export default function Learning() {
                     <h4
                       className="text-[30px] leading-9 font-bold mb-3.75
                       bg-[linear-gradient(90deg,#FFF_0%,#999_104%)]
-                      bg-clip-text text-transparent whitespace-pre-line"
-                    >
+                      bg-clip-text text-transparent whitespace-pre-line">
                       {item.title}
                     </h4>
                     <p className="text-sm leading-5 text-white opacity-50 mb-5">
@@ -91,32 +88,28 @@ export default function Learning() {
                     {item.coming ? (
                       <div
                         className="inline-flex items-center gap-2.5 text-sm px-4 py-2.5 rounded-[40px] text-black opacity-60 cursor-not-allowed
-                      bg-[linear-gradient(90deg,#ECECEC_0%,#898989_100%)]
-                      shadow-[0_54px_55px_rgba(212,212,212,0.25),
-                              0_-12px_30px_rgba(255,255,255,0.12),
-                              0_4px_6px_rgba(255,255,255,0.12),
-                              0_12px_13px_rgba(255,255,255,0.17),
-                              0_-3px_5px_rgba(255,255,255,0.09)]"
-                      >
+                        bg-[linear-gradient(90deg,#ECECEC_0%,#898989_100%)]
+                        shadow-[0_54px_55px_rgba(212,212,212,0.25),
+                        0_-12px_30px_rgba(255,255,255,0.12),
+                        0_4px_6px_rgba(255,255,255,0.12),
+                        0_12px_13px_rgba(255,255,255,0.17),
+                        0_-3px_5px_rgba(255,255,255,0.09)]">
                         Coming Soon
                       </div>
-                    ) : (
+                     ) : (
                       <Link
                         href={item.link}
                         className="inline-flex items-center gap-2.5 text-sm px-4 py-2.5 rounded-[40px] text-black
-                      bg-[linear-gradient(90deg,#ECECEC_0%,#898989_100%)]
-                      shadow-[0_54px_55px_rgba(212,212,212,0.25),
-                              0_-12px_30px_rgba(255,255,255,0.12),
-                              0_4px_6px_rgba(255,255,255,0.12),
-                              0_12px_13px_rgba(255,255,255,0.17),
-                              0_-3px_5px_rgba(255,255,255,0.09)]
-                      hover:-translate-y-0.5 hover:shadow-[0_60px_60px_rgba(212,212,212,0.3)]
-                      transition-all duration-200"
-                      >
+                        bg-[linear-gradient(90deg,#ECECEC_0%,#898989_100%)]
+                        shadow-[0_54px_55px_rgba(212,212,212,0.25),
+                        0_-12px_30px_rgba(255,255,255,0.12),
+                        0_4px_6px_rgba(255,255,255,0.12),
+                        0_12px_13px_rgba(255,255,255,0.17),
+                        0_-3px_5px_rgba(255,255,255,0.09)]
+                        hover:-translate-y-0.5 hover:shadow-[0_60px_60px_rgba(212,212,212,0.3)]
+                        transition-all duration-200">
                         Know More
-                        <MoveRight
-                          size={16}
-                          className="transition-transform group-hover:translate-x-1"
+                        <MoveRight size={16}  className="transition-transform group-hover:translate-x-1"
                         />
                       </Link>
                     )}

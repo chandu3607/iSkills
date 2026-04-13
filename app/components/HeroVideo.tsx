@@ -22,13 +22,13 @@ export default function HeroVideo() {
                 <span className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#FFB056]/30 animate-ping" />
                 <div
                   className="relative w-16 h-16 md:w-20 md:h-20 rounded-full 
-                bg-[#FFB056]/20 backdrop-blur-xl border border-[#FFB056]/30
-                flex items-center justify-center
-                shadow-[0_0_40px_rgba(255,255,255,0.2)]
-                group-hover:scale-110 transition">
+                  bg-[#FFB056]/20 backdrop-blur-xl border border-[#FFB056]/30
+                  flex items-center justify-center
+                  shadow-[0_0_40px_rgba(255,255,255,0.2)]
+                  group-hover:scale-110 transition">
                   <Play
                     fill="currentColor"
-                    className="text-[#FFB056]  w-8 h-8 ml-1"
+                    className="text-[#FFB056] w-8 h-8 ml-1"
                   />
                 </div>
               </div>

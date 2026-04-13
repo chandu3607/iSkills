@@ -28,8 +28,7 @@ export default function Navbar() {
                     window.open(
                       "https://www.linkedin.com/company/iskills-by-iquanta/",
                       "_blank",
-                    )
-                  }>
+                    )}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -104,8 +103,7 @@ export default function Navbar() {
                               hover:bg-white hover:text-black
                               transition-all duration-200
                               cursor-pointer
-                            "
-                          >
+                            ">
                             {item.name}
                           </div>
                         </Link>
@@ -121,8 +119,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={() => setIsContactOpen(true)}
-                className="bg-linear-to-r from-gray-200 to-gray-400 text-black text-[13px] px-4 py-2 rounded-full cursor-pointer"
-              >
+                className="bg-linear-to-r from-gray-200 to-gray-400 text-black text-[13px] px-4 py-2 rounded-full cursor-pointer">
                 Contact Us
               </button>
               <Link href="/login">
@@ -130,8 +127,7 @@ export default function Navbar() {
                   <img
                     src="https://media.iquanta.in/ui_images/skills/log-in.png"
                     className="w-4.75"
-                    alt="login"
-                  />
+                    alt="login"/>
                   Login
                 </button>
               </Link>
@@ -162,7 +158,7 @@ export default function Navbar() {
             </button>
           </div>
           {isMenuOpen && (
-            <div className="lg:hidden px-6 pb-6 text-white md:space-y-4 space-y-3">
+            <div className="lg:hidden px-6 pb-6 text-white md:space-y-4 space-y-3 h-screen">
               <div>
                 <button
                   onClick={() => setMobileDropdown(!mobileDropdown)}

@@ -37,35 +37,37 @@ export default function page() {
                 intact.
               </p>
               <div className="hidden md:block">
-              <div className="mt-10 max-w-xl rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-                <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(97,230,198,0.16),transparent_35%),linear-gradient(160deg,rgba(15,15,20,0.98)_0%,rgba(7,7,10,0.98)_100%)] p-6 sm:p-7">
-                  <div className="max-w-[60%]">
-                    <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#61E6C6]">
-                      Founder’s Note
-                    </p>
-                    <p className="mt-4 text-[14px] leading-6 text-[#C8CDD8] sm:text-[15px]">
-                      At iSkills, we are building a learning experience that
-                      helps serious learners move from ambition to execution
-                      with structured support.
-                    </p>
-                    <div className="mt-5">
-                      <p className="text-[16px] font-semibold text-white">
-                        Indrajeet Singh
+                <div className="mt-10 max-w-xl rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(97,230,198,0.16),transparent_35%),linear-gradient(160deg,rgba(15,15,20,0.98)_0%,rgba(7,7,10,0.98)_100%)] p-6 sm:p-7">
+                    <div className="max-w-[60%]">
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#61E6C6]">
+                        Founder’s Note
                       </p>
-                      <p className="text-[13px] text-white/55">Founder & CEO</p>
+                      <p className="mt-4 text-[14px] leading-6 text-[#C8CDD8] sm:text-[15px]">
+                        At iSkills, we are building a learning experience that
+                        helps serious learners move from ambition to execution
+                        with structured support.
+                      </p>
+                      <div className="mt-5">
+                        <p className="text-[16px] font-semibold text-white">
+                          Indrajeet Singh
+                        </p>
+                        <p className="text-[13px] text-white/55">
+                          Founder & CEO
+                        </p>
+                      </div>
+                    </div>
+                    <div className="pointer-events-none absolute bottom-0 right-0 w-[36%]">
+                      <img
+                        src="https://media.iquanta.in/ui_images/skills/founder.png"
+                        alt="Indrajeet Singh"
+                        width={320}
+                        height={360}
+                        className="h-auto w-full object-contain"
+                      />
                     </div>
                   </div>
-                  <div className="pointer-events-none absolute bottom-0 right-0 w-[36%]">
-                    <img
-                      src="https://media.iquanta.in/ui_images/skills/founder.png"
-                      alt="Indrajeet Singh"
-                      width={320}
-                      height={360}
-                      className="h-auto w-full object-contain"
-                    />
-                  </div>
                 </div>
-              </div>
               </div>
             </div>
             <div className="mx-auto w-full ">
@@ -180,25 +182,43 @@ export default function page() {
                             <option className="bg-[#0B0B0D]" value="">
                               Where did you hear about us?
                             </option>
-                            <option className="bg-[#0B0B0D]" value="Instagram post / Story">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="Instagram post / Story"
+                            >
                               Instagram post / Story
                             </option>
-                            <option className="bg-[#0B0B0D]" value="Youtube Video">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="Youtube Video"
+                            >
                               Youtube Video
                             </option>
-                            <option className="bg-[#0B0B0D]" value="Google Search">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="Google Search"
+                            >
                               Google Search
                             </option>
-                            <option className="bg-[#0B0B0D]" value="Friends / Family">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="Friends / Family"
+                            >
                               Friends / Family
                             </option>
-                            <option className="bg-[#0B0B0D]" value="Instagram Ads">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="Instagram Ads"
+                            >
                               Instagram Ads
                             </option>
                             <option className="bg-[#0B0B0D]" value="Google Ads">
                               Google Ads
                             </option>
-                            <option className="bg-[#0B0B0D]" value="LinkedIn Post">
+                            <option
+                              className="bg-[#0B0B0D]"
+                              value="LinkedIn Post"
+                            >
                               LinkedIn Post
                             </option>
                           </select>
@@ -227,15 +247,16 @@ export default function page() {
                     Already have an account?{" "}
                     <Link
                       href="/login"
-                      className="font-semibold text-white underline underline-offset-4">
+                      className="font-semibold text-white underline underline-offset-4"
+                    >
                       Sign in
                     </Link>
                   </p>
                 </div>
               </div>
             </div>
-              <div className="block md:hidden">
-                <div className="md:mt-10  max-w-xl rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+            <div className="block md:hidden">
+              <div className="md:mt-10  max-w-xl rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
                 <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(97,230,198,0.16),transparent_35%),linear-gradient(160deg,rgba(15,15,20,0.98)_0%,rgba(7,7,10,0.98)_100%)] p-6 sm:p-7">
                   <div className="max-w-[60%]">
                     <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#61E6C6]">
@@ -264,7 +285,7 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
           </div>
         </div>
       </section>
