@@ -13,7 +13,7 @@ export default function NotFound() {
     <>
       <Headder />
       <div className={styles.pageWrap}>
-        <div className="flex flex-col items-center">
+        <div className={styles.contentWrap}>
           <div className={styles.main_wrapper}>
             <div className={styles.main}>
               <div className={styles.antenna}>
@@ -83,7 +83,8 @@ export default function NotFound() {
             </div>
           </div>
 
-          <div className="-mt-26 flex flex-col items-center text-center text-white md:-mt-10">
+          <div className="mt-7">
+            <div className={styles.actionBlock} >
             <p className="text-white/60 text-[15px] md:text-[17px] mb-2">
               The page you were looking for could not be found
             </p>
@@ -112,6 +113,7 @@ export default function NotFound() {
                 Go Home
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </div>
