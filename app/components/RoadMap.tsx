@@ -42,11 +42,13 @@ export default function Roadmap() {
 
   return (
     <section className="bg-black md:py-10 py-6 md:pb-20 ">
+      
       <div className="text-center md:mb-15 mb-10">
         <h2 className=" max-w-6xl mx-auto text-[26px] leading-9.5 md:text-[54px] md:px-0 px-10 md:leading-18.5 font-black bg-[linear-gradient(90deg,#FEB5BA_0%,#D5B1FD_46.5%,#C3FFBE_100%)] bg-clip-text text-transparent">
           Discover Your Roadmap to Success
         </h2>
       </div>
+
       <div className="mx-auto max-w-6xl px-4 md:hidden">
         <div className="relative pl-8">
           <div className="absolute left-2 top-3 bottom-3 w-px bg-white/15" />
@@ -55,12 +57,16 @@ export default function Roadmap() {
               <div key={step.text} className="relative">
                 <div
                   className="absolute -left-8 top-6 h-4 w-4 rounded-full border border-white/60"
-                  style={{ background: step.glow }}/>
+                  style={{ background: step.glow }}
+                />
                 <div className="rounded-[22px] border border-white/12 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm">
                   <div className="mb-3 flex items-center gap-3">
                     <div
                       className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[13px] font-black text-white"
-                      style={{ background: `linear-gradient(135deg, ${step.glow}, rgba(255,255,255,0.12))` }}>
+                      style={{
+                        background: `linear-gradient(135deg, ${step.glow}, rgba(255,255,255,0.12))`,
+                      }}
+                    >
                       {i + 1}
                     </div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/45">
@@ -76,11 +82,13 @@ export default function Roadmap() {
           </div>
         </div>
       </div>
+
       <div className="relative hidden md:block">
         <div className="relative z-10">
           <img
             src="https://media.iquanta.in/ui_images/skills/roadmap.webp"
-            className="w-full" />
+            className="w-full"
+          />
         </div>
         {steps.map((step, i) => (
           <div
@@ -88,19 +96,20 @@ export default function Roadmap() {
             className={`absolute ${step.className} 
                 w-50 5-40 
                 rounded-full border border-white/40 
-                flex items-center justify-center z-10`}>
+                flex items-center justify-center z-10`} >
             <div className="w-50 h-50 rounded-full border border-white/20 flex items-center justify-center">
               <div
                 className={`relative w-45 h-45 rounded-full 
                     bg-white/10 border border-white/50 
                     flex items-center justify-center px-3 text-center
                     transition-all duration-300
-                    hover:scale-110 hover:border-4 hover:border-white/50 hover:shadow-[inset_0px_9px_11px_0px_rgba(0,0,0,0.5),0px_1px_12px_5px_rgba(0,0,0,0)]
+                    hover:scale-112 hover:border-4 hover:border-white/50 hover:shadow-[inset_0px_9px_11px_0px_rgba(0,0,0,0.5),0px_1px_12px_5px_rgba(0,0,0,0)]
                     hover:bg-linear-to-br ${step.hover}`}>
                 <div
                   className="absolute w-30 h-30 rounded-full blur-[50px] 
-                 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80"
-                  style={{ background: step.glow }}/>
+                    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80"
+                  style={{ background: step.glow }}
+                />
                 <h3 className="text-white text-[16px] leading-5 italic font-extrabold relative">
                   {step.text}
                 </h3>
@@ -109,6 +118,7 @@ export default function Roadmap() {
           </div>
         ))}
       </div>
+
     </section>
   );
 }

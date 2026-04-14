@@ -28,7 +28,7 @@ export default function Hero() {
           bg-[linear-gradient(92deg,#00efff,#ff6b00)]" />
         <div
           className="relative z-10 text-center max-w-6xl w-full mx-auto px-6
-          pt-30 pb-10 md:pt-45 md:pb-10" >
+          pt-30 pb-10 md:pt-20 md:pb-0" >
            <p
             className="
               inline-flex items-center gap-2
