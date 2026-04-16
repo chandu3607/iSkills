@@ -20,13 +20,11 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
-
 const paymentMethods = [
   { label: "Cards", icon: CreditCard },
   { label: "UPI", icon: Smartphone },
   { label: "Wallet", icon: Wallet },
 ];
-
 const checkoutMentors = [
   {
     name: "Saurabh Moharikar",
@@ -50,18 +48,15 @@ const checkoutMentors = [
     img: "https://iquantamedia.s3.ap-south-1.amazonaws.com/ui_images/skills/skill-home/ajay-kumar.webp",
   },
 ];
-
 type Coupon = {
   code: string;
   title: string;
   description: string;
   discount: number;
 };
-
 const programFee = 10000;
 const gstAmount = 1800;
 const listPrice = 20800;
-
 const availableCoupons: Coupon[] = [
   {
     code: "SKILLS1000",
@@ -81,13 +76,13 @@ const availableCoupons: Coupon[] = [
     description: "Best value coupon for this checkout.",
     discount: 2000,
   },
-   {
+  {
     code: "IQCARE3000",
     title: "Limited period offer",
     description: "Best value coupon for this checkout.",
     discount: 3000,
   },
-   {
+  {
     code: "IQCARE4000",
     title: "Limited period offer",
     description: "Best value coupon for this checkout.",
@@ -102,13 +97,10 @@ export default function Payment() {
   const [couponInput, setCouponInput] = React.useState("");
   const [isLoved, setIsLoved] = React.useState(false);
   const [shareNotice, setShareNotice] = React.useState("");
-
   const subtotal = programFee + gstAmount;
   const discountAmount = appliedCoupon?.discount ?? 0;
   const payableAmount = Math.max(subtotal - discountAmount, 0);
-
   const formatPrice = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
-
   const openCouponDrawer = () => setIsCouponDrawerOpen(true);
   const closeCouponDrawer = () => setIsCouponDrawerOpen(false);
   const openShareDrawer = () => {
@@ -116,35 +108,29 @@ export default function Payment() {
     setIsShareDrawerOpen(true);
   };
   const closeShareDrawer = () => setIsShareDrawerOpen(false);
-
   const applyCoupon = (coupon: Coupon) => {
     setAppliedCoupon(coupon);
     setCouponInput(coupon.code);
     closeCouponDrawer();
   };
-
   const removeAppliedCoupon = () => {
     setAppliedCoupon(null);
     setCouponInput("");
   };
-
   const applyManualCoupon = () => {
     const manualCode = couponInput.trim();
     if (!manualCode) {
       removeAppliedCoupon();
       return;
     }
-
     const matchedCoupon = availableCoupons.find(
       (coupon) => coupon.code.toLowerCase() === manualCode.toLowerCase(),
     );
-
     if (matchedCoupon) {
       setAppliedCoupon({ ...matchedCoupon, code: manualCode });
       closeCouponDrawer();
       return;
     }
-
     setAppliedCoupon({
       code: manualCode,
       title: "Manual coupon",
@@ -153,7 +139,6 @@ export default function Payment() {
     });
     closeCouponDrawer();
   };
-
   const copyShareLink = async () => {
     const shareUrl = window.location.href;
     try {
@@ -162,13 +147,10 @@ export default function Payment() {
         setShareNotice("Link copied. You can paste it anywhere.");
         return;
       }
-    } catch {
-      // Fallback handled below.
-    }
+    } catch {}
     window.prompt("Copy this link", shareUrl);
     setShareNotice("Copy the link and share it manually.");
   };
-
   const openShareTarget = async (
     platform:
       | "whatsapp"
@@ -183,12 +165,10 @@ export default function Payment() {
     const encodedText = encodeURIComponent(
       "Check this Data Analytics Job Guarantee program",
     );
-
     if (platform === "copy") {
       await copyShareLink();
       return;
     }
-
     if (platform === "instagram") {
       await copyShareLink();
       window.open(
@@ -199,7 +179,6 @@ export default function Payment() {
       setShareNotice("Instagram opened. Paste the copied link there.");
       return;
     }
-
     const targetUrl =
       platform === "whatsapp"
         ? `https://wa.me/?text=${encodedText}%20${encodedUrl}`
@@ -280,9 +259,6 @@ export default function Payment() {
               <div className="md:rounded-3xl rounded-3xl md:border-2 border border-white/60 bg-[#080808] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.35)] md:p-8 ">
                 <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-6">
                   <div>
-                    {/* <p className="text-sm font-medium text-white/50 relative z-10">
-                    Program
-                  </p> */}
                     <h2 className=" md:text-[34px] text-[22px] font-semibold text-white relative z-10">
                       Data Analytics Job Guarantee
                     </h2>
@@ -301,10 +277,7 @@ export default function Payment() {
                 </div>
                 <div className="flex flex-wrap md:gap-3 gap-2  pt-6">
                   {[
-                    {
-                      icon: Briefcase,
-                      text: "Job Guarantee (Unlimited Interview Opportunities)",
-                    },
+                    { icon: Briefcase, text: "Job Guarantee (Unlimited Interview Opportunities)" },
                     { icon: Video, text: "Live Sessions" },
                     { icon: MessagesSquare, text: "1 on 1 Live Doubt Support" },
                     { icon: Award, text: "Course Completion Certificate" },
@@ -317,8 +290,7 @@ export default function Payment() {
                     return (
                       <div
                         key={i}
-                        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 backdrop-blur-md transition hover:bg-white/10"
-                      >
+                        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 backdrop-blur-md transition hover:bg-white/10" >
                         <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-white/70">
                           <Icon className="h-3 w-3" />
                         </span>
@@ -351,14 +323,12 @@ export default function Payment() {
                     style={{
                       scrollbarWidth: "thin",
                       scrollbarColor: "#755ea5 #161616",
-                    }}
-                  >
+                    }}>
                     <div className="flex w-max md:gap-4 gap-2  pb-3 snap-x snap-mandatory">
                       {checkoutMentors.map((mentor) => (
                         <div
                           key={mentor.name}
-                          className="relative md:h-60 h-48 w-72.5 md:w-90 shrink-0 snap-start overflow-hidden rounded-[30px] border border-white/35 bg-[linear-gradient(132deg,#221055_0%,#4D1DB1_35%,#0A124A_100%)] shadow-[0_16px_40px_rgba(0,0,0,0.45)]"
-                        >
+                          className="relative md:h-60 h-48 w-72.5 md:w-90 shrink-0 snap-start overflow-hidden rounded-[30px] border border-white/35 bg-[linear-gradient(132deg,#221055_0%,#4D1DB1_35%,#0A124A_100%)] shadow-[0_16px_40px_rgba(0,0,0,0.45)]" >
                           <div className="absolute -left-12 -top-12 h-40 w-40 rounded-full bg-[#8D6DFF]/30 blur-3xl" />
                           <div className="absolute right-16 top-0 h-28 w-28 rounded-full bg-[#2EE7FF]/18 blur-2xl" />
                           <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(11,8,34,0.2)_15%,rgba(9,9,24,0.62)_62%,rgba(9,9,24,0.9)_100%)]" />
@@ -382,8 +352,7 @@ export default function Payment() {
                             src={mentor.img}
                             alt={mentor.name}
                             loading="lazy"
-                            className="absolute bottom-0 right-0 z-10 md:h-full h-[70%] object-contain"
-                          />
+                            className="absolute bottom-0 right-0 z-10 md:h-full h-[70%] object-contain" />
                         </div>
                       ))}
                     </div>
@@ -410,8 +379,7 @@ export default function Payment() {
                     return (
                       <div
                         key={method.label}
-                        className="rounded-2xl border border-white/10 bg-white/2 p-4 text-center"
-                      >
+                        className="rounded-2xl border border-white/10 bg-white/2 p-4 text-center" >
                         <Icon className="mx-auto h-5 w-5 text-white/80" />
                         <p className="mt-2 md:text-sm text-xs font-medium text-white/70">
                           {method.label}
@@ -471,21 +439,18 @@ export default function Payment() {
                         value={couponInput}
                         readOnly
                         onClick={openCouponDrawer}
-                        className="min-w-0 w-full flex-1 cursor-pointer bg-transparent px-3 text-sm text-white outline-none placeholder:text-white/25"
-                      />
+                        className="min-w-0 w-full flex-1 cursor-pointer bg-transparent px-3 text-sm text-white outline-none placeholder:text-white/25" />
                       <button
                         type="button"
                         onClick={openCouponDrawer}
-                        className="shrink-0 rounded-xl bg-linear-to-r from-gray-200 to-gray-400 px-4 py-2 text-xs font-medium text-black cursor-pointer transition hover:bg-white/90"
-                      >
+                        className="shrink-0 rounded-xl bg-linear-to-r from-gray-200 to-gray-400 px-4 py-2 text-xs font-medium text-black cursor-pointer transition hover:bg-white/90">
                         {appliedCoupon ? "Change" : "Apply"}
                       </button>
                       {appliedCoupon ? (
                         <button
                           type="button"
                           onClick={removeAppliedCoupon}
-                          className="shrink-0 rounded-xl border border-white/15 px-3 py-2 text-xs font-medium text-white/80 transition hover:bg-white/8"
-                        >
+                          className="shrink-0 rounded-xl border border-white/15 px-3 py-2 text-xs font-medium text-white/80 transition hover:bg-white/8">
                           Remove
                         </button>
                       ) : null}
@@ -493,8 +458,7 @@ export default function Payment() {
                     {appliedCoupon ? (
                       <p
                         className="break-all px-3 pt-1 text-[10px] text-emerald-300"
-                        title={`${appliedCoupon.code} applied`}
-                      >
+                        title={`${appliedCoupon.code} applied`}>
                         {appliedCoupon.code} applied
                         {discountAmount > 0
                           ? `. You saved ${formatPrice(discountAmount)}.`
@@ -517,20 +481,17 @@ export default function Payment() {
                         type="button"
                         aria-label="Like program"
                         onClick={() => setIsLoved((previous) => !previous)}
-                        className="cursor-pointer"
-                      >
+                        className="cursor-pointer" >
                         <Heart
                           className={`h-5 w-5 transition ${
                             isLoved ? "fill-red-500 text-red-500" : "text-white"
-                          }`}
-                        />
+                          }`}/>
                       </button>
                       <button
                         type="button"
                         aria-label="Share program"
                         onClick={handleShare}
-                        className="cursor-pointer"
-                      >
+                        className="cursor-pointer">
                         <Share2 className="h-5 w-5 text-white" />
                       </button>
                     </div>
@@ -566,23 +527,20 @@ export default function Payment() {
         </div>
       </section>
       <div
-        className={`fixed inset-0 z-[9999] transition ${
+        className={`fixed inset-0 z-9999 transition ${
           isCouponDrawerOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-      >
+        }`}>
         <button
           type="button"
           aria-label="Close coupon drawer"
           onClick={closeCouponDrawer}
           className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
             isCouponDrawerOpen ? "opacity-100" : "opacity-0"
-          }`}
-        />
+          }`} />
         <aside
           className={`absolute right-0 top-0 flex h-full w-full max-w-md flex-col overflow-hidden border-l border-white/15 bg-[#0c0c0c] p-4 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.45)] transition-transform duration-300 ${
             isCouponDrawerOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
+          }`} >
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs uppercase tracking-wide text-white/45">
@@ -595,12 +553,10 @@ export default function Payment() {
             <button
               type="button"
               onClick={closeCouponDrawer}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 text-white/80 transition hover:bg-white/12"
-            >
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 text-white/80 transition hover:bg-white/12">
               <X className="h-4 w-4" />
             </button>
           </div>
-
           <div className="mt-6 rounded-2xl border border-white/12 bg-white/3 p-4">
             <p className="text-xs uppercase tracking-wide text-white/45">
               Have a coupon code?
@@ -616,13 +572,11 @@ export default function Payment() {
                   }
                 }}
                 placeholder="Enter coupon code"
-                className="min-w-0 flex-1 rounded-xl border border-white/10 bg-black/35 px-3 py-2 text-sm text-white outline-none placeholder:text-white/25"
-              />
+                className="min-w-0 flex-1 rounded-xl border border-white/10 bg-black/35 px-3 py-2 text-sm text-white outline-none placeholder:text-white/25"/>
               <button
                 type="button"
                 onClick={applyManualCoupon}
-                className="rounded-xl bg-linear-to-r from-gray-200 to-gray-400 px-4 py-2 text-xs font-semibold text-black transition hover:bg-white/90"
-              >
+                className="rounded-xl bg-linear-to-r from-gray-200 to-gray-400 px-4 py-2 text-xs font-semibold text-black transition hover:bg-white/90">
                 Apply
               </button>
             </div>
@@ -635,8 +589,7 @@ export default function Payment() {
               return (
                 <div
                   key={coupon.code}
-                  className="rounded-2xl border border-white/12 bg-white/3 p-4"
-                >
+                  className="rounded-2xl border border-white/12 bg-white/3 p-4">
                   <p className="text-sm font-semibold text-white">
                     {coupon.code}
                   </p>
@@ -656,8 +609,7 @@ export default function Payment() {
                         isApplied
                           ? "cursor-default bg-emerald-500/20 text-emerald-300"
                           : "cursor-pointer bg-linear-to-r from-gray-200 to-gray-400 text-black hover:bg-white/90"
-                      }`}
-                    >
+                      }`}>
                       {isApplied ? "Applied" : "Apply"}
                     </button>
                   </div>
@@ -668,23 +620,20 @@ export default function Payment() {
         </aside>
       </div>
       <div
-        className={`fixed inset-0 z-[10000] transition ${
+        className={`fixed inset-0 z-10000 transition ${
           isShareDrawerOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-      >
+        }`}>
         <button
           type="button"
           aria-label="Close share drawer"
           onClick={closeShareDrawer}
           className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
             isShareDrawerOpen ? "opacity-100" : "opacity-0"
-          }`}
-        />
+          }`} />
         <aside
           className={`absolute right-0 top-0 h-full w-full max-w-sm border-l border-white/15 bg-[#0c0c0c] p-4 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.45)] transition-transform duration-300 ${
             isShareDrawerOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
+          }`}>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs uppercase tracking-wide text-white/45">
@@ -697,8 +646,7 @@ export default function Payment() {
             <button
               type="button"
               onClick={closeShareDrawer}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 text-white/80 transition hover:bg-white/12"
-            >
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 text-white/80 transition hover:bg-white/12" >
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -707,47 +655,40 @@ export default function Payment() {
             <button
               type="button"
               onClick={() => openShareTarget("whatsapp")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10" >
               WhatsApp
             </button>
             <button
               type="button"
               onClick={() => openShareTarget("instagram")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10">
               Instagram
             </button>
             <button
               type="button"
               onClick={() => openShareTarget("facebook")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10" >
               Facebook
             </button>
             <button
               type="button"
               onClick={() => openShareTarget("twitter")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10" >
               X (Twitter)
             </button>
             <button
               type="button"
               onClick={() => openShareTarget("telegram")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10" >
               Telegram
             </button>
             <button
               type="button"
               onClick={() => openShareTarget("copy")}
-              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+              className="rounded-xl border border-white/12 bg-white/4 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"  >
               Copy Link
             </button>
           </div>
-
           {shareNotice ? (
             <p className="mt-4 text-xs text-emerald-300">{shareNotice}</p>
           ) : null}
@@ -766,8 +707,7 @@ export default function Payment() {
               {appliedCoupon ? (
                 <p
                   className="mt-1 truncate text-[10px] text-emerald-300"
-                  title={`${appliedCoupon.code} applied`}
-                >
+                  title={`${appliedCoupon.code} applied`}>
                   {appliedCoupon.code} applied
                   {discountAmount > 0
                     ? ` • Saved ${formatPrice(discountAmount)}`
@@ -780,8 +720,7 @@ export default function Payment() {
                 type="button"
                 aria-label="Like program"
                 onClick={() => setIsLoved((previous) => !previous)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5"
-              >
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5" >
                 <Heart
                   className={`h-4 w-4 transition ${
                     isLoved ? "fill-red-500 text-red-500" : "text-white"
@@ -792,8 +731,7 @@ export default function Payment() {
                 type="button"
                 aria-label="Share program"
                 onClick={handleShare}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5"
-              >
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5"  >
                 <Share2 className="h-4 w-4 text-white" />
               </button>
             </div>
@@ -802,8 +740,7 @@ export default function Payment() {
             <button
               type="button"
               onClick={openCouponDrawer}
-              className="min-w-0 flex-1 rounded-lg border border-white/12 bg-white/4 px-3 py-2 text-left text-xs text-white/85"
-            >
+              className="min-w-0 flex-1 rounded-lg border border-white/12 bg-white/4 px-3 py-2 text-left text-xs text-white/85"   >
               <span className="block truncate">
                 {appliedCoupon ? appliedCoupon.code : "Apply coupon"}
               </span>
@@ -811,16 +748,14 @@ export default function Payment() {
             <button
               type="button"
               onClick={openCouponDrawer}
-              className="shrink-0 rounded-lg bg-linear-to-r from-gray-200 to-gray-400 px-3 py-2 text-xs font-medium text-black"
-            >
+              className="shrink-0 rounded-lg bg-linear-to-r from-gray-200 to-gray-400 px-3 py-2 text-xs font-medium text-black"  >
               {appliedCoupon ? "Change" : "Apply"}
             </button>
             {appliedCoupon ? (
               <button
                 type="button"
                 onClick={removeAppliedCoupon}
-                className="shrink-0 rounded-lg border border-white/15 px-3 py-2 text-xs font-medium text-white/80"
-              >
+                className="shrink-0 rounded-lg border border-white/15 px-3 py-2 text-xs font-medium text-white/80"  >
                 Remove
               </button>
             ) : null}
