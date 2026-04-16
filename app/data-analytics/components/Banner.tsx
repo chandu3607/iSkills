@@ -30,23 +30,20 @@ export default function Banner() {
               w-62.5 sm:w-100 md:w-130.5 
               h-30 md:h-50
               bg-[linear-gradient(92deg,#00efff,#ff6b00)]
-              blur-[60px] opacity-90 rounded-full"
-            />
+              blur-[60px] opacity-90 rounded-full" />
             <div className="relative w-full md:w-145 mx-auto">
               <div
                 className="absolute inset-0 rounded-2xl 
                 bg-[linear-gradient(90deg,#00efff,#ff6b00)]
-                blur-[20px] opacity-30 "
-              />
+                blur-[20px] opacity-30" />
               <div className="relative w-full md:max-w-145 max-w-full mx-auto">
                 {!play ? (
                   <div
                     onClick={() => setPlay(true)}
-                    className="relative cursor-pointer group">
+                    className="relative cursor-pointer group" >
                     <img
-                      src="https://img.youtube.com/vi/l_hS9GeGnYU/maxresdefault.jpg"
-                      className="w-full h-50 sm:h-75 md:h-78.75 object-cover rounded-xl"
-                    />
+                      src="https://img.youtube.com/vi/n2YYzOVl_z8/maxresdefault.jpg"
+                      className="w-full h-50 sm:h-75 md:h-78.75 object-cover rounded-xl" />
                     <div className="absolute inset-0 bg-black/40 rounded-xl" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative flex items-center justify-center">
@@ -55,9 +52,7 @@ export default function Banner() {
                         absolute w-10 h-10 md:w-13 md:h-13 rounded-full
                         bg-[#FEC22E]
                         opacity-60
-                        animate-ping
-                        "
-                        ></span>
+                        animate-ping"></span>
                         <div
                           className="
                           relative z-10
@@ -70,11 +65,10 @@ export default function Banner() {
                             className="w-4 h-4 md:w-5 md:h-5 text-white "
                           />
                         </div>
-                      <div></div>
                       </div>
                     </div>
                   </div>
-                  ) : (
+                ) : (
                   <div className="relative">
                     <button
                       onClick={() => setPlay(false)}
@@ -83,17 +77,19 @@ export default function Banner() {
                       bg-[linear-gradient(248deg,#FEC22E_23.04%,#D8950E_72.85%)] hover:bg-black
                       text-white rounded-full p-2 cursor-pointer
                       transition
-                      ">
+                      "
+                    >
                       <X className="w-4 h-4" />
                     </button>
                     <iframe
-                      src="https://www.youtube.com/embed/l_hS9GeGnYU?autoplay=1&mute=0&rel=0"
+                      src="https://www.youtube.com/embed/n2YYzOVl_z8?autoplay=1&mute=0&rel=0"
                       className="w-full h-50 sm:h-75 md:h-78.75 rounded-xl border border-white/10"
                       allow="autoplay"
                     />
                   </div>
                 )}
               </div>
+
               {/* Decorative Images (hidden on mobile for clean UI) */}
               <div className="hidden md:block absolute -left-45 -top-13 w-47.5 z-10">
                 <img src="https://media.iquanta.in/ui_images/skills/vedio-layer-left.png" />
@@ -108,8 +104,7 @@ export default function Banner() {
               className="
                 flex flex-wrap justify-center items-center 
                 gap-2 sm:gap-5 
-                text-[#A6A6AE] text-[14px] sm:text-[16px]
-               " >
+                text-[#A6A6AE] text-[14px] sm:text-[16px] " >
               <li>
                 <span className="text-white">Mode:</span> Live Classes
               </li>
@@ -119,21 +114,22 @@ export default function Banner() {
               </li>
               <span className="opacity-40 hidden sm:inline">|</span>
               <li>
-                <span className="text-white">Duration:</span> 6 Months
+                <span className="text-white">Duration:</span> 1 Year
               </li>
             </ul>
             <div className="flex flex-col sm:flex-row justify-center gap-3 mt-7.5">
               <button
                 onClick={() => setIsContactOpen(true)}
                 className="
-                  px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-                  bg-[linear-gradient(137deg,#683FBE_0%,#26B884_89.86%)]
-                  shadow-[rgb(42,176,137)_-23px_19px_42px_-11px]
-                  hover:scale-105 hover:shadow-[0_10px_30px_rgba(38,184,132,0.5)]
-                  transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
-                  " >
+                      px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
+                      bg-[linear-gradient(137deg,#683FBE_0%,#26B884_89.86%)]
+                      shadow-[rgb(42,176,137)_-23px_19px_42px_-11px]
+                      hover:scale-105 hover:shadow-[0_10px_30px_rgba(38,184,132,0.5)]
+                      transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
+                      " >
                 Enquire Now <MoveRight className="w-4 h-4" />
               </button>
+
               <button
                 onClick={() => {
                   const el = document.getElementById("Courses");
@@ -144,12 +140,13 @@ export default function Banner() {
                   }
                 }}
                 className="
-              px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-              border border-[#26B884]
-              bg-[linear-gradient(137deg,#683fbe24_0%,#26b8842e_89.86%)]
-              hover:scale-105 hover:border-[#4fffb0]
-              transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
-              ">
+                      px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
+                      border border-[#26B884]
+                      bg-[linear-gradient(137deg,#683fbe24_0%,#26b8842e_89.86%)]
+                      hover:scale-105 hover:border-[#4fffb0]
+                      transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
+                      "
+              >
                 View Training Options <MoveRight className="w-4 h-4" />
               </button>
             </div>
