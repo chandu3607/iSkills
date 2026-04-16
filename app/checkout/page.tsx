@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Headder from "../components/Headder";
 import Payment from "./components/Payment";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Checkout | iSkills",
@@ -15,6 +16,7 @@ export default function Page() {
       <main>
         <Payment />
       </main>
+      <Footer />
     </>
   );
 }

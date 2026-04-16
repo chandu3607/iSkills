@@ -650,7 +650,6 @@ export default function Payment() {
               <X className="h-4 w-4" />
             </button>
           </div>
-
           <div className="mt-6 grid grid-cols-2 gap-3">
             <button
               type="button"

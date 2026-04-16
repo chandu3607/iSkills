@@ -1,155 +1,135 @@
 "use client";
-import { MoveRight } from 'lucide-react'
-import React from 'react'
+import { MoveRight, CheckCircle2 } from "lucide-react";
+import React from "react";
+
+const stats = [
+  { value: "200+", label: "Live Session Hours" },
+  { value: "12h", label: "Daily Doubt Solving" },
+  { value: "Sat & Sun", label: "3 PM – 5 PM IST" },
+];
+
+const features = [
+  "Live sessions by industry experts",
+  "Real-time industry experience with domain-specific projects",
+  "Job-ready across 6+ technologies",
+  "Become a certified Data Analyst",
+  "Build stunning visual dashboards from complex data",
+  "Solve real-world business problems and use cases",
+];
 
 export default function PmpSection() {
   return (
-    <section className="relative bg-black md:py-16 py-8 overflow-hidden">
-      <div className="absolute -top-17.5 left-0 right-0 mx-auto 
-        w-237.5 h-95  rounded-full 
-        bg-[#3300FF] blur-[90px] md:opacity-40 opacity-20" />
-      <div className="absolute top-0 opacity-40 w-full">
-        <img
-          src="https://media.iquanta.in/ui_images/skills/banner-bg.png"
-          className="w-full"
-        />
+    <section className="relative bg-[#080808] py-20 md:py-0 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse,rgba(104,63,190,0.1),transparent_65%)] blur-3xl" />
       </div>
-    <div className="max-w-6xl mx-auto px-4 relative z-10">
-      <div className="grid md:grid-cols-12 grid-cols-1 gap-8 md:gap-16 items-center">
-        <div className='md:col-span-7'>
-          <h2 className="
-            text-[22px] sm:text-[26px] md:text-[32px]
-            font-bold leading-8 sm:leading-9 md:leading-11.25 mb-2.5
-            bg-[linear-gradient(99deg,#61E6C6_6.97%,#127EF1_34.37%,#EF7D6E_88.36%)]
-            bg-clip-text text-transparent
-          ">
-            Data Analytics certification program
-          </h2>
 
-          <h6 className="text-[#EDEEF1] text-[13px] sm:text-[14px] md:text-[15px] italic font-semibold leading-6 sm:leading-7 md:leading-8.75">
-            No prior knowledge needed | Updated Industry oriented syllabus 
-          </h6>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-          <p className="text-[#EDEEF1] text-[14px] sm:text-[15px] md:text-[16px] leading-6">
-            Master Data analytics and business intelligence from scratch, deep dive into data and extract hidden insights to optimize and enhance business problems like never before. 
-          </p>
+          {/* Left — Content */}
+          <div>
+            {/* Label */}
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[#4a4a58] font-medium mb-4">
+              About the Program
+            </p>
 
-          <p className="text-[#EDEEF1] text-[14px] sm:text-[15px] md:text-[16px] leading-6">
-           Leveraging data analytics will help you analyze data better, make complex decisions effortlessly and help solve complex business problems.
-          </p>
+            {/* Heading */}
+            <h2 className="text-[26px] sm:text-[32px] md:text-[38px] font-bold leading-[1.15] tracking-[-0.02em] text-white mb-4">
+              Data Analytics{" "}
+              <span className="bg-[linear-gradient(135deg,#683FBE,#26B884)] bg-clip-text text-transparent">
+                Certification Program
+              </span>
+            </h2>
 
-          {/* <p className="text-[#EDEEF1] text-[14px] sm:text-[15px] md:text-[16px] leading-6">
-            In today's data-driven world, mastering data analytics training is essential. With applications across industries, a data analytics certification is key to career success.
-          </p> */}
-          <div className="
-            mt-6.25 p-px rounded-[20px]
-            bg-[linear-gradient(45deg,#7BC1D7,transparent)]
-            w-full sm:w-fit
-          ">
-            <ul className="
-              flex flex-wrap sm:flex-nowrap
-              gap-5 sm:gap-7.5 px-4 sm:px-5 py-3
-              bg-black rounded-[20px]
-            ">
-              <li className="text-start">
-                <h6 className="text-[#27B884] text-[18px] sm:text-[20px] md:text-[22px] font-bold mb-1">
-                  200+
-                </h6>
-                <p className="text-white text-[12px] sm:text-[13px] md:text-[14px]">
-                  Hours of Live Sessions
-                </p>
-              </li>
+            {/* Tagline */}
+            <p className="text-[13px] text-[#4a4a58] italic mb-5 font-medium">
+              No prior knowledge needed &nbsp;·&nbsp; Updated industry-oriented syllabus
+            </p>
 
-              <li className="text-start">
-                <h6 className="text-[#27B884] text-[18px] sm:text-[20px] md:text-[22px] font-bold mb-1">
-                  12
-                </h6>
-                <p className="text-white text-[12px] sm:text-[13px] md:text-[14px]">
-                  Hours daily doubt solving
-                </p>
-              </li>
+            {/* Description */}
+            <p className="text-[14px] sm:text-[15px] text-[#52525e] leading-relaxed mb-3">
+              Master data analytics and business intelligence from scratch.
+              Deep dive into data and extract hidden insights to optimize
+              and solve complex business problems.
+            </p>
+            <p className="text-[14px] sm:text-[15px] text-[#52525e] leading-relaxed mb-8">
+              Leveraging analytics helps you make complex decisions
+              effortlessly and drive real impact at scale.
+            </p>
 
-              <li className="text-start">
-                <h6 className="text-[#27B884] text-[18px] sm:text-[20px] md:text-[22px] font-bold mb-1">
-                  Sat & Sun
-                </h6>
-                <p className="text-white text-[12px] sm:text-[13px] md:text-[14px]">
-                  3PM to 5PM IST
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 mt-7.5">
-            <button 
-            onClick={() => {
+            {/* Stat pills */}
+            <div className="flex flex-wrap gap-3 mb-9">
+              {stats.map((s, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] min-w-[100px]"
+                >
+                  <span className="text-[20px] font-bold text-[#26B884] leading-none mb-1">
+                    {s.value}
+                  </span>
+                  <span className="text-[12px] text-[#4a4a58] leading-tight">
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => {
                   const el = document.getElementById("Courses");
                   if (el) {
-                    const y =
-                      el.getBoundingClientRect().top + window.scrollY - 80;
+                    const y = el.getBoundingClientRect().top + window.scrollY - 80;
                     window.scrollTo({ top: y, behavior: "smooth" });
                   }
-                }}className="
-              w-full sm:w-auto
-              px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-              bg-[linear-gradient(137deg,#683FBE_0%,#26B884_89.86%)]
-              shadow-[rgb(42,176,137)_-23px_19px_42px_-11px]
-              flex justify-center items-center gap-2 cursor-pointer
-            ">
-              Apply Now  <MoveRight className="w-4 h-4" />
-            </button>
+                }}
+                className="
+                  group px-7 py-2.5 text-[14px] font-semibold text-white rounded-full
+                  bg-[linear-gradient(135deg,#683FBE,#26B884)]
+                  shadow-[0_4px_24px_rgba(104,63,190,0.3)]
+                  hover:opacity-90 active:scale-[0.98]
+                  flex items-center justify-center gap-2 cursor-pointer transition-all duration-200
+                "
+              >
+                Apply Now
+                <MoveRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
+              </button>
 
-            <button className="
-              w-full sm:w-auto
-              px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-              bg-[#111] border border-white/20 flex justify-center items-center
-            ">
-              Start Date: 10th January 2025
-            </button>
-          </div>
-        </div>
-        <div className='md:col-span-5'>
-          <div className="
-            p-2.5 rounded-[30px_37px_30px_30px]
-            border-[3px] border-white/20
-            bg-[linear-gradient(134deg,#0C0C0E_6.48%,#141418_56.76%,#0C0C0E_96.26%)]
-            relative ">
-            <div className="
-              p-0.75 rounded-3xl
-              bg-[linear-gradient(134deg,rgba(255,255,255,0.54)_6.48%,#3e3e51_56.76%,#4f4f5d_96.26%)] ">
-
-              <ul className="
-                bg-black rounded-[20px] p-4 sm:p-5.75
-                grid md:gap-3 gap-2
+              <button className="
+                px-7 py-2.5 text-[14px] font-medium text-[#7a7a8a] rounded-full
+                border border-white/[0.08] bg-white/[0.02]
+                hover:text-white hover:border-white/[0.16]
+                flex items-center justify-center gap-2 cursor-pointer transition-all duration-200
               ">
-                {[
-                  "Live sessions by industry experts",
-                  "Get real time industry experience | Domain specific live projects",
-                  "Be job ready in more than 6+ technologies",
-                  "Become a certified Data Analyst",
-                  "Analyze data in depth and create stunning visual dashboard",
-                  " Solve complex business problems and usecases ",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-3 text-white text-[14px] sm:text-[16px] md:text-[18px] leading-6 sm:leading-7.25">
-                    <img
-                      src="https://media.iquanta.in/ui_images/skills/arrow.svg"
-                      className="md:w-4 w-3 md:h-4 h-3 mt-1"
-                    />
-                    {item}
+                Start Date: 10th Jan 2025
+              </button>
+            </div>
+          </div>
+
+          {/* Right — Feature card */}
+          <div className="p-[1px] rounded-2xl bg-[linear-gradient(135deg,rgba(104,63,190,0.3),rgba(38,184,132,0.2))]">
+            <div className="rounded-2xl bg-[#0d0d10] p-6 sm:p-8">
+              <p className="text-[11px] uppercase tracking-widest text-[#383845] font-medium mb-5">
+                What you'll learn
+              </p>
+              <ul className="grid gap-4">
+                {features.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#26B884] mt-0.5 flex-shrink-0" />
+                    <span className="text-[14px] sm:text-[15px] text-[#a0a0b0] leading-snug">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
-
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-      <div className="
-        absolute left-80 right-0 top-0 bottom-0 m-auto
-        w-152.5 h-112.5
-        rounded-full blur-2xl
-        bg-[linear-gradient(271deg,#FF9C54_35.86%,rgba(255,255,255,0.54)_52.65%,transparent_72.38%)]
-        opacity-90" />
     </section>
-  )
+  );
 }
