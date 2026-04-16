@@ -5,10 +5,8 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, Home } from "lucide-react";
 import Headder from "./components/Headder";
 import styles from "./not-found.module.css";
-
 export default function NotFound() {
   const router = useRouter();
-
   return (
     <>
       <Headder />
@@ -81,13 +79,12 @@ export default function NotFound() {
               <div className={styles.text_4043}>4</div>
             </div>
           </div>
-
           <div className="mt-7">
             <div className={styles.actionBlock}>
               <p className="text-white/60 text-[15px] md:text-[17px] mb-2">
                 The page you were looking for could not be found
               </p>
-              <p className="text-white/40 text-[13px] mb-6">
+              <p className="text-white/40 text-[14px] mb-6">
                 You can go back or return to homepage
               </p>
               <div className="flex md:gap-3 gap-2 flex-wrap justify-center">
