@@ -16,7 +16,9 @@ export default function Page() {
       <main>
         <Payment />
       </main>
+      <div className="hidden md:block">
       <Footer />
+      </div>
     </>
   );
 }

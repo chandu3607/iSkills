@@ -15,10 +15,10 @@ export default function Banner() {
           <div className="text-center md:mb-7.5 mb-5">
             <h1
               className="
-            text-[34px] sm:text-[48px] md:text-[68px]
-            font-bold leading-tight tracking-tight
-            bg-[linear-gradient(90deg,#FEB5BA_0%,#D5B1FD_46.5%,#C3FFBE_100%)]
-            bg-clip-text text-transparent z-10">
+              text-[34px] sm:text-[48px] md:text-[68px]
+              font-bold leading-tight tracking-tight
+              bg-[linear-gradient(90deg,#FEB5BA_0%,#D5B1FD_46.5%,#C3FFBE_100%)]
+              bg-clip-text text-transparent z-10">
               Data Analytics Mastery
             </h1>
           </div>
@@ -40,19 +40,19 @@ export default function Banner() {
                 {!play ? (
                   <div
                     onClick={() => setPlay(true)}
-                    className="relative cursor-pointer group" >
+                    className="relative cursor-pointer group">
                     <img
                       src="https://img.youtube.com/vi/n2YYzOVl_z8/maxresdefault.jpg"
-                      className="w-full h-50 sm:h-75 md:h-78.75 object-cover rounded-xl" />
+                      className="w-full h-50 sm:h-75 md:h-78.75 object-cover rounded-xl"/>
                     <div className="absolute inset-0 bg-black/40 rounded-xl" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative flex items-center justify-center">
                         <span
                           className="
-                        absolute w-10 h-10 md:w-13 md:h-13 rounded-full
-                        bg-[#FEC22E]
-                        opacity-60
-                        animate-ping"></span>
+                          absolute w-10 h-10 md:w-13 md:h-13 rounded-full
+                          bg-[#FEC22E]
+                          opacity-60
+                          animate-ping" ></span>
                         <div
                           className="
                           relative z-10
@@ -68,7 +68,7 @@ export default function Banner() {
                       </div>
                     </div>
                   </div>
-                ) : (
+                  ) : (
                   <div className="relative">
                     <button
                       onClick={() => setPlay(false)}
@@ -76,9 +76,7 @@ export default function Banner() {
                       absolute top-2 right-2 z-20
                       bg-[linear-gradient(248deg,#FEC22E_23.04%,#D8950E_72.85%)] hover:bg-black
                       text-white rounded-full p-2 cursor-pointer
-                      transition
-                      "
-                    >
+                      transition ">
                       <X className="w-4 h-4" />
                     </button>
                     <iframe
@@ -89,7 +87,6 @@ export default function Banner() {
                   </div>
                 )}
               </div>
-
               {/* Decorative Images (hidden on mobile for clean UI) */}
               <div className="hidden md:block absolute -left-45 -top-13 w-47.5 z-10">
                 <img src="https://media.iquanta.in/ui_images/skills/vedio-layer-left.png" />
@@ -104,7 +101,7 @@ export default function Banner() {
               className="
                 flex flex-wrap justify-center items-center 
                 gap-2 sm:gap-5 
-                text-[#A6A6AE] text-[14px] sm:text-[16px] " >
+                text-[#A6A6AE] text-[14px] sm:text-[16px] ">
               <li>
                 <span className="text-white">Mode:</span> Live Classes
               </li>
@@ -121,15 +118,13 @@ export default function Banner() {
               <button
                 onClick={() => setIsContactOpen(true)}
                 className="
-                      px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-                      bg-[linear-gradient(137deg,#683FBE_0%,#26B884_89.86%)]
-                      shadow-[rgb(42,176,137)_-23px_19px_42px_-11px]
-                      hover:scale-105 hover:shadow-[0_10px_30px_rgba(38,184,132,0.5)]
-                      transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
-                      " >
+                px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
+                bg-[linear-gradient(137deg,#683FBE_0%,#26B884_89.86%)]
+                shadow-[rgb(42,176,137)_-23px_19px_42px_-11px]
+                hover:scale-105 hover:shadow-[0_10px_30px_rgba(38,184,132,0.5)]
+                transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer " >
                 Enquire Now <MoveRight className="w-4 h-4" />
               </button>
-
               <button
                 onClick={() => {
                   const el = document.getElementById("Courses");
@@ -139,15 +134,14 @@ export default function Banner() {
                     window.scrollTo({ top: y, behavior: "smooth" });
                   }
                 }}
-                className="
-                      px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
-                      border border-[#26B884]
-                      bg-[linear-gradient(137deg,#683fbe24_0%,#26b8842e_89.86%)]
-                      hover:scale-105 hover:border-[#4fffb0]
-                      transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
-                      "
-              >
-                View Training Options <MoveRight className="w-4 h-4" />
+                  className="
+                   px-6 sm:px-7.5 py-2.5 text-[14px] text-white rounded-full
+                   border border-[#26B884]
+                   bg-[linear-gradient(137deg,#683fbe24_0%,#26b8842e_89.86%)]
+                   hover:scale-105 hover:border-[#4fffb0]
+                   transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
+                   ">
+                  View Training Options <MoveRight className="w-4 h-4" />
               </button>
             </div>
           </div>
