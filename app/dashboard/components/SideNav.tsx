@@ -49,7 +49,6 @@ const mainItems: NavItem[] = [
 //   { name: "Explore Courses", href: "/dashboard/explore-courses", icon: GraduationCap },
 // ];
 
-
 // const growthItems: NavItem[] = [
 //   { name: "Special Initiatives", href: "/dashboard/special-initiators", icon: Award },
 //   { name: "Success Stories", href: "/dashboard/success-stories", icon: Trophy },
@@ -109,24 +108,20 @@ export default function SideNav() {
       <div
         className={`fixed inset-0 z-10 bg-slate-900/50 backdrop-blur-sm transition-opacity lg:hidden ${isMobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
-        onClick={() => setIsMobileOpen(false)}
-      />
+        onClick={() => setIsMobileOpen(false)} />
       <div
         className={`fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 lg:static lg:translate-x-0 ${isMobileOpen ? "translate-x-0" : "-translate-x-full"
-          } min-h-screen p-0 sm:p-3`}
-      >
+          } min-h-screen p-0 sm:p-3`} >
         <aside
           className={`relative flex flex-col border border-slate-200 bg-white transition-all duration-300 rounded-none lg:rounded-3xl h-screen lg:h-[calc(100vh-1.5rem)] ${collapsed ? "w-20" : "w-64"
-            }`}
-        >
+            }`} >
           <div className="flex items-center justify-between px-6 py-5">
             {!collapsed && (
              <Link href={"/"}>
               <img
                 className="w-28"
                 src={dashboardLogo}
-                alt="Logo"
-              />
+                alt="Logo" />
               </Link>
             )}
             <button
@@ -137,8 +132,7 @@ export default function SideNav() {
               <PanelRight
                 size={18}
                 className={`transition-transform ${collapsed ? "rotate-180" : ""
-                  }`}
-              />
+                  }`}/>
               <span className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-[11px] font-medium text-white shadow-lg group-hover:block">
                 {toggleNavLabel}
               </span>
