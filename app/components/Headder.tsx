@@ -4,14 +4,13 @@ import { Phone, ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 
-export default function Navbar() {
+export default function Headder({ className = "" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(true);
   return (
     <>
-      <header className="fixed top-0 w-full z-999">
-        <div className="bg-[linear-gradient(90deg,rgba(236,236,236,0.06)_0%,rgba(137,137,137,0.06)_100%)] backdrop-blur-2xl md:rounded-b-[50px] rounded-b-[20px]">
+        <header className={`fixed top-0 w-full z-999 bg-[linear-gradient(90deg,rgba(236,236,236,0.06)_0%,rgba(137,137,137,0.06)_100%)] backdrop-blur-2xl md:rounded-b-[50px] rounded-b-[20px] ${className}`}>
           <div className="max-w-7xl mx-auto flex items-center justify-between md:px-6 px-6 md:py-3 py-4">
             <div className="flex items-center gap-12">
               <a href="/" className=" cursor-pointer">
@@ -248,8 +247,7 @@ export default function Navbar() {
               </div>
             </div>
           )}
-        </div>
-      </header>
+        </header>
       <ContactModal open={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </>
   );

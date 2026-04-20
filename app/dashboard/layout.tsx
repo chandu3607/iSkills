@@ -208,7 +208,7 @@ function DashboardLayoutContent({
           [data-dashboard-theme="dark"] .text-violet-600,
           [data-dashboard-theme="dark"] .text-emerald-600,
           [data-dashboard-theme="dark"] .text-amber-600 {
-            color: #7ea4d8 !important;
+          color: #7ea4d8 !important;
           }
           [data-dashboard-theme="dark"] .hover\\:text-blue-700:hover,
           [data-dashboard-theme="dark"] .hover\\:text-slate-800:hover {

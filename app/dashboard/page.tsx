@@ -112,7 +112,6 @@ export default function DashboardHome() {
               <p className="mt-0.5 sm:mt-1 text-lg sm:text-2xl font-semibold text-slate-900 truncate">
                 {card.value}
               </p>
-
             </article>
           );
         })}
