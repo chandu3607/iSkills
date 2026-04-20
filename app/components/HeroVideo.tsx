@@ -1,11 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import { Play, X } from "lucide-react";
 
 export default function HeroVideo() {
   const [play, setPlay] = useState(false);
-
   return (
     <section className="bg-black md:pb-10 pb-6">
       <div className="max-w-4xl mx-auto px-4">

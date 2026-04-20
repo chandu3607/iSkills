@@ -31,8 +31,7 @@ export default function Hero() {
         />
         <div
           className="relative z-10 text-center max-w-6xl w-full mx-auto px-6
-          pt-30 pb-10 md:pt-20 md:pb-0"
-        >
+          pt-30 pb-10 md:pt-20 md:pb-0" >
           <p
             className="
               inline-flex items-center gap-2
@@ -45,7 +44,7 @@ export default function Hero() {
               border border-white/10
               backdrop-blur-md
               shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
-            <Loader className="w-3.5 h-3.5 text-[#ff9000]" />
+            <Loader className="w-3.5 h-3.5 text-[#ff9000] animate-[spin_3s_linear_infinite]" />
             2x Your Salary with
           </p>
           <h1
