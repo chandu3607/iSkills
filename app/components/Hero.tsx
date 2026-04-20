@@ -44,7 +44,10 @@ export default function Hero() {
               border border-white/10
               backdrop-blur-md
               shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
-            <Loader className="w-3.5 h-3.5 text-[#ff9000] animate-[spin_3s_linear_infinite]" />
+            <Loader className="w-3.5 h-3.5 text-[#ff9000] "
+            style={{
+            animation: "spin 6s linear infinite",
+            }} />
             2x Your Salary with
           </p>
           <h1
