@@ -8,7 +8,7 @@ import { Loader, MoveRight, Sparkles, TrendingUp } from "lucide-react";
 export default function page() {
   return (
     <>
-       <Headder className="bg-black  rounded-2xl"  />
+    <Headder className="bg-black  rounded-none!  "  />
       <div
         className=" rounded-4xl h-screen  "
         style={{
@@ -86,7 +86,7 @@ export default function page() {
                   rounded-[50px]
                   text-[12px] md:text-[16px] font-medium
                   text-white
-              bg-[#ff9000]
+                bg-[#ff9000]
                   border border-white/10
                   backdrop-blur-xl
                   cursor-pointer
@@ -101,7 +101,6 @@ export default function page() {
           </div>
         </div>
       </div>
-      {/* <HeroVideo /> */}
     </>
   );
 }

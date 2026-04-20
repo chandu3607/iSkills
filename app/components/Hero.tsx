@@ -13,23 +13,27 @@ export default function Hero() {
           <img
             src="https://media.iquanta.in/ui_images/skills/banner-bg.png"
             className="w-full h-full object-cover"
-            alt="Banner" />
+            alt="Banner"
+          />
         </div>
         <div className="hidden md:block absolute ointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] opacity-30 ">
           <img
             src="https://media.iquanta.in/ui_images/skills/flower.gif"
             className="w-full h-auto"
-            alt="Flower"/>
+            alt="Flower"
+          />
         </div>
         <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,transparent_20%,#080808_100%)] pointer-events-none" />
         <div
           className="absolute pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[62%]
             w-225 h-75 rounded-full blur-[80px] opacity-10
-          bg-[linear-gradient(92deg,#00efff,#ff6b00)]" />
+          bg-[linear-gradient(92deg,#00efff,#ff6b00)]"
+        />
         <div
           className="relative z-10 text-center max-w-6xl w-full mx-auto px-6
-          pt-30 pb-10 md:pt-20 md:pb-0" >
-           <p
+          pt-30 pb-10 md:pt-20 md:pb-0"
+        >
+          <p
             className="
               inline-flex items-center gap-2
               mx-auto w-fit
@@ -47,12 +51,12 @@ export default function Hero() {
           <h1
             className="text-white font-black uppercase md:leading-23.5 leading-12
             text-[38px] md:text-[72px] lg:text-[84px]"
-            style={{ fontFamily: "Saira Stencil One, sans-serif" }}>
+            style={{ fontFamily: "Saira Stencil One, sans-serif" }} >
             Online Coding <br className="hidden md:block" />
             Courses by{" "}
             <span
               className="lowercase text-[#ff9000]"
-              style={{ filter: "drop-shadow(0 0 24px rgba(255,144,3,0.55))" }}>
+              style={{ filter: "drop-shadow(0 0 24px rgba(255,144,3,0.55))" }} >
               i
             </span>
             Skills
@@ -87,7 +91,7 @@ export default function Hero() {
                 border border-[#FFB056]/50 bg-transparent
                 hover:bg-[#FFB056]/10 hover:border-[#FFB056]
                 hover:-translate-y-0.5
-                transition-all duration-200 backdrop-blur-sm cursor-pointer" >
+                transition-all duration-200 backdrop-blur-sm cursor-pointer">
                 Free counseling <MoveRight className="w-4 h-4" />
               </button>
             </div>
