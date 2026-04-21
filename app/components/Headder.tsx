@@ -9,7 +9,7 @@ export default function Headder({ className = "" }) {
   const [mobileDropdown, setMobileDropdown] = useState(true);
   return (
     <>
-      <div className="fixed top-0 w-full z-999 ">
+      <div className="fixed top-0 w-full z-[9999] ">
         <header
           className={`w-full
           backdrop-blur-2xl
