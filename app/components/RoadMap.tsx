@@ -42,13 +42,11 @@ export default function Roadmap() {
 
   return (
     <section className="bg-black md:py-10 py-6 md:pb-20 ">
-      
       <div className="text-center md:mb-15 mb-10">
         <h2 className=" max-w-6xl mx-auto text-[26px] leading-9.5 md:text-[54px] md:px-0 px-10 md:leading-18.5 font-black bg-[linear-gradient(90deg,#FEB5BA_0%,#D5B1FD_46.5%,#C3FFBE_100%)] bg-clip-text text-transparent">
           Discover Your Roadmap to Success
         </h2>
       </div>
-
       <div className="mx-auto max-w-6xl px-4 md:hidden">
         <div className="relative pl-8">
           <div className="absolute left-2 top-3 bottom-3 w-px bg-white/15" />
@@ -82,7 +80,6 @@ export default function Roadmap() {
           </div>
         </div>
       </div>
-
       <div className="relative hidden md:block">
         <div className="relative z-10">
           <img
@@ -118,7 +115,6 @@ export default function Roadmap() {
           </div>
         ))}
       </div>
-
     </section>
   );
 }
