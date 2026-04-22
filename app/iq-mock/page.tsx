@@ -9,8 +9,8 @@ export default function page() {
         <div className="grid grid-cols-2 gap-2 md:px-10 py-6">
             <div className="bg-[linear-gradient(182deg,rgba(255,255,255,1)_0%,rgba(233,243,253,1)_100%)] rounded-[30px] p-3">
                 <div className="grid grid-cols-2">
-                    <div className="bg-white">
-                        <Gauge value={85} />
+                    <div className="bg-white rounded-[30px] p-4">
+                        <Gauge value={90} />
                     </div>
                 </div>
             </div>

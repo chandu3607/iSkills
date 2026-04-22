@@ -91,9 +91,9 @@ export default function Roadmap() {
           <div
             key={i}
             className={`absolute ${step.className} 
-                w-50 5-40 
-                rounded-full border border-white/40 
-                flex items-center justify-center z-10`} >
+            w-50 5-40 
+            rounded-full border border-white/40 
+            flex items-center justify-center z-10`} >
             <div className="w-50 h-50 rounded-full border border-white/20 flex items-center justify-center">
               <div
                 className={`relative w-45 h-45 rounded-full 

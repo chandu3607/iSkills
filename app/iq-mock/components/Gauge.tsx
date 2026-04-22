@@ -16,7 +16,7 @@ const NEEDLE_BASE_Y = 241
 const HUB_OUTER_RADIUS = 32
 const HUB_INNER_RADIUS = 26
 const GAUGE_VIEWBOX_X = 58
-const GAUGE_VIEWBOX_Y = 100
+const GAUGE_VIEWBOX_Y = 70
 const GAUGE_VIEWBOX_WIDTH = 390
 const GAUGE_VIEWBOX_HEIGHT = 215
 const GAUGE_TICK_STOPS = [
@@ -201,7 +201,7 @@ export default function Gauge({
         x={GAUGE_CENTER_X}
         y={GAUGE_CENTER_Y}
         fill="#000"
-        fontSize="50px"
+        fontSize="46px"
         fontWeight="700"
         textAnchor="middle"
         dominantBaseline="middle"
