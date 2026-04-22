@@ -449,7 +449,7 @@ export default function Curriculum() {
                     <p className="mb-2 md:text-[12px] text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
                       Module {i + 1}
                     </p>
-                    <h6 className="text-[13px] font-semibold md:leading-7 leading-5 text-white md:text-[20px]">
+                    <h6 className="text-[13px] font-semibold md:leading-6 leading-5 text-white md:text-[16px]">
                       {module.title}
                     </h6>
                   </button>

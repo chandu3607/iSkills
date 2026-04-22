@@ -1408,7 +1408,6 @@ export default function Curriculum() {
       {} as Record<string, { title: string; lessons: string[] }>,
     ),
   );
-
   const [active, setActive] = useState(grouped[0] || null);
   return (
     <section className="relative overflow-hidden bg-black py-6 md:py-10">
@@ -1435,13 +1434,12 @@ export default function Curriculum() {
                         active?.title === module.title
                         ? "border-[#61E6C6]/35 bg-[linear-gradient(135deg,rgba(97,230,198,0.18)_0%,rgba(18,126,241,0.12)_48%,rgba(239,125,110,0.14)_100%)] shadow-[0_18px_40px_rgba(0,0,0,0.28)]"
                         : "border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.03)_100%)] hover:border-white/15 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.04)_100%)]"
-                    }`}
-                  >
+                    }`}>
                     <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)]" />
                     <p className="mb-2 md:text-[12px] text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
                       Module {i + 1}
                     </p>
-                    <h6 className="text-[13px] font-semibold md:leading-7 leading-5 text-white md:text-[20px]">
+                    <h6 className="text-[13px] font-semibold md:leading-6 leading-5 text-white md:text-[16px]">
                       {module.title}
                     </h6>
                   </button>
@@ -1458,8 +1456,7 @@ export default function Curriculum() {
                   {active?.lessons?.map((lesson, i) => (
                     <li
                       key={`${lesson}-${i}`}
-                      className="relative overflow-hidden rounded-[18px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.03)_100%)] px-4 py-3.5 md:text-[15px] text-[13px] leading-5 md:leading-6 text-white sm:px-5"
-                    >
+                      className="relative overflow-hidden rounded-[18px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.03)_100%)] px-4 py-3.5 md:text-[15px] text-[13px] leading-5 md:leading-6 text-white sm:px-5">
                       <div className="absolute inset-y-3 left-0 w-1 rounded-full bg-[linear-gradient(180deg,#61E6C6_0%,#127EF1_55%,#EF7D6E_100%)]" />
                       <span className="block pl-3 capitalize">{lesson}</span>
                     </li>
