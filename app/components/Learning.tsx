@@ -66,7 +66,7 @@ export default function Learning() {
           <div
             className="relative rounded-[28px] p-2.5
             bg-[linear-gradient(180deg,#EF7D6E_0%,#4BEBAD_46.5%,rgba(127,124,169,0.74)_97%)]" >
-            <div className="relative bg-black/90 backdrop-blur-[14px] rounded-[21px] py-10 md:px-10 px-2">
+              <div className="relative bg-black/90 backdrop-blur-[14px] rounded-[21px] py-10 md:px-10 px-2">
               <div className="absolute top-0 left-92.5 w-px h-full bg-white/10 hidden md:block" />
               <div className="absolute top-0 right-97.5 w-px h-full bg-white/10 hidden md:block" />
               <div className="absolute top-110.5 left-0 right-0 mx-auto w-full h-px bg-white/10 hidden md:block" />
@@ -96,7 +96,7 @@ export default function Learning() {
                         0_-3px_5px_rgba(255,255,255,0.09)]">
                         Coming Soon
                       </div>
-                     ) : (
+                      ) : (
                       <Link
                         href={item.link}
                         className="inline-flex items-center gap-2.5 text-sm px-4 py-2.5 rounded-[40px] text-black
@@ -109,8 +109,7 @@ export default function Learning() {
                         hover:-translate-y-0.5 hover:shadow-[0_60px_60px_rgba(212,212,212,0.3)]
                         transition-all duration-200">
                         Know More
-                        <MoveRight size={16}  className="transition-transform group-hover:translate-x-1"
-                        />
+                        <MoveRight size={16}  className="transition-transform group-hover:translate-x-1" />
                       </Link>
                     )}
                   </div>

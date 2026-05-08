@@ -52,25 +52,23 @@ export default function Courses() {
             return (
               <article
                 key={course.title}
-                className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)]"
-              >
+                className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,18,24,0.96)_0%,rgba(8,8,10,0.98)_100%)]">
                 <div
                   className={`absolute inset-0 ${
                     isGold
                       ? "bg-[linear-gradient(145deg,rgba(246,195,91,0.16)_0%,rgba(239,125,110,0.08)_42%,transparent_70%)]"
                       : "bg-[linear-gradient(145deg,rgba(255,255,255,0.12)_0%,rgba(18,126,241,0.08)_42%,transparent_72%)]"
-                  }`}
-                />
-                <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent)]" />
-                <div className="relative z-10">
-                  <div className="relative  overflow-hidden">
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-x-5 bottom-5"></div>
-                  </div>
+                  }`} />
+                  <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent)]" />
+                  <div className="relative z-10">
+                    <div className="relative  overflow-hidden">
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-x-5 bottom-5"></div>
+                    </div>
                   <div className="p-5 md:p-3">
                     <h3 className="text-[20px] font-semibold text-white mb-3">
                       {course.title}
@@ -81,30 +79,25 @@ export default function Courses() {
                           isGold
                             ? "text-[#F6C35B]"
                             : "bg-[linear-gradient(90deg,#f3f3f3,#8a8a8a,#e1e1e1,#b2b2b2)] bg-clip-text text-transparent"
-                        }`}
-                      >
-                        Features
+                        }`}> Features
                       </h5>
                       <div
                         className="h-60 overflow-x-auto"
                         style={{
                           scrollbarWidth: "thin",
                           scrollbarColor: "#EFD4CB #1a1a1a",
-                        }}
-                      >
+                        }}>
                         <ul className=" grid gap-2 mr-3">
                           {course.features.map((feature, index) => (
                             <li
                               key={feature}
-                              className="flex items-start gap-1 rounded-2xl border border-white/8 bg-white/3 px-3 py-2 text-[12px] leading-6 text-white/80"
-                            >
+                              className="flex items-start gap-1 rounded-2xl border border-white/8 bg-white/3 px-3 py-2 text-[12px] leading-6 text-white/80">
                               <span
                                 className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
                                   isGold
                                     ? "bg-[#F6C35B]/18 text-[#F6C35B]"
                                     : "bg-white/12 text-white/80"
-                                }`}
-                              >
+                                }`} >
                                 {index + 1}
                               </span>
                               <span>{feature}</span>

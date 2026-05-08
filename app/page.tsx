@@ -16,7 +16,6 @@ import Footer from "./components/Footer";
 import { Metadata } from "next";
 import { MoveRight, ShoppingCart } from "lucide-react";
 import BuyNowButton from "./components/BuyNowButton";
-
 const faqData = [
   {
     name: "What is iSkills?",
@@ -154,11 +153,9 @@ export const metadata: Metadata = {
     "Full Stack Development course",
     "Coding classes online",
   ],
-
   alternates: {
     canonical: "https://www.iquanta.in/iskills",
   },
-
   openGraph: {
     type: "website",
     url: "https://www.iquanta.in/iskills",
@@ -174,7 +171,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Best Online Coding and Programming Courses [2025] I iskills",

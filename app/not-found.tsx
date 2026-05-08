@@ -63,7 +63,7 @@ export default function NotFound() {
                       <div className={styles.g13}></div>
                     </div>
                     <div className={styles.g}></div>
-                    <div className={styles.g}></div>
+                    <div className={styles.g}></div> 
                   </div>
                 </div>
               </div>

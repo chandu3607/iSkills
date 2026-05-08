@@ -56,7 +56,6 @@ class X {
   #animationState = { elapsed: 0, delta: 0 };
   #isAnimating: boolean = false;
   #isVisible: boolean = false;
-
   canvas!: HTMLCanvasElement;
   camera!: PerspectiveCamera;
   cameraMinAspect?: number;
@@ -80,7 +79,6 @@ class X {
   onAfterRender: (state: { elapsed: number; delta: number }) => void = () => {};
   onAfterResize: (size: SizeData) => void = () => {};
   isDisposed: boolean = false;
-
   constructor(config: XConfig) {
     this.#config = { ...config };
     this.#initCamera();
@@ -121,7 +119,7 @@ class X {
     this.renderer = new WebGLRenderer(rendererOptions);
     this.renderer.outputColorSpace = SRGBColorSpace;
   }
-
+  
   #initObservers() {
     if (!(this.#config.size instanceof Object)) {
       window.addEventListener('resize', this.#onResize.bind(this));
@@ -143,7 +141,7 @@ class X {
     if (this.#resizeTimer) clearTimeout(this.#resizeTimer);
     this.#resizeTimer = window.setTimeout(this.resize.bind(this), 100);
   }
-
+ 
   resize() {
     let w: number, h: number;
     if (this.#config.size instanceof Object) {
@@ -184,7 +182,7 @@ class X {
     const newTan = tanFov / (this.camera.aspect / aspect);
     this.camera.fov = 2 * MathUtils.radToDeg(Math.atan(newTan));
   }
-
+  
   updateWorldSize() {
     if (this.camera.isPerspectiveCamera) {
       const fovRad = (this.camera.fov * Math.PI) / 180;
@@ -213,6 +211,7 @@ class X {
   get postprocessing() {
     return this.#postprocessing;
   }
+
   set postprocessing(value: any) {
     this.#postprocessing = value;
     this.render = value.render.bind(value);
@@ -846,21 +845,15 @@ const Ballpit: React.FC<BallpitProps> = ({ className = '', followCursor = true, 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const instanceRef = useRef<CreateBallpitReturn | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const colorsKey = JSON.stringify(props.colors);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     if (instanceRef.current) {
       instanceRef.current.dispose();
       instanceRef.current = null;
     }
     if (timerRef.current) clearTimeout(timerRef.current);
-
-    // Delay init so the previous WebGL context fully releases before a new one
-    // is created — prevents "getShaderPrecisionFormat is null" on hot reload
     timerRef.current = setTimeout(() => {
       if (!canvasRef.current) return;
       try {
@@ -869,7 +862,6 @@ const Ballpit: React.FC<BallpitProps> = ({ className = '', followCursor = true, 
         console.warn('Ballpit: WebGL init failed, will recover on next render', e);
       }
     }, 150);
-
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
       if (instanceRef.current) {
