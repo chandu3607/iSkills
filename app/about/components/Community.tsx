@@ -1,28 +1,28 @@
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+// import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import React from "react";
 const socialLinks = [
   {
     name: "Facebook",
     href: "https://www.facebook.com/iQuanta.in/",
-    icon: Facebook,
+    // icon: Facebook,
     bg: "#1877F2",
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/iquanta.in/",
-    icon: Instagram,
+    // icon: Instagram,
     bg: "linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4)",
   },
   {
     name: "LinkedIn",
     href: "https://in.linkedin.com/company/iquanta-edu-services",
-    icon: Linkedin,
+    // icon: Linkedin,
     bg: "#0A66C2",
   },
   {
     name: "Youtube",
     href: "https://www.youtube.com/@CatpreparationiQuanta",
-    icon: Youtube,
+    // icon: Youtube,
     bg: "#FF0000",
   },
 ];
@@ -87,7 +87,7 @@ export default function Community() {
                 </div>   
                 <div className="flex md:flex-row flex-col items-center justify-center gap-2 mt-6">
                 <p className="text-white">Join Our Community:</p>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     {socialLinks.map((social) => {
                       const Icon = social.icon;
                       return (
@@ -105,7 +105,7 @@ export default function Community() {
                         </a>
                       );
                     })}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex md:flex-row flex-col items-center justify-center gap-4 mt-6">
                   <div className="flex md:-space-x-3 -space-x-2  relative z-10">

@@ -10,8 +10,8 @@ import Vision from './components/Vision'
 import ChooseUs from './components/ChooseUs'
 import AppPromo from './components/AppPromo'
 import Community from './components/Community'
-import { Footer } from '../components/Footer'
-import ToppersWithJeetsir from '../components/ToppersWithJeetsir'
+// import { Footer } from '../components/Footer'
+// import ToppersWithJeetsir from '../components/ToppersWithJeetsir'
 
 export default function page() {
   return (
@@ -27,7 +27,7 @@ export default function page() {
          <AppPromo />
         <ChooseUs />
         <Community />
-        <Footer />       
+        {/* <Footer />        */}
     </div>
   )
 }

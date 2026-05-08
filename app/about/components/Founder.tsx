@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+// import { Facebook, Instagram, Linkedin } from "lucide-react";
 import React from "react";
 
 const logos = [
@@ -10,23 +10,23 @@ const logos = [
   { src: "ani-white-logo.webp", link: "https://www.aninews.in/news/business/business/iquanta-reshapes-cat-preparation-industry-one-facebook-group-at-a-time20210322140723/", dark: true ,alt: "ANI logo",},
 ];
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/jeet.singh.412224/",
-    icon: Facebook,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/indralion/",
-    icon: Instagram,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/indralion/",
-    icon: Linkedin,
-  },
-];
+// const socialLinks = [
+//   {
+//     name: "Facebook",
+//     href: "https://www.facebook.com/jeet.singh.412224/",
+//     icon: Facebook,
+//   },
+//   {
+//     name: "Instagram",
+//     href: "https://www.instagram.com/indralion/",
+//     icon: Instagram,
+//   },
+//   {
+//     name: "LinkedIn",
+//     href: "https://www.linkedin.com/in/indralion/",
+//     icon: Linkedin,
+//   },
+// ];
 
 export default function Founder() {
   return (
@@ -112,7 +112,7 @@ export default function Founder() {
                   Follow me:
                 </h4>
                 <div className="mt-2 flex items-center gap-3">
-                  {socialLinks.map((social) => {
+                  {/* {socialLinks.map((social) => {
                     const Icon = social.icon;
                     return (
                       <a
@@ -125,7 +125,7 @@ export default function Founder() {
                         <Icon size={18} />
                       </a>
                     );
-                  })}
+                  })} */}
                 </div>
               </div>
             </div>
